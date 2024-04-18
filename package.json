@@ -1,10 +1,12 @@
 {
   "name": "@renzp/utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "一款零依赖、实用的Javascript/Typescript工具库",
   "type": "module",
   "main": "dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "types": "dist/index.d.ts",
   "author": "renzp <1074720760.qq.com>",
   "repository": {
@@ -15,7 +17,9 @@
   "bugs": {
     "url": "https://github.com/renzp94/utils/issues"
   },
-  "keywords": ["utils"],
+  "keywords": [
+    "utils"
+  ],
   "license": "MIT",
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
