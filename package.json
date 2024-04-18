@@ -1,10 +1,12 @@
 {
   "name": "@renzp/utils",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "基于竖式计算方式矫正js数字计算精度",
   "type": "module",
   "main": "dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "types": "dist/index.d.ts",
   "author": "renzp <1074720760.qq.com>",
   "repository": {
@@ -15,7 +17,9 @@
   "bugs": {
     "url": "https://github.com/renzp94/utils/issues"
   },
-  "keywords": ["utils"],
+  "keywords": [
+    "utils"
+  ],
   "license": "MIT",
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
