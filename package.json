@@ -1,0 +1,37 @@
+{
+  "name": "@renzp/utils",
+  "version": "0.0.0",
+  "description": "基于竖式计算方式矫正js数字计算精度",
+  "type": "module",
+  "main": "dist/index.js",
+  "files": ["dist"],
+  "types": "dist/index.d.ts",
+  "author": "renzp <1074720760.qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renzp94/utils.git"
+  },
+  "homepage": "https://github.com/renzp94/utils#readme",
+  "bugs": {
+    "url": "https://github.com/renzp94/utils/issues"
+  },
+  "keywords": ["utils"],
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "scripts": {
+    "build": "bun run scripts/build.ts",
+    "pub": "standard-version && npm publish"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.7.0",
+    "@types/bun": "latest",
+    "bun-plugin-dts": "^0.2.3",
+    "standard-version": "^9.5.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
