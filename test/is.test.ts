@@ -83,11 +83,7 @@ test('isFunction', () => {
 test('isJson', () => {
   expect(isJson(null)).toBe(false)
   expect(isJson(undefined)).toBe(false)
-  expect(isJson(0)).toBe(false)
   expect(isJson('')).toBe(false)
-  expect(isJson(false)).toBe(false)
-  expect(isJson(true)).toBe(false)
-  expect(isJson({ a: 1 })).toBe(true)
   expect(isJson('{ "a": 1 }')).toBe(true)
 })
 

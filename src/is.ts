@@ -99,13 +99,13 @@ export const isFunction = <T extends Function>(v: unknown): v is T =>
  *
  * @example
  * isJson(null); // false
+ * isJson(undefined); // false
  * isJson(''); // false
- * isJson({ a: 1 }); // true
  * isJson('{ "a": 1 }'); // true
  */
-export const isJson = <T = unknown>(v: T): v is T => {
+export const isJson = (v?: string | null): v is string => {
   try {
-    return isString(v) ? isObject(JSON.parse(v)) : isObject(v)
+    return isObject(isString(v) ? JSON.parse(v) : v)
   } catch {
     return false
   }
