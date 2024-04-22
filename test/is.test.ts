@@ -5,6 +5,7 @@ import {
   isBoolean,
   isDate,
   isDef,
+  isFalsy,
   isFunction,
   isMap,
   isNull,
@@ -57,6 +58,16 @@ test('isDef', () => {
   } else {
     g // 自动推断类型为undefined | null
   }
+})
+
+test('isFalsy', () => {
+  expect(isFalsy(false)).toBe(true)
+  expect(isFalsy(0)).toBe(true)
+  expect(isFalsy('')).toBe(true)
+  expect(isFalsy(null)).toBe(true)
+  expect(isFalsy(undefined)).toBe(true)
+  expect(isFalsy(Number.NaN)).toBe(true)
+  expect(isFalsy(1)).toBe(false)
 })
 
 test('isFunction', () => {
