@@ -21,6 +21,9 @@
         "noExplicitAny": "off",
         "noExtraNonNullAssertion": "error",
         "noConsoleLog": "warn"
+      },
+      "performance": {
+        "noAccumulatingSpread": "off"
       }
     }
   },
