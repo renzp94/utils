@@ -93,6 +93,25 @@ export const isFunction = <T extends Function>(v: unknown): v is T =>
   typeof v === 'function'
 
 /**
+ * 是否为Json数据
+ * @param v 要判断的变量
+ * @returns 如果是json对象或者json字符串则返回true，否则返回false
+ *
+ * @example
+ * isJson(null); // false
+ * isJson(''); // false
+ * isJson({ a: 1 }); // true
+ * isJson('{ "a": 1 }'); // true
+ */
+export const isJson = <T = unknown>(v: T): v is T => {
+  try {
+    return isString(v) ? isObject(JSON.parse(v)) : isObject(v)
+  } catch {
+    return false
+  }
+}
+
+/**
  * 是否为Map类型
  * @param v 要判断的变量
  * @returns 如果是Map则返回true，否则返回false
