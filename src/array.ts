@@ -1,5 +1,4 @@
-import { isDef } from '../dist'
-import { isArray, isUnDef } from './is'
+import { isArray, isDef, isUnDef } from './is'
 import { removeKey } from './object'
 
 export interface FlattenOptions {
