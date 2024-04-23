@@ -11,6 +11,7 @@ export default defineConfig({
     'pages/guide/getting-started.md': 'index.md',
     'pages/:category/:page.md': ':category/:page.md',
   },
+  head: [['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }]],
   themeConfig: {
     logo: {
       src: '/logo.png',
