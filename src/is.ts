@@ -96,7 +96,7 @@ export const isFunction = <T extends Function>(v: unknown): v is T =>
 /**
  * 是否为Json数据
  * @param v 要判断的变量
- * @returns 如果是json对象或者json字符串则返回true，否则返回false
+ * @returns 如果是json数据则返回true，否则返回false
  *
  * @example
  * isJson(null); // false
@@ -104,9 +104,9 @@ export const isFunction = <T extends Function>(v: unknown): v is T =>
  * isJson(''); // false
  * isJson('{ "a": 1 }'); // true
  */
-export const isJson = (v?: string | null): v is string => {
+export const isJson = <T = unknown>(v: T): v is T => {
   try {
-    return isObject(isString(v) ? JSON.parse(v) : v)
+    return isObject(isDef(v) && isString(v) ? JSON.parse(v) : v)
   } catch {
     return false
   }
