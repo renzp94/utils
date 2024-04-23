@@ -1,4 +1,4 @@
-name: Deploy
+name: Docs Deploy
 on:
   push:
     branches: main
@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    name: Deploy
+    name: Docs Deploy
     runs-on: ubuntu-latest
 
     permissions:
@@ -38,5 +38,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "renzp-utils"
-          entrypoint: ""
+          entrypoint: "https://deno.land/std/http/file_server.ts"
           root: "docs/.vitepress/dist"
