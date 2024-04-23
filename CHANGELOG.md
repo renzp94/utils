@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/renzp94/utils/compare/v0.0.3...v0.0.4) (2024-04-23)
+
+
+### Features
+
+* **docs:** 添加文档 ([9316d5c](https://github.com/renzp94/utils/commit/9316d5cdcfca1b55aef965e4d691719f1f1d5d77))
+* **is:** 添加isTruth(是否为真值)方法 ([2efe697](https://github.com/renzp94/utils/commit/2efe6975fa1ec292dc93a7def12271fc74314a78))
+
+
+### Bug Fixes
+
+* **array:** 修复isDef引入错误的问题 ([69f1788](https://github.com/renzp94/utils/commit/69f17884df39ff6c67c255cfd172369028422501))
+
 ### 0.0.3 (2024-04-22)
 
 
