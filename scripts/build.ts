@@ -1,14 +1,48 @@
+import { exists, readdir, unlink } from 'node:fs/promises'
 import dts from 'bun-plugin-dts'
 
-const result = await Bun.build({
-  entrypoints: ['./src/index.ts'],
-  outdir: './dist',
-  plugins: [dts()],
-})
+const rmDist = async () => {
+  const hasDist = await exists('./dist')
+  if (hasDist) {
+    const distFiles = await readdir('./dist')
+    const rmFiles = distFiles.map((file) => {
+      return unlink(`./dist/${file}`)
+    })
 
-if (result.success) {
-  console.log('打包成功')
-} else {
-  console.log('打包失败')
-  console.log(result.logs)
+    await Promise.all(rmFiles)
+  }
 }
+
+const getEntrypoints = async () => {
+  const files = await readdir('./src')
+  const entrypoints = files
+    .filter((file) => !file.includes('_'))
+    .map((file) => `./src/${file}`)
+
+  return entrypoints
+}
+
+const runBuild = async () => {
+  // biome-ignore lint/suspicious/noConsoleLog: <explanation>
+  console.log('📦 打包中...')
+  await rmDist()
+  const entrypoints = await getEntrypoints()
+  const result = await Bun.build({
+    entrypoints,
+    outdir: './dist',
+    splitting: true,
+    plugins: [dts()],
+  })
+
+  if (result.success) {
+    // biome-ignore lint/suspicious/noConsoleLog: <explanation>
+    console.log('📦 打包成功 🎉🎉🎉')
+  } else {
+    // biome-ignore lint/suspicious/noConsoleLog: <explanation>
+    console.log('📦 打包失败 🚨\n')
+    // biome-ignore lint/suspicious/noConsoleLog: <explanation>
+    console.log(result.logs)
+  }
+}
+
+runBuild()
