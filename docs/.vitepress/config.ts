@@ -58,10 +58,12 @@ export default defineConfig({
       },
       {
         text: '数组操作',
+        collapsed: false,
         items: [{ text: 'flatten', link: '/array/flatten' }],
       },
       {
         text: '类型判断',
+        collapsed: false,
         items: [
           { text: 'isArray', link: '/is/isArray' },
           { text: 'isBigint', link: '/is/isBigint' },
@@ -86,14 +88,17 @@ export default defineConfig({
       },
       {
         text: '数字操作',
+        collapsed: false,
         items: [{ text: 'numberSeparate', link: '/number/numberSeparate' }],
       },
       {
         text: '对象操作',
+        collapsed: false,
         items: [{ text: 'removeKey', link: '/object/removeKey' }],
       },
       {
         text: '浏览器操作',
+        collapsed: false,
         items: [{ text: 'copyText', link: '/window/copyText' }],
       },
     ],
