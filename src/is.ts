@@ -1,4 +1,8 @@
-import { type _ExcludeUndefinedNull, _toString } from './_base'
+import {
+  type _ExcludeFalsy,
+  type _ExcludeUndefinedNull,
+  _toString,
+} from './_base'
 
 /**
  * 是否为Array类型
@@ -205,6 +209,18 @@ export const isString = (v: unknown): v is string => typeof v === 'string'
  * isSymbol(0); // false
  */
 export const isSymbol = (v: unknown): v is symbol => typeof v === 'symbol'
+
+/**
+ *
+ * 是否为真值
+ * @param v 要判断的变量
+ * @returns 如果是真值则返回true，否则返回false
+ *
+ * @example
+ * isTruth(false); // false
+ * isTruth(1); // true
+ */
+export const isTruth = <T = any>(v: T): v is _ExcludeFalsy<T> => !isFalsy(v)
 
 /**
  * 是否为undefined

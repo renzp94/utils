@@ -16,6 +16,7 @@ import {
   isSet,
   isString,
   isSymbol,
+  isTruth,
   isUnDef,
   isUndefined,
 } from '../src'
@@ -133,6 +134,16 @@ test('isString', () => {
 test('isSymbol', () => {
   expect(isSymbol(Symbol(0))).toBe(true)
   expect(isSymbol(0)).toBe(false)
+})
+
+test('isTruth', () => {
+  expect(isTruth(false)).toBe(false)
+  expect(isTruth(0)).toBe(false)
+  expect(isTruth('')).toBe(false)
+  expect(isTruth(null)).toBe(false)
+  expect(isTruth(undefined)).toBe(false)
+  expect(isTruth(Number.NaN)).toBe(false)
+  expect(isTruth(1)).toBe(true)
 })
 
 test('isUndefined', () => {
