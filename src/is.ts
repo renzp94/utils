@@ -76,7 +76,8 @@ export const isDef = <T = any>(v: T): v is _ExcludeUndefinedNull<T> =>
  * isFalsy(false); // true
  * isFalsy(1); // false
  */
-export const isFalsy = (v: unknown) => !v
+export const isFalsy = (v: unknown): v is false | null | undefined | 0 | '' =>
+  !v
 
 /**
  * 是否为function类型
