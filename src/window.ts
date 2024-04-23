@@ -5,6 +5,11 @@
  *
  * @param text 要复制的文本
  * @returns 如果复制成功则返回true，否则返回false
+ *
+ * @example
+ * const status = await copyText('复制文本'); // true
+ * const text = await navigator.clipboard.readText();
+ * console.log(text); // 复制文本
  */
 export const copyText = async (text: string) => {
   try {
