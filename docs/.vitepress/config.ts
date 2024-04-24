@@ -98,6 +98,17 @@ export default defineConfig({
         items: [{ text: 'removeKey', link: '/object/removeKey' }],
       },
       {
+        text: '验证器',
+        collapsed: false,
+        items: [
+          { text: 'emailValidator', link: '/validator/emailValidator' },
+          { text: 'idCardValidator', link: '/validator/idCardValidator' },
+          { text: 'phoneValidator', link: '/validator/phoneValidator' },
+          { text: 'telValidator', link: '/validator/telValidator' },
+          { text: 'zhValidator', link: '/validator/zhValidator' },
+        ],
+      },
+      {
         text: '浏览器操作',
         collapsed: false,
         items: [{ text: 'copyText', link: '/window/copyText' }],
