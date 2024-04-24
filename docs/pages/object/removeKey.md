@@ -9,7 +9,7 @@
 传入一个对象和属性名，返回删除属性后的对象。
 
 ```ts
-import { numberSeparate } from '@renzp/utils'
+import { removeKey } from '@renzp/utils'
 
 const a = { a: 1, b: 2 };
 const c = removeKey(a, "a"); // c = { b: 2 }  a = { a: 1, b: 2 }

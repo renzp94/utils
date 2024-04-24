@@ -11,9 +11,9 @@
 ```ts
 import { copyText } from '@renzp/utils'
 
- * const status = await copyText('复制文本'); // true
- * const text = await navigator.clipboard.readText()
- * console.log(text); // 复制文本
+const status = await copyText('复制文本'); // true
+const text = await navigator.clipboard.readText()
+console.log(text); // 复制文本
 ```
 
 ## 参数
@@ -25,6 +25,6 @@ import { copyText } from '@renzp/utils'
 
 ## 返回
 
-| 参数 | 说明           | 类型              |
-| ---- | -------------- | ----------------- |
-| v    | 复制操作的状态 | `Promise<boolean` |
+| 参数 | 说明           | 类型               |
+| ---- | -------------- | ------------------ |
+| v    | 复制操作的状态 | `Promise<boolean>` |
