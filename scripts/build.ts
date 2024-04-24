@@ -30,7 +30,9 @@ const runBuild = async () => {
   const result = await Bun.build({
     entrypoints,
     outdir: './dist',
+    naming: '[name].[ext]',
     splitting: true,
+    format: 'esm',
     plugins: [dts()],
   })
 
