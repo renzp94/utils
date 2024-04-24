@@ -4,7 +4,6 @@ import pkg from '../../package.json'
 export default defineConfig({
   title: 'Utils',
   description: '一款零依赖、实用的Javascript/Typescript工具库',
-  cleanUrls: true,
   lastUpdated: true,
   metaChunk: true,
   rewrites: {
