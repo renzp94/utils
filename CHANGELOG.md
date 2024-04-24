@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/renzp94/utils/compare/v0.0.4...v0.0.5) (2024-04-24)
+
+
+### Features
+
+* **validator:** 添加emailValidator(邮箱验证)、idCardValidator(身份证验证)、phoneValidator(手机号验证)、telValidator(座机号验证)、zhValidator(中文验证)等方法 ([cb77502](https://github.com/renzp94/utils/commit/cb77502ff961a5c93f11e151d4abca0e81d7d023))
+
+
+### Bug Fixes
+
+* **docs:** 修正文档内容 ([33921da](https://github.com/renzp94/utils/commit/33921dacac2b166d9f17cfd2ba016dc31ebc59ce))
+
 ### [0.0.4](https://github.com/renzp94/utils/compare/v0.0.3...v0.0.4) (2024-04-23)
 
 
