@@ -13,7 +13,6 @@
  */
 export const copyText = async (text: string) => {
   try {
-    // navigator.clipboard只能用于https或者localhost。
     if (navigator?.clipboard?.writeText) {
       await navigator.clipboard.writeText(text)
       return true
