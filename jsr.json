@@ -1,6 +1,6 @@
 {
   "name": "@renzp/utils",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "exports": {
     "./array": "./src/array.ts",
     "./has": "./src/has.ts",
