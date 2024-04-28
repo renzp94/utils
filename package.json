@@ -1,10 +1,12 @@
 {
   "name": "@renzp/utils",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "一款零依赖、实用的Javascript/Typescript工具库",
   "type": "module",
   "main": "dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "types": "dist/index.d.ts",
   "author": "renzp <1074720760.qq.com>",
   "repository": {
@@ -15,7 +17,9 @@
   "bugs": {
     "url": "https://github.com/renzp94/utils/issues"
   },
-  "keywords": ["utils"],
+  "keywords": [
+    "utils"
+  ],
   "license": "MIT",
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
@@ -23,7 +27,7 @@
   },
   "scripts": {
     "build": "bun run scripts/build.ts",
-    "pub": "standard-version && npm publish",
+    "pub:npm": "bun run scripts/pub-npm.ts",
     "pub:jsr": "bun run scripts/pub-jsr.ts",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",

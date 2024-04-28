@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/renzp94/utils/compare/v0.0.5...v0.0.6) (2024-04-28)
+
+
+### Bug Fixes
+
+* 修复打包内容中重复导出的问题 ([e4fa1c3](https://github.com/renzp94/utils/commit/e4fa1c36d7178f191cb34432707b5e7d77673b9d))
+
 ### [0.0.5](https://github.com/renzp94/utils/compare/v0.0.4...v0.0.5) (2024-04-24)
 
 
