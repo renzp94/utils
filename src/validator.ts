@@ -16,7 +16,7 @@
  * emailValidator('xiaoli@gmail.com'); // true
  * emailValidator('lisi@qq'); // false
  */
-export const emailValidator = (v: string) =>
+export const emailValidator = (v: string): boolean =>
   /^[a-zA-Z0-9_\.\-\+]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/.test(v)
 
 /**
@@ -37,7 +37,7 @@ export const emailValidator = (v: string) =>
  * idCardValidator('620102195603025026'); // false
  * idCardValidator('abc123456789012343'); // false
  */
-export const idCardValidator = (v: string) => {
+export const idCardValidator = (v: string): boolean => {
   // 验证基本格式规则
   if (!/^[1-9]\d{16}(\d|X|x)$/.test(v)) {
     return false
@@ -80,7 +80,7 @@ export const idCardValidator = (v: string) => {
  * phoneValidator('13311111111'); // true
  * phoneValidator('12000000000'); // false
  */
-export const phoneValidator = (v: string) => /^1[3-9]\d{9}$/.test(v)
+export const phoneValidator = (v: string): boolean => /^1[3-9]\d{9}$/.test(v)
 
 /**
  * 座机号码验证
@@ -96,7 +96,7 @@ export const phoneValidator = (v: string) => /^1[3-9]\d{9}$/.test(v)
  * telValidator('12345678'); // true
  * telValidator('01100-62770334'); // false
  */
-export const telValidator = (v: string) =>
+export const telValidator = (v: string): boolean =>
   /^(0\d{2,3}-)?\d{7,8}$/.test(v) || /^(\(0\d{2,3}\))?\d{7,8}$/.test(v)
 
 export enum ZH_MATCH {
@@ -122,7 +122,7 @@ export enum ZH_MATCH {
  * zhValidator('这是一段含有英文符号的字符串.'); // false
  * zhValidator('《》（）', ZH_MATCH.S); // true
  */
-export const zhValidator = (v: string, match = ZH_MATCH.W_S) => {
+export const zhValidator = (v: string, match = ZH_MATCH.W_S): boolean => {
   const regexps = {
     [ZH_MATCH.S]: /^[，。？！：；、“”【】（）《》]{0,}$/,
     [ZH_MATCH.W]: /^[\u4e00-\u9fa5]{0,}$/,

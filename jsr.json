@@ -1,0 +1,15 @@
+{
+  "name": "@renzp/utils",
+  "version": "0.0.5",
+  "exports": {
+    "./array": "./src/array.ts",
+    "./has": "./src/has.ts",
+    "./number": "./src/number.ts",
+    "./is": "./src/is.ts",
+    "./object": "./src/object.ts",
+    "./window": "./src/window.ts",
+    ".": "./src/index.ts",
+    "./time": "./src/time.ts",
+    "./validator": "./src/validator.ts"
+  }
+}

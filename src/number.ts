@@ -25,7 +25,10 @@ export interface NumberSeparateOptions {
  * numberSeparate(12345, { digit: 2 }); // '1,23,45
  * numberSeparate(12345, { digit: 2, separate: '$' }); // 1$23$45
  */
-export const numberSeparate = (v: number, options?: NumberSeparateOptions) => {
+export const numberSeparate = (
+  v: number,
+  options?: NumberSeparateOptions,
+): string | number => {
   const { digit = 3, separate = ',', isDealDecimal } = options ?? {}
   if (isNumber(v) && digit > 0) {
     const values = v.toString()?.split('.')

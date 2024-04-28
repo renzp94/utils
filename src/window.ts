@@ -11,7 +11,7 @@
  * const text = await navigator.clipboard.readText();
  * console.log(text); // 复制文本
  */
-export const copyText = async (text: string) => {
+export const copyText = async (text: string): Promise<boolean> => {
   try {
     if (navigator?.clipboard?.writeText) {
       await navigator.clipboard.writeText(text)

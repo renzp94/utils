@@ -13,7 +13,7 @@ const rmDist = async () => {
   }
 }
 
-const getEntrypoints = async () => {
+export const getEntrypoints = async () => {
   const files = await readdir('./src')
   const entrypoints = files
     .filter((file) => !file.includes('_'))
