@@ -1,5 +1,7 @@
 import { build, jsrPublish, npmPublish } from './common'
 
+// biome-ignore lint/suspicious/noConsoleLog: <explanation>
+console.log('📦 打包中...')
 const result = await build()
 
 if (result.success) {

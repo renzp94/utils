@@ -32,8 +32,6 @@ const getEntrypoints = async () => {
  * 打包
  */
 export const build = async () => {
-  // biome-ignore lint/suspicious/noConsoleLog: <explanation>
-  console.log('📦 打包中...')
   await rmDist()
   const entrypoints = await getEntrypoints()
   return await Bun.build({
@@ -81,7 +79,8 @@ const getExports = async () => {
  */
 export const jsrPublish = async () => {
   const pkg = await Bun.file('./package.json').json()
-  const jsr = await Bun.file('./jsr.json').json()
+  const hasJsrJson = await exists('./jsr.json')
+  const jsr = hasJsrJson ? await Bun.file('./jsr.json').json() : {}
 
   if (jsr.version === pkg.version) {
     // biome-ignore lint/suspicious/noConsoleLog: <explanation>
@@ -98,4 +97,6 @@ export const jsrPublish = async () => {
 
   await Bun.write('./jsr.json', JSON.stringify(jsrConfig, null, 2))
   await Bun.$`bunx jsr publish --allow-dirty`
+  await Bun.$`git add jsr.json`
+  await Bun.$`git commit -m "chore(jsr:${jsrConfig.version}): published"`
 }
