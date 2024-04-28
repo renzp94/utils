@@ -32,6 +32,7 @@ const runBuild = async () => {
     outdir: './dist',
     naming: '[name].[ext]',
     splitting: true,
+    minify: true,
     format: 'esm',
     plugins: [dts()],
   })
