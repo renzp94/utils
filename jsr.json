@@ -1,9 +1,10 @@
 {
   "name": "@renzp/utils",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "exports": {
     "./array": "./src/array.ts",
     "./has": "./src/has.ts",
+    "./other": "./src/other.ts",
     "./number": "./src/number.ts",
     "./is": "./src/is.ts",
     "./object": "./src/object.ts",
