@@ -194,6 +194,35 @@ export const isPrimitive = <T = unknown>(v: unknown): v is T =>
   isSymbol(v)
 
 /**
+ * 是否为引用类型数据
+ *
+ * 引用类型数据有：Object, Array, Date, Map, Set, WeakMap, WeakSet
+ *
+ * @param v 要判断的变量
+ * @returns 如果是引用类型数据则返回true，否则返回false
+ *
+ * @example
+ * isRefData({}); // true
+ * isRefData([]); // true
+ * isRefData(''); // false
+ * isRefData(1); // false
+ * isRefData(true); // false
+ * isRefData(new Date()); // true
+ * isRefData(new Map()); // true
+ * isRefData(new Set()); // true
+ * isRefData(new WeakMap()); // true
+ * isRefData(new WeakSet()); // true
+ */
+export const isRefData = <T = unknown>(v: T): v is T =>
+  isObject(v) ||
+  isArray(v) ||
+  isDate(v) ||
+  isMap(v) ||
+  isSet(v) ||
+  isWeakMap(v) ||
+  isWeakSet(v)
+
+/**
  * 是否为RegExp类型
  * @param v 要判断的变量
  * @returns 如果是RegExp则返回true，否则返回false
