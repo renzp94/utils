@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/renzp94/utils/compare/v0.0.7...v0.0.8) (2024-05-16)
+
+
+### 代码重构
+
+* **is:** 重构isNull判断为[object Null] ([dc8590a](https://github.com/renzp94/utils/commit/dc8590ad27a3aaf977780d0a078cb04281b1740c))
+
+
+### 其他
+
+* 调整打包脚本 ([cc2c9bd](https://github.com/renzp94/utils/commit/cc2c9bd21e0d2a43e84e7fe72582d0d92f74c14c))
+* 添加version配置文件 ([a8215de](https://github.com/renzp94/utils/commit/a8215dea02958e3b84a4327977068596b82cb395))
+* **array:** 移除flatten函数deep入参，默认深度扁平化 ([8b98987](https://github.com/renzp94/utils/commit/8b98987c33bca2445f710a3dd965b93ec181e96d))
+* **docs:** 更新coverage ([2480bc6](https://github.com/renzp94/utils/commit/2480bc625352761de63b01d9a5185790cdd04861))
+
+
+### 文档
+
+* **array:flatten:** 更新flatten属性配置说明 ([f933539](https://github.com/renzp94/utils/commit/f933539ab12cfff561cced3692a779da5801d013))
+
 ### [0.0.7](https://github.com/renzp94/utils/compare/v0.0.6...v0.0.7) (2024-04-28)
 
 ### [0.0.6](https://github.com/renzp94/utils/compare/v0.0.5...v0.0.6) (2024-04-28)
