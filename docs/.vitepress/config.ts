@@ -116,6 +116,11 @@ export default defineConfig({
         collapsed: false,
         items: [{ text: 'copyText', link: '/window/copyText' }],
       },
+      {
+        text: '其他',
+        collapsed: false,
+        items: [{ text: 'deepCopy', link: '/other/deep-copy' }],
+      },
     ],
     editLink: {
       pattern: 'https://github.com/renzp94/utils/edit/main/docs/:path',
