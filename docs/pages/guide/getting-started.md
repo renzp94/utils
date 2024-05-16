@@ -20,6 +20,19 @@ $ yarn add @renzp/utils
 $ bun add @renzp/utils
 ```
 
+```js [cdn]
+<script type="importmap">
+    {
+        "imports": {
+            "@renzp/utils": "https://esm.sh/@renzp/utils"
+        }
+    }
+</script>
+<script type="module">
+  import { isNumber } from '@renzp/utils'
+</script>
+```
+
 :::
 
 
