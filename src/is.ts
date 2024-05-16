@@ -166,6 +166,34 @@ export const isObject = <T = object>(v: T): v is T =>
   _toString(v) === '[object Object]'
 
 /**
+ * 是否为基础数据类型
+ *
+ * 基础数据类型有：string, number, boolean, null, undefined，symbol
+ *
+ * @param v 要判断的变量
+ * @returns 如果是基础数据类型则返回true，否则返回false
+ *
+ * @example
+ * isPrimitive(1); // true
+ * isPrimitive('1'); // true
+ * isPrimitive({}); // false
+ * isPrimitive([]); // false
+ * isPrimitive(null); // true
+ * isPrimitive(undefined); // true
+ * isPrimitive(Symbol()); // true
+ * isPrimitive(new Map()); // false
+ * isPrimitive(new Set()); // false
+ * isPrimitive(new WeakMap()); // false
+ */
+export const isPrimitive = <T = unknown>(v: unknown): v is T =>
+  isString(v) ||
+  isNumber(v) ||
+  isBoolean(v) ||
+  isNull(v) ||
+  isUndefined(v) ||
+  isSymbol(v)
+
+/**
  * 是否为RegExp类型
  * @param v 要判断的变量
  * @returns 如果是RegExp则返回true，否则返回false
