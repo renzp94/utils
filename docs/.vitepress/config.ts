@@ -77,6 +77,8 @@ export default defineConfig({
           { text: 'isNull', link: '/is/isNull' },
           { text: 'isNumber', link: '/is/isNumber' },
           { text: 'isObject', link: '/is/isObject' },
+          { text: 'isPrimitive', link: '/is/isPrimitive' },
+          { text: 'isRefData', link: '/is/isRefData' },
           { text: 'isRegExp', link: '/is/isRegExp' },
           { text: 'isSet', link: '/is/isSet' },
           { text: 'isString', link: '/is/isString' },
@@ -84,6 +86,8 @@ export default defineConfig({
           { text: 'isTruth', link: '/is/isTruth' },
           { text: 'isUnDef', link: '/is/isUnDef' },
           { text: 'isUndefined', link: '/is/isUndefined' },
+          { text: 'isWeakMap', link: '/is/isWeakMap' },
+          { text: 'isWeakSet', link: '/is/isWeakSet' },
         ],
       },
       {
