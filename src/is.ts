@@ -139,7 +139,8 @@ export const isMap = <T = Map<any, any>>(v: T): v is T =>
  * const b = 1;
  * isNull(b); // false
  */
-export const isNull = (v: unknown): v is null => v === null
+export const isNull = (v: unknown): v is null =>
+  _toString(v) === '[object Null]'
 
 /**
  * 是否为number类型
