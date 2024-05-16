@@ -1,6 +1,6 @@
 # flatten
 
-扁平化数组。默认只扁平化一级，如果需要深度扁平化则可以指定`deep`参数为`true`，如果不需要全部深度扁平化，可通过`depth`来指定要扁平化的深度。如果需要扁平化对象数组，如树结构的数据可以指定`deepKey`属性来指定根据`deepKey`属性来扁平化。
+扁平化数组。默认深度扁平化，如果不需要全部深度扁平化，可通过`depth`来指定要扁平化的深度。如果需要扁平化对象数组，如树结构的数据可以指定`deepKey`属性来指定根据`deepKey`属性来扁平化。
 
 > 注意：`depth`小于等于`0`时将不进行扁平化操作
 
@@ -12,8 +12,8 @@
 import { flatten } from '@renzp/utils'
 
 flatten([[1], 2, [3]]); // [1, 2, 3]
-flatten([[1, 2], 3, [4, [5]]], { deep: true }); // [1, 2, 3, 4, 5]
-flatten([[1, 2], 3, [4, [5]]], { deep: true, depth: 1 }); // [1, 2, 3, 4, [5]]
+flatten([[1, 2], 3, [4, [5]]]); // [1, 2, 3, 4, 5]
+flatten([[1, 2], 3, [4, [5]]], { depth: 1 }); // [1, 2, 3, 4, [5]]
 const a = flatten(
    [
      {
@@ -30,7 +30,7 @@ const a = flatten(
      },
      { label: '1-2', value: '1-2' },
    ],
-   { deep: true, deepKey: 'children' },
+   { deepKey: 'children' },
  );
 console.log(JSON.stringify(a)); // [{"label":"1-1","value":"1-1"},{"label":"2-1","value":"2-1"},{"label":"3-1","value":"3-1"},{"label":"2-2","value":"2-2"},{"label":"1-2","value":"1-2"}]
 ```
@@ -44,11 +44,10 @@ console.log(JSON.stringify(a)); // [{"label":"1-1","value":"1-1"},{"label":"2-1"
 
 ### options
 
-| 参数    | 说明                     | 类型      | 默认值 | 是否必填 |
-| ------- | ------------------------ | --------- | ------ | -------- |
-| deep    | 是否深度扁平化           | `boolean` | -      | 否       |
-| depth   | 扁平化的深度, 最小为`1`  | `number`  | -      | 否       |
-| deepKey | 扁平化对象数组的对象属性 | `string`  | -      | 否       |
+| 参数    | 说明                     | 类型                       | 默认值 | 是否必填 |
+| ------- | ------------------------ | -------------------------- | ------ | -------- |
+| depth   | 扁平化的深度, 最小为`1`  | `Number.POSITIVE_INFINITY` | -      | 否       |
+| deepKey | 扁平化对象数组的对象属性 | `string`                   | -      | 否       |
 
 
 ## 返回
