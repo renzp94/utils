@@ -168,13 +168,14 @@ export const isObject = <T = object>(v: T): v is T =>
 /**
  * 是否为基础数据类型
  *
- * 基础数据类型有：string, number, boolean, null, undefined，symbol
+ * 基础数据类型有：string, number, bigint, boolean, null, undefined，symbol
  *
  * @param v 要判断的变量
  * @returns 如果是基础数据类型则返回true，否则返回false
  *
  * @example
  * isPrimitive(1); // true
+ * isPrimitive(1n); // true
  * isPrimitive('1'); // true
  * isPrimitive({}); // false
  * isPrimitive([]); // false
@@ -191,7 +192,8 @@ export const isPrimitive = <T = unknown>(v: unknown): v is T =>
   isBoolean(v) ||
   isNull(v) ||
   isUndefined(v) ||
-  isSymbol(v)
+  isSymbol(v) ||
+  isBigint(v)
 
 /**
  * 是否为引用类型数据

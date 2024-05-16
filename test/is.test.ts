@@ -132,7 +132,7 @@ test('isPrimitive', () => {
   expect(isPrimitive([])).toBe(false)
   expect(isPrimitive(test)).toBe(false)
   expect(isPrimitive(new Date())).toBe(false)
-  expect(isPrimitive(BigInt(1))).toBe(false)
+  expect(isPrimitive(BigInt(1))).toBe(true)
   expect(isPrimitive(new Map())).toBe(false)
   expect(isPrimitive(new Set())).toBe(false)
   expect(isPrimitive(new WeakMap())).toBe(false)
