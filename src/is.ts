@@ -13,7 +13,7 @@ import {
  * isArray([]); // true
  * isArray({ length: 1 }); // false
  */
-export const isArray = <T = Array<any>>(v: T): v is T => Array.isArray(v)
+export const isArray = <T = any>(v: unknown): v is Array<T> => Array.isArray(v)
 
 /**
  * 是否为bigint类型
@@ -125,7 +125,7 @@ export const isJson = <T = unknown>(v: T): v is T => {
  * isMap(new Map()); // true
  * isMap({ size: 0 }); // false
  */
-export const isMap = <T = Map<any, any>>(v: T): v is T =>
+export const isMap = <K, V>(v: unknown): v is Map<K, V> =>
   _toString(v) === '[object Map]'
 
 /**
@@ -162,7 +162,7 @@ export const isNumber = (v: unknown): v is number => typeof v === 'number'
  * isObject({}); // true
  * isObject(1); // false
  */
-export const isObject = <T = object>(v: T): v is T =>
+export const isObject = <T extends Record<any, any>>(v: unknown): v is T =>
   _toString(v) === '[object Object]'
 
 /**
@@ -245,7 +245,7 @@ export const isRegExp = (v: unknown): v is RegExp =>
  * isSet(new Set()); // true
  * isSet({ size: 0 }); // false
  */
-export const isSet = <T = Set<any>>(v: T): v is T =>
+export const isSet = <T = any>(v: unknown): v is Set<T> =>
   _toString(v) === '[object Set]'
 
 /**
