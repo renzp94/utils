@@ -20,6 +20,8 @@ import {
   isTruth,
   isUnDef,
   isUndefined,
+  isWeakMap,
+  isWeakSet,
 } from '../src'
 
 test('isArray', () => {
@@ -117,6 +119,28 @@ test('isObject', () => {
   }
 })
 
+test('isPrimitive', () => {
+  const test = () => {}
+  expect(isPrimitive('1')).toBe(true)
+  expect(isPrimitive(1)).toBe(true)
+  expect(isPrimitive(false)).toBe(true)
+  expect(isPrimitive(null)).toBe(true)
+  expect(isPrimitive(undefined)).toBe(true)
+  expect(isPrimitive(Symbol('1'))).toBe(true)
+  expect(isPrimitive({})).toBe(false)
+  expect(isPrimitive([])).toBe(false)
+  expect(isPrimitive(test)).toBe(false)
+  expect(isPrimitive(new Date())).toBe(false)
+  expect(isPrimitive(BigInt(1))).toBe(false)
+  expect(isPrimitive(new Map())).toBe(false)
+  expect(isPrimitive(new Set())).toBe(false)
+  expect(isPrimitive(new WeakMap())).toBe(false)
+  expect(isPrimitive(new WeakSet())).toBe(false)
+  expect(isPrimitive(/1/)).toBe(false)
+  expect(isPrimitive(new Error())).toBe(false)
+  expect(isPrimitive(new Promise(() => {}))).toBe(false)
+})
+
 test('isRegExp', () => {
   expect(isRegExp(/\d/)).toBe(true)
   expect(isRegExp('/d/')).toBe(false)
@@ -161,24 +185,23 @@ test('isUnDef', () => {
   expect(isUnDef(0)).toBe(false)
 })
 
-test('isPrimitive', () => {
-  const test = () => {}
-  expect(isPrimitive('1')).toBe(true)
-  expect(isPrimitive(1)).toBe(true)
-  expect(isPrimitive(false)).toBe(true)
-  expect(isPrimitive(null)).toBe(true)
-  expect(isPrimitive(undefined)).toBe(true)
-  expect(isPrimitive(Symbol('1'))).toBe(true)
-  expect(isPrimitive({})).toBe(false)
-  expect(isPrimitive([])).toBe(false)
-  expect(isPrimitive(test)).toBe(false)
-  expect(isPrimitive(new Date())).toBe(false)
-  expect(isPrimitive(BigInt(1))).toBe(false)
-  expect(isPrimitive(new Map())).toBe(false)
-  expect(isPrimitive(new Set())).toBe(false)
-  expect(isPrimitive(new WeakMap())).toBe(false)
-  expect(isPrimitive(new WeakSet())).toBe(false)
-  expect(isPrimitive(/1/)).toBe(false)
-  expect(isPrimitive(new Error())).toBe(false)
-  expect(isPrimitive(new Promise(() => {}))).toBe(false)
+test('isWeakMap', () => {
+  expect(isWeakMap(new WeakMap())).toBe(true)
+  expect(isWeakMap({ size: 0 })).toBe(false)
+  expect(isWeakMap(new Map())).toBe(false)
+  expect(isWeakMap(new Set())).toBe(false)
+  expect(isWeakMap({})).toBe(false)
+  expect(isWeakMap([])).toBe(false)
+  expect(isWeakMap(null)).toBe(false)
+})
+
+test('isWeakSet', () => {
+  expect(isWeakSet(new WeakSet())).toBe(true)
+  expect(isWeakSet(new WeakMap())).toBe(false)
+  expect(isWeakSet({ size: 0 })).toBe(false)
+  expect(isWeakSet(new Map())).toBe(false)
+  expect(isWeakSet(new Set())).toBe(false)
+  expect(isWeakSet({})).toBe(false)
+  expect(isWeakSet([])).toBe(false)
+  expect(isWeakSet(null)).toBe(false)
 })
