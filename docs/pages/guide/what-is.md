@@ -8,12 +8,12 @@
 
 | File             | % Funcs | % Lines |
 | ---------------- | ------- | ------- |
-| All files        | 100.00  | 97.74   |
+| All files        | 100.00  | 97.90   |
 | src/_base.ts     | 100.00  | 100.00  |
 | src/array.ts     | 100.00  | 96.43   |
 | src/index.ts     | 100.00  | 100.00  |
 | src/is.ts        | 100.00  | 100.00  |
-| src/number.ts    | 100.00  | 92.31   |
+| src/number.ts    | 100.00  | 93.75   |
 | src/object.ts    | 100.00  | 90.91   |
 | src/validator.ts | 100.00  | 100.00  |
 | src/window.ts    | 100.00  | 100.00  |
