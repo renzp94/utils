@@ -2,11 +2,9 @@ import { isArray, isDef, isUnDef } from './is'
 import { removeKey } from './object'
 
 export interface FlattenOptions {
-  // 是否深度扁平化
-  deep?: boolean
   // 如果是对象数组，指定深度扁平化的属性
   deepKey?: string
-  // 扁平化的深度最小为1
+  // 扁平化的深度最小为1，默认为Number.POSITIVE_INFINITY(无限深度)
   depth?: number
 }
 type Flatten<T = any> = (list: Array<T>, options?: FlattenOptions) => Array<T>
@@ -21,8 +19,8 @@ type Flatten<T = any> = (list: Array<T>, options?: FlattenOptions) => Array<T>
  *
  * @example
  * flatten([[1], 2, [3]]); // [1, 2, 3]
- * flatten([[1, 2], 3, [4, [5]]], { deep: true }); // [1, 2, 3, 4, 5]
- * flatten([[1, 2], 3, [4, [5]]], { deep: true, depth: 1 }); // [1, 2, 3, 4, [5]]
+ * flatten([[1, 2], 3, [4, [5]]]); // [1, 2, 3, 4, 5]
+ * flatten([[1, 2], 3, [4, [5]]], { depth: 1 }); // [1, 2, 3, 4, [5]]
  * const a = flatten(
  *    [
  *      {
@@ -39,38 +37,36 @@ type Flatten<T = any> = (list: Array<T>, options?: FlattenOptions) => Array<T>
  *      },
  *      { label: '1-2', value: '1-2' },
  *    ],
- *    { deep: true, deepKey: 'children' },
+ *    { deepKey: 'children' },
  *  );
  * console.log(JSON.stringify(a)); // [{"label":"1-1","value":"1-1"},{"label":"2-1","value":"2-1"},{"label":"3-1","value":"3-1"},{"label":"2-2","value":"2-2"},{"label":"1-2","value":"1-2"}]
  */
 export const flatten: Flatten = (list, options) => {
-  const { deep, deepKey, depth } = options ?? {}
-  // 如果depth小于0则扁平化
-  if (isDef(depth) && depth <= 0) {
+  const { deepKey, depth = Number.POSITIVE_INFINITY } = options ?? {}
+  // 如果depth小于0则不扁平化
+  if (depth <= 0) {
     return list
   }
-
+  // 如果不存在deepKey则直接使用flat方法进行扁平化
+  if (isUnDef(deepKey)) {
+    return list.flat(depth ?? Number.POSITIVE_INFINITY)
+  }
+  // 根据指定的deepKey进行扁平化
   let level = 0
-
   const _flatten: Flatten = (list) => {
     level++
-    const isCanDeep = isUnDef(depth) || level < depth
+    const isCanDeep = level < depth
 
     return list.reduce(
       (prev: Parameters<Flatten>[0], curr: Parameters<Flatten>[0][0]) => {
-        if (deep && isCanDeep) {
-          // 根据指定key深度扁平化
-          if (deepKey) {
-            const target: Parameters<Flatten>[0][0] = removeKey(curr, deepKey)
+        if (isCanDeep) {
+          const target: Parameters<Flatten>[0][0] = removeKey(curr, deepKey)
 
-            return [
-              ...prev,
-              target,
-              ...(curr[deepKey] ? _flatten(curr[deepKey]) : []),
-            ]
-          }
-
-          return [...prev, ...(isArray(curr) ? _flatten(curr) : [curr])]
+          return [
+            ...prev,
+            target,
+            ...(curr[deepKey] ? _flatten(curr[deepKey]) : []),
+          ]
         }
 
         return [...prev, ...(isArray(curr) ? curr : [curr])]
