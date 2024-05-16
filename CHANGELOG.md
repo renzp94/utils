@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/renzp94/utils/compare/v0.0.8...v0.0.9) (2024-05-16)
+
+
+### Bug修复
+
+* **is:** 修复isPrimitive判断bigint类型错误的问题 ([36b9d9b](https://github.com/renzp94/utils/commit/36b9d9b0b313225066ccae27b4b5100f47dfc1f3))
+
+
+### 其他
+
+* 更新README ([76aa813](https://github.com/renzp94/utils/commit/76aa8138f79c0b67d3238d1ee976e0683b871ba5))
+* **is:** 优化类型定义 ([588be24](https://github.com/renzp94/utils/commit/588be2492e212a54b7c97e5c7a275d3bf389cb96))
+* **jsr:0.0.8:** published ([42a8a64](https://github.com/renzp94/utils/commit/42a8a64b7521f76b2819a0e2dea212650c90e03a))
+
+
+### 新功能
+
+* **is:** 添加isPrimitive(是否为基础数据类型)方法 ([52b4f83](https://github.com/renzp94/utils/commit/52b4f836fdcdefe274e976d63be119bea8621f49))
+* **is:** 添加isRefData(是否为引用类型数据)方法 ([577d2e2](https://github.com/renzp94/utils/commit/577d2e219b4c7ea64d946b15dc9e467116f4ff1f))
+* **is:** 添加isWeakMap和isWeakSet方法 ([f12039b](https://github.com/renzp94/utils/commit/f12039b1453d390aa1d32810fb4684ebd3e4c73f))
+* **other:** 添加deepCopy(深拷贝)方法 ([8f059fc](https://github.com/renzp94/utils/commit/8f059fca1a5c0b6378bb6d72bccf53674d97ee49))
+
+
+### 文档
+
+* **getting-started:** 添加cdn引入包说明 ([a0aeea1](https://github.com/renzp94/utils/commit/a0aeea1d838e995b4e69c288cd458884491b8637))
+* **is:** 添加isPrimitive方法的文档 ([dc1e488](https://github.com/renzp94/utils/commit/dc1e4882525c66737079eafb6e4fe51f32101e5b))
+* **is:** 添加isRefData方法的文档 ([f799b3a](https://github.com/renzp94/utils/commit/f799b3a6bce646fa2b34b784fd08d5f1ad1a04bb))
+* **is:** 添加isWeakMap和isWeakSet方法的文档 ([c632de2](https://github.com/renzp94/utils/commit/c632de210d39463bb40b1500cd02fae947a06660))
+* **other:** 添加deepCopy方法的文档 ([dee8177](https://github.com/renzp94/utils/commit/dee8177b0d163b9e2fcc0cb9268068fa1c2eb070))
+
 ### [0.0.8](https://github.com/renzp94/utils/compare/v0.0.7...v0.0.8) (2024-05-16)
 
 
