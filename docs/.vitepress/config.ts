@@ -106,6 +106,7 @@ export default defineConfig({
         items: [
           { text: 'emailValidator', link: '/validator/emailValidator' },
           { text: 'idCardValidator', link: '/validator/idCardValidator' },
+          { text: 'numberValidator', link: '/validator/numberValidator' },
           { text: 'phoneValidator', link: '/validator/phoneValidator' },
           { text: 'telValidator', link: '/validator/telValidator' },
           { text: 'zhValidator', link: '/validator/zhValidator' },
