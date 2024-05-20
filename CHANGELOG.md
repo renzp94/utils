@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/renzp94/utils/compare/v0.0.9...v0.0.10) (2024-05-20)
+
+
+### 其他
+
+* **jsr:0.0.9:** published ([9035e09](https://github.com/renzp94/utils/commit/9035e0975cbf0f7bf105a3a16d53b0fce77f6313))
+
+
+### 新功能
+
+* **validator:** 添加numberValidator(数字验证)方法 ([d8ffde8](https://github.com/renzp94/utils/commit/d8ffde8a00b757778c1a4921b05a99a80518e59c))
+
+
+### 文档
+
+* **validator:** 添加numberValidator方法的文档 ([75f232e](https://github.com/renzp94/utils/commit/75f232eca94b5f884fea34b9111ffa339090bc8c))
+
 ### [0.0.9](https://github.com/renzp94/utils/compare/v0.0.8...v0.0.9) (2024-05-16)
 
 
