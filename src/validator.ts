@@ -84,7 +84,7 @@ export const idCardValidator = (v: string): boolean => {
  * numberValidator('-1'); // true
  * numberValidator('12e2'); // true
  */
-export const numberValidator = (v: string) => {
+export const numberValidator = (v: string): boolean => {
   const hasE = /e/i.test(v)
   // 科学计数法
   const eReg = /^[-+]?\d+(?:\.\d+)?(?:e[+-]?|E[+-]?)\d+?$/
