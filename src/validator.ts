@@ -1,3 +1,5 @@
+import { isNumber } from './is'
+
 /**
  * 邮箱验证
  *
@@ -65,6 +67,31 @@ export const idCardValidator = (v: string): boolean => {
   const codes = [1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2]
   // 由于最后一位可能是x或X，校验码中的是X，所以转大写再比较
   return `${A}${codes[M]}` === v.toUpperCase()
+}
+
+/**
+ * 数字验证
+ *
+ * @param v 验证的字符串
+ * @returns 如果是纯数字则返回true，否则返回false
+ *
+ * @example
+ * numberValidator('1'); // true
+ * numberValidator('1.1'); // true
+ * numberValidator('1.1.1'); // false
+ * numberValidator('.1'); // false
+ * numberValidator('1.'); // false
+ * numberValidator('-1'); // true
+ * numberValidator('12e2'); // true
+ */
+export const numberValidator = (v: string) => {
+  const hasE = /e/i.test(v)
+  // 科学计数法
+  const eReg = /^[-+]?\d+(?:\.\d+)?(?:e[+-]?|E[+-]?)\d+?$/
+  // 非科学计数法
+  const reg = /^[-+]?\d+?(?:\.\d+|\d?)$/
+
+  return hasE ? eReg.test(v) : reg.test(v)
 }
 
 /**
