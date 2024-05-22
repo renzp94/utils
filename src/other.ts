@@ -18,16 +18,16 @@ import { isArray, isDate, isMap, isObject, isRefData, isSet } from './is'
  * console.log(list); // [{ a: 1, b: 2 }, { a: 2, b: 4 }]
  * console.log(newList); // [{ a: 1 }, { a: 2 }]
  */
-export const deepCopy = <T = any>(v: T): T => {
+export const deepClone = <T = any>(v: T): T => {
   if (isRefData(v)) {
     if (isObject(v)) {
       return Object.keys(v).reduce((prev, key) => {
-        return { ...prev, [key]: deepCopy(v[key]) }
+        return { ...prev, [key]: deepClone(v[key]) }
       }, {} as T)
     }
 
     if (isArray(v)) {
-      return v.map((item) => deepCopy(item)) as T
+      return v.map((item) => deepClone(item)) as T
     }
 
     if (isDate(v)) {
