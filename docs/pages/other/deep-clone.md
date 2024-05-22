@@ -1,4 +1,4 @@
-# deepCopy
+# deepClone
 
 深拷贝。
 
@@ -9,10 +9,10 @@
 传入一个值，返回复制后的值。
 
 ```ts
-import { deepCopy } from '@renzp/utils'
+import { deepClone } from '@renzp/utils'
 
 const list: any = [{ a: 1 }, { a: 2 }]
-const newList = copy(list).map((item: any) => {
+const newList = deepClone(list).map((item: any) => {
  item.b = item.a * 2
  return item
 })
