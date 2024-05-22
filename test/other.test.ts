@@ -1,9 +1,9 @@
 import { expect, test } from 'bun:test'
-import { deepCopy } from '../src'
+import { deepClone } from '../src'
 
 test('复制基本数据类型', () => {
   const str = 'hello'
-  let newStr = deepCopy(str)
+  let newStr = deepClone(str)
   expect(newStr).toBe(str)
   newStr += ' world'
   expect(newStr).toBe('hello world')
@@ -12,7 +12,7 @@ test('复制基本数据类型', () => {
 
 test('复制对象', () => {
   const obj: any = { a: 1 }
-  const newObj = deepCopy(obj)
+  const newObj = deepClone(obj)
   newObj.b = 2
 
   expect(newObj).not.toBe(obj)
@@ -22,7 +22,7 @@ test('复制对象', () => {
 
 test('复制多层对象', () => {
   const obj: any = { a: 1, b: { c: 3, d: { e: 4 } }, f: [4] }
-  const newObj = deepCopy(obj)
+  const newObj = deepClone(obj)
   newObj.b.d.e = 0
   newObj.b.c = 0
   newObj.f.push(0)
@@ -34,7 +34,7 @@ test('复制多层对象', () => {
 
 test('复制数组', () => {
   const arr = [1, 2, 3]
-  const newArr = deepCopy(arr)
+  const newArr = deepClone(arr)
   newArr.push(4)
 
   expect(newArr).not.toBe(arr)
@@ -44,7 +44,7 @@ test('复制数组', () => {
 
 test('复制对象数组', () => {
   const list: any = [{ a: 1 }, { a: 2 }]
-  const newList = deepCopy(list).map((item: any) => {
+  const newList = deepClone(list).map((item: any) => {
     item.b = item.a * 2
 
     return item
@@ -60,7 +60,7 @@ test('复制对象数组', () => {
 
 test('复制日期', () => {
   const date = new Date('1970-01-01')
-  const newDate = deepCopy(date)
+  const newDate = deepClone(date)
   newDate.setFullYear(2020)
 
   expect(newDate).not.toBe(date)
@@ -70,7 +70,7 @@ test('复制日期', () => {
 
 test('复制Map', () => {
   const map = new Map([['a', 1]])
-  const newMap = deepCopy(map)
+  const newMap = deepClone(map)
   newMap.set('a', 2)
 
   expect(newMap).not.toBe(map)
@@ -80,7 +80,7 @@ test('复制Map', () => {
 
 test('复制Set', () => {
   const set = new Set([1])
-  const newSet = deepCopy(set)
+  const newSet = deepClone(set)
   newSet.add(2)
 
   expect(newSet).not.toBe(set)
