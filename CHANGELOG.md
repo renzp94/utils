@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://github.com/renzp94/utils/compare/v0.0.10...v0.0.11) (2024-05-22)
+
+
+### 文档
+
+* **validator:** 添加numberValidator路由 ([3decc80](https://github.com/renzp94/utils/commit/3decc8006dbefd55729c7c3cd54e1b6ac4b52d23))
+
+
+### CI配置
+
+* 调整文档部署action触发时机 ([50cf38f](https://github.com/renzp94/utils/commit/50cf38ff8527837d62e297fd02fe5ebe579854d8))
+
+
+### 其他
+
+* deepCopy更名为deepClone ([2845de7](https://github.com/renzp94/utils/commit/2845de7b0fb4506a8ab14f46a0ba7a167ce99f9a))
+* **validator:** 添加numberValidator方法返回值 ([7f4dcfc](https://github.com/renzp94/utils/commit/7f4dcfc904de459cc804f341885a7c0f7d92164c))
+
 ### [0.0.10](https://github.com/renzp94/utils/compare/v0.0.9...v0.0.10) (2024-05-20)
 
 
