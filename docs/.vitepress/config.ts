@@ -59,7 +59,11 @@ export default defineConfig({
       {
         text: '数组操作',
         collapsed: false,
-        items: [{ text: 'flatten', link: '/array/flatten' }],
+        items: [
+          { text: 'first', link: '/array/first' },
+          { text: 'flatten', link: '/array/flatten' },
+          { text: 'last', link: '/array/last' },
+        ],
       },
       {
         text: '类型判断',
