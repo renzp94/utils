@@ -90,5 +90,7 @@ test('复制Set', () => {
 
 test('生成随机数', () => {
   expect(radom(100, 10000)).toBeNumber()
-  expect(radom(100, 10000, 0).toString().includes('.')).toBeFalse()
+  expect(radom(1, 35)).toBeGreaterThan(1)
+  expect(radom(1, 35)).toBeLessThan(35)
+  expect(radom(100, 10000, 0)).toBeInteger()
 })
