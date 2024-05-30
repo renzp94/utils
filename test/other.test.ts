@@ -1,5 +1,5 @@
 import { expect, test } from 'bun:test'
-import { deepClone, radom } from '../src'
+import { deepClone, radom, uuid } from '../src'
 
 test('复制基本数据类型', () => {
   const str = 'hello'
@@ -93,4 +93,14 @@ test('生成随机数', () => {
   expect(radom(1, 35)).toBeGreaterThan(1)
   expect(radom(1, 35)).toBeLessThan(35)
   expect(radom(100, 10000, 0)).toBeInteger()
+})
+
+test('生成UUID', () => {
+  expect(uuid()).toHaveLength(36)
+  expect(
+    /^[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}$/.test(
+      uuid(),
+    ),
+  ).toBeTrue()
+  expect(/[A-Z]/.test(uuid(true))).toBeTrue()
 })
