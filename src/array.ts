@@ -1,6 +1,78 @@
+import {
+  deepClone,
+  isArray,
+  isFunction,
+  isPrimitive,
+  isString,
+  isUnDef,
+} from '.'
 import { _find } from './_base'
-import { isArray, isDef, isUnDef } from './is'
 import { removeKey } from './object'
+
+export type DifferenceFilter<T> =
+  | keyof T
+  | Array<keyof T>
+  | ((target: T, v: T) => boolean)
+/**
+ * 过滤数组
+ * @param list 目标数组
+ * @param values 比较数组
+ * @param filter 过滤key或函数
+ * @returns 返回过滤后的数组
+ *
+ * @example
+ * difference([1, 2, 3], [2, 3]); // [1]
+ * difference([1, 2, false, '1'], ['1']); // [1, 2, false]
+ * difference(
+ *  [{ a: 1, b: 1 },{ a: 2, b: 2 }],
+ *  [{ a: 1 }],
+ *  'a',
+ * ); // [{ a: 2, b: 2 }]
+ * difference(
+ *  [{ a: 0, b: 0 },{ a: 1, b: 1 },{ a: 2, b: 2 }],
+ *  [{ a: 1 }],
+ *  (target, v) => target.a < v.a,
+ * ); // [{ a: 1, b: 1 }, { a: 2, b: 2 }]
+ */
+export const difference = <T>(
+  list: Array<T>,
+  values: Array<T>,
+  filter?: DifferenceFilter<T>,
+): Array<T> => {
+  // 如果不是数组，则返回空
+  if (!isArray(list) || !isArray(values)) {
+    return []
+  }
+  // 如果没有过滤key或过滤函数则直接对比
+  let filterFn: any = (v: T) => !values.includes(v)
+  // 如果是过滤key则对比key
+  if (isString(filter)) {
+    return list.filter(
+      (item) => !values.some((v) => item?.[filter] === v?.[filter]),
+    )
+  }
+  // 如果是过滤key数组则全对比key
+  if (isArray(filter)) {
+    return list.filter(
+      (item) =>
+        !values.some((v) => filter.every((key) => item?.[key] === v?.[key])),
+    )
+  }
+  // 如果是过滤函数则调用函数
+  if (isFunction(filter)) {
+    filterFn = (target: T) => {
+      return !values.some((v: T) => {
+        // 调用前处理一下，避免过滤函数修改原数据
+        return filter?.(
+          isPrimitive(target) ? target : deepClone(target),
+          isPrimitive(v) ? v : deepClone(v),
+        )
+      })
+    }
+  }
+
+  return list.filter(filterFn)
+}
 
 /**
  * 获取数组最后一个元素
