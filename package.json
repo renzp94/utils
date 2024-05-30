@@ -1,6 +1,6 @@
 {
   "name": "@renzp/utils",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "一款零依赖、实用的Javascript/Typescript工具库",
   "type": "module",
   "main": "dist/index.js",

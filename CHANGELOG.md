@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.13](https://github.com/renzp94/utils/compare/v0.0.12...v0.0.13) (2024-05-30)
+
+
+### 其他
+
+* 调整引入路径 ([ee3fdeb](https://github.com/renzp94/utils/commit/ee3fdebb433b03ffc955286b9a3eb2d11c266305))
+* **jsr:0.0.12:** published ([2af85a3](https://github.com/renzp94/utils/commit/2af85a37aa60917cdfab3249c6a335938f11115e))
+
+
+### 测试
+
+* **other:** 添加radom测试用例 ([23434a7](https://github.com/renzp94/utils/commit/23434a743a6fc37d69d4fe12be30cb677e00e40e))
+
+
+### 新功能
+
+* **array:** 添加createArray(创建数组)方法 ([7005cc0](https://github.com/renzp94/utils/commit/7005cc01438f939b2f8fe59ccc790ff2488dd278))
+* **other:** 添加radom(生成随机数)方法 ([a6f41de](https://github.com/renzp94/utils/commit/a6f41de1d884827a69f14adc63bca714cd2c815a))
+* **other:** 添加uuid(生成UUID)方法 ([fea8e3b](https://github.com/renzp94/utils/commit/fea8e3baf557a6cf2db3ce9aed9655995012a87d))
+
+
+### 文档
+
+* 根据目录自动生成侧边栏 ([3425403](https://github.com/renzp94/utils/commit/342540308e3107eac09d43dc93fda946344432d7))
+* **array:** 添加createArray方法的文档 ([6f4d41b](https://github.com/renzp94/utils/commit/6f4d41bf77af2b424c32572cb0e08456858174ea))
+* **other:** 添加radom方法的文档 ([475aaed](https://github.com/renzp94/utils/commit/475aaed42a2cf0b786830c63c3b328e4c8b67467))
+* **other:** 添加uuid方法的文档 ([173b55f](https://github.com/renzp94/utils/commit/173b55fdc5a6e1d37a0c3928994ef283a6e4fd78))
+
 ### [0.0.12](https://github.com/renzp94/utils/compare/v0.0.10...v0.0.12) (2024-05-30)
 
 
