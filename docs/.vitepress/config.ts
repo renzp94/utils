@@ -7,7 +7,7 @@ export default defineConfig({
   lastUpdated: true,
   metaChunk: true,
   rewrites: {
-    'pages/guide/getting-started.md': 'index.md',
+    'pages/guide/gettingStarted.md': 'index.md',
     'pages/:category/:page.md': ':category/:page.md',
   },
   head: [['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }]],
@@ -52,7 +52,7 @@ export default defineConfig({
       {
         text: '简介',
         items: [
-          { text: '什么是@renzp/utils?', link: '/guide/what-is' },
+          { text: '什么是@renzp/utils?', link: '/guide/whatIs' },
           { text: '快速开始', link: '/' },
         ],
       },
@@ -124,7 +124,7 @@ export default defineConfig({
       {
         text: '其他',
         collapsed: false,
-        items: [{ text: 'deepClone', link: '/other/deep-clone' }],
+        items: [{ text: 'deepClone', link: '/other/deepClone' }],
       },
     ],
     editLink: {
