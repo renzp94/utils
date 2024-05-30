@@ -1,13 +1,7 @@
-import {
-  deepClone,
-  isArray,
-  isFunction,
-  isPrimitive,
-  isString,
-  isUnDef,
-} from '.'
 import { _find } from './_base'
+import { isArray, isFunction, isPrimitive, isString, isUnDef } from './is'
 import { removeKey } from './object'
+import { deepClone } from './other'
 
 export type DifferenceFilter<T> =
   | keyof T

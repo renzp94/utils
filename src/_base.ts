@@ -1,4 +1,4 @@
-import { isArray } from '.'
+import { isArray } from './is'
 
 /**
  * 调用变量的toString
