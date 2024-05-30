@@ -1,5 +1,5 @@
 import { expect, test } from 'bun:test'
-import { deepClone } from '../src'
+import { deepClone, radom } from '../src'
 
 test('复制基本数据类型', () => {
   const str = 'hello'
@@ -86,4 +86,9 @@ test('复制Set', () => {
   expect(newSet).not.toBe(set)
   expect(newSet).toEqual(new Set([1, 2]))
   expect(set).toEqual(new Set([1]))
+})
+
+test('生成随机数', () => {
+  expect(radom(100, 10000)).toBeNumber()
+  expect(radom(100, 10000, 0).toString().includes('.')).toBeFalse()
 })
