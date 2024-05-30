@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.12](https://github.com/renzp94/utils/compare/v0.0.10...v0.0.12) (2024-05-30)
+
+
+### 新功能
+
+* **array:** 添加difference(过滤数组)方法 ([089cb86](https://github.com/renzp94/utils/commit/089cb8662dd8e21611614b571c7acd4db3c9ce66))
+* **array:** 添加first(获取第一元素)和last(获取最后一个元素)方法 ([a2df643](https://github.com/renzp94/utils/commit/a2df6430f4e61c14c9dd2974cf393d069110437c))
+
+
+### 文档
+
+* 调整文件名及路径 ([82e7ae1](https://github.com/renzp94/utils/commit/82e7ae1bd4783e3885914a80cfb492560c8f92c3))
+* **array:** 添加difference方法的文档 ([a5056a1](https://github.com/renzp94/utils/commit/a5056a16947e81e0fdab2b01fb9d65cb6b3c70d3))
+* **array:** 添加first和last方法的文档 ([135be64](https://github.com/renzp94/utils/commit/135be644867cd5b07a2a4ed22b96f4b6b3900f65))
+* **other:** 调整deepCopy为deepClone ([8bd624f](https://github.com/renzp94/utils/commit/8bd624f60761969cafde3ad9e059c48987f96e55))
+* **validator:** 添加numberValidator路由 ([3decc80](https://github.com/renzp94/utils/commit/3decc8006dbefd55729c7c3cd54e1b6ac4b52d23))
+
+
+### 其他
+
+* **other:** deepCopy更名为deepClone ([fd65200](https://github.com/renzp94/utils/commit/fd65200035ef24f544a2558f78f1fb55af1756e1))
+* **release:** 0.0.11 ([08a4ed7](https://github.com/renzp94/utils/commit/08a4ed7d966931bb3f6cb4c82f8ead468a46b0f3))
+* **validator:** 添加numberValidator方法返回值 ([7f4dcfc](https://github.com/renzp94/utils/commit/7f4dcfc904de459cc804f341885a7c0f7d92164c))
+* **validator:** 移除无用导入 ([59fc595](https://github.com/renzp94/utils/commit/59fc5953cbe567a461ec5f2f9647b8d1e106b592))
+
+
+### CI配置
+
+* 调整打包脚本 ([20835c7](https://github.com/renzp94/utils/commit/20835c783458f2d705c6d1dab3704218d7e246d0))
+* 调整文档部署action触发时机 ([50cf38f](https://github.com/renzp94/utils/commit/50cf38ff8527837d62e297fd02fe5ebe579854d8))
+
 ### [0.0.11](https://github.com/renzp94/utils/compare/v0.0.10...v0.0.11) (2024-05-22)
 
 
