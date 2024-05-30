@@ -1,5 +1,32 @@
+import { _find } from './_base'
 import { isArray, isDef, isUnDef } from './is'
 import { removeKey } from './object'
+
+/**
+ * 获取数组最后一个元素
+ * @param list 目标数组
+ * @param defaultValue 默认值
+ * @returns 返回数组最后一个元素，如果没有则返回defaultValue
+ *
+ * @example
+ * last([1, 2, 3]); // 3
+ * last([], 2); // 2
+ */
+export const last = <T>(list: Array<T>, defaultValue?: T): T | undefined =>
+  _find(list, list.length - 1, defaultValue)
+
+/**
+ * 获取数组第一个元素
+ * @param list 目标数组
+ * @param defaultValue 默认值
+ * @returns 返回数组第一个元素，如果没有则返回defaultValue
+ *
+ * @example
+ * first([1, 2, 3]); // 1
+ * first([], 2); // 2
+ */
+export const first = <T>(list: Array<T>, defaultValue?: T): T | undefined =>
+  _find(list, 0, defaultValue)
 
 export interface FlattenOptions {
   // 如果是对象数组，指定深度扁平化的属性
