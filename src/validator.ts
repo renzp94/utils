@@ -1,5 +1,3 @@
-import { isNumber } from './is'
-
 /**
  * 邮箱验证
  *
