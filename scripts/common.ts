@@ -12,20 +12,8 @@ export const rmDist = async () => {
       return unlink(`./dist/${file}`)
     })
 
-    await Promise.all(rmFiles)
+    return Promise.all(rmFiles)
   }
-}
-
-/**
- * 获取入口文件
- */
-const getEntrypoints = async () => {
-  const files = await readdir('./src')
-  const entrypoints = files
-    .filter((file) => !file.includes('_'))
-    .map((file) => `./src/${file}`)
-
-  return entrypoints
 }
 
 /**
@@ -33,9 +21,8 @@ const getEntrypoints = async () => {
  */
 export const build = async () => {
   await rmDist()
-  const entrypoints = await getEntrypoints()
-  return await Bun.build({
-    entrypoints,
+  return Bun.build({
+    entrypoints: ['./src/index.ts'],
     outdir: './dist',
     naming: '[name].[ext]',
     splitting: true,
@@ -50,7 +37,7 @@ export const build = async () => {
  */
 export const npmPublish = async () => {
   await Bun.$`bunx standard-version`
-  await Bun.$`npm publish`
+  return Bun.$`npm publish`
 }
 
 /**
@@ -98,5 +85,5 @@ export const jsrPublish = async () => {
   await Bun.write('./jsr.json', JSON.stringify(jsrConfig, null, 2))
   await Bun.$`bunx jsr publish --allow-dirty`
   await Bun.$`git add jsr.json`
-  await Bun.$`git commit -m "chore(jsr:${jsrConfig.version}): published"`
+  return Bun.$`git commit -m "chore(jsr:${jsrConfig.version}): published"`
 }
