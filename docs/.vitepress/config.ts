@@ -60,6 +60,7 @@ export default defineConfig({
         text: '数组操作',
         collapsed: false,
         items: [
+          { text: 'difference', link: '/array/difference' },
           { text: 'first', link: '/array/first' },
           { text: 'flatten', link: '/array/flatten' },
           { text: 'last', link: '/array/last' },
