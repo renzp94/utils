@@ -1,4 +1,4 @@
 export default {
   text: '类型判断',
-  collapsed: false,
+  collapsed: true,
 }
