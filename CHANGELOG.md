@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.14](https://github.com/renzp94/utils/compare/v0.0.13...v0.0.14) (2024-05-31)
+
+
+### 其他
+
+* **jsr:0.0.13:** published ([e9f8b7d](https://github.com/renzp94/utils/commit/e9f8b7d569539d933cb30ceca439329b61f67592))
+
+
+### 新功能
+
+* **array:** 添加unique(数组去重)方法 ([cd9b3bb](https://github.com/renzp94/utils/commit/cd9b3bb42ca803c44c3361a566f09662756ae782))
+
+
+### 文档
+
+* 调整侧边栏默认为关闭 ([20d5e26](https://github.com/renzp94/utils/commit/20d5e26bdea0cbde9118476d8b11a23635410606))
+* **array:** 添加unique文档 ([95e48a7](https://github.com/renzp94/utils/commit/95e48a7ea70c320d1bf14deecf067b008177840f))
+
 ### [0.0.13](https://github.com/renzp94/utils/compare/v0.0.12...v0.0.13) (2024-05-30)
 
 
