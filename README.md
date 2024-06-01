@@ -1,6 +1,6 @@
 <p align="center"><a href="https://github.com/renzp94/utils" target="_blank" rel="noopener noreferrer"><img width="200" src="./logo.png" alt="@renzp/utils logo"></a></p>
 <p align="center">
-  <a href="https://github.com/renzp94/utils/coverage.md">
+  <a href="https://github.com/renzp94/utils/blob/main/coverage.md">
     <img src="./coverage.svg" alt="Code coverage">
   </a>
   <a href="https://bundlephobia.com/package/@renzp/utils">
