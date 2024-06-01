@@ -1,0 +1,6 @@
+export * from './createArray'
+export * from './difference'
+export * from './first'
+export * from './flatten'
+export * from './last'
+export * from './unique'
