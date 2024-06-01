@@ -89,3 +89,7 @@ test('对象数组去重', () => {
     { a: 3, b: 1 },
   ])
 })
+
+test('不是数组去重', () => {
+  expect(unique({ length: 1 } as any)).toEqual({ length: 1 } as any)
+})

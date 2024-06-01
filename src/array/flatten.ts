@@ -59,17 +59,13 @@ export const flatten: Flatten = (list, options) => {
 
     return list.reduce(
       (prev: Parameters<Flatten>[0], curr: Parameters<Flatten>[0][0]) => {
+        let values = isArray(curr) ? curr : [curr]
         if (isCanDeep) {
           const target: Parameters<Flatten>[0][0] = removeKey(curr, deepKey)
-
-          return [
-            ...prev,
-            target,
-            ...(curr[deepKey] ? _flatten(curr[deepKey]) : []),
-          ]
+          values = [target, ...(curr[deepKey] ? _flatten(curr[deepKey]) : [])]
         }
 
-        return [...prev, ...(isArray(curr) ? curr : [curr])]
+        return [...prev, ...values]
       },
       [],
     ) as ReturnType<Flatten>

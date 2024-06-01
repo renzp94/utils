@@ -15,12 +15,12 @@ import { isObject } from '../is'
 export const removeKey = <T extends object, K extends keyof T>(
   obj: T,
   key: K,
-): Omit<T, K> | undefined => {
+): Omit<T, K> => {
   if (!isObject(obj)) {
-    return
+    return obj
   }
 
-  const target = { ...obj } as T
+  const target = { ...obj }
   delete target[key]
 
   return target as Omit<T, K>
