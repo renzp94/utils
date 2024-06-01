@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.16](https://github.com/renzp94/utils/compare/v0.0.15...v0.0.16) (2024-06-01)
+
+
+### 其他
+
+* 本地生成coverage ([7359b22](https://github.com/renzp94/utils/commit/7359b22c84a6fdc5bd61b43001c0a2987b9cc496))
+* 调整jsr发布脚本 ([ddbecef](https://github.com/renzp94/utils/commit/ddbecef731ab6fcdb7e5f2d97f87c64ee54fd98e))
+* **jsr:0.0.15:** published ([da5906f](https://github.com/renzp94/utils/commit/da5906f65e85801f2363f3f93b715c92d6b05127))
+
 ### [0.0.15](https://github.com/renzp94/utils/compare/v0.0.14...v0.0.15) (2024-06-01)
 
 
