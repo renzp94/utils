@@ -41,27 +41,6 @@ export const npmPublish = async () => {
 }
 
 /**
- * 获取jsr导出路径
- */
-const getExports = async () => {
-  const files = await readdir('./src')
-  const exports = files
-    .filter((file) => !file.includes('_'))
-    .reduce((prev, file) => {
-      if (file === 'index.ts') {
-        return { ...prev, '.': './src/index.ts' }
-      }
-
-      return {
-        ...prev,
-        [`./${file.replace('.ts', '')}`]: `./src/${file}`,
-      }
-    }, {})
-
-  return exports
-}
-
-/**
  * jsr发布
  */
 export const jsrPublish = async () => {
@@ -75,11 +54,12 @@ export const jsrPublish = async () => {
     return
   }
 
-  const exports = await getExports()
   const jsrConfig = {
     name: pkg.name,
     version: pkg.version,
-    exports,
+    exports: {
+      '.': './src/index.ts',
+    },
   }
 
   await Bun.write('./jsr.json', JSON.stringify(jsrConfig, null, 2))
