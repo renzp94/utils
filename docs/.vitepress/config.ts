@@ -10,7 +10,7 @@ export default async () => {
     lastUpdated: true,
     metaChunk: true,
     rewrites: {
-      'pages/guide/gettingStarted.md': 'index.md',
+      'pages/guide/whatIs.md': 'index.md',
       'pages/:category/:page.md': ':category/:page.md',
     },
     head: [['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }]],
