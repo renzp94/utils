@@ -1,4 +1,5 @@
 import { exists, readdir, unlink } from 'node:fs/promises'
+import path from 'node:path'
 import dts from 'bun-plugin-dts'
 
 /**
@@ -67,9 +68,6 @@ export const jsrPublish = async () => {
   await Bun.$`git add jsr.json`
   return Bun.$`git commit -m "chore(jsr:${jsrConfig.version}): published"`
 }
-
-import path from 'node:path'
-
 export interface CoverageOptions {
   label?: string
   tagConfigs?: Array<{ ratio: number; color: string }>
