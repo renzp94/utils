@@ -39,6 +39,7 @@ All files                         |  100.00 |  100.00 |
  src/number/index.ts              |  100.00 |  100.00 | 
  src/number/numberSeparate.ts     |  100.00 |  100.00 | 
  src/object/index.ts              |  100.00 |  100.00 | 
+ src/object/merge.ts              |  100.00 |  100.00 | 
  src/object/removeKey.ts          |  100.00 |  100.00 | 
  src/other/deepClone.ts           |  100.00 |  100.00 | 
  src/other/index.ts               |  100.00 |  100.00 | 
