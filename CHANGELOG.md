@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.17](https://github.com/renzp94/utils/compare/v0.0.16...v0.0.17) (2024-06-03)
+
+
+### 其他
+
+* 调整脚本代码 ([4a2b585](https://github.com/renzp94/utils/commit/4a2b58549f3c4d8b3f89898319b3be49249946b6))
+* **jsr:0.0.16:** published ([0c5c8e9](https://github.com/renzp94/utils/commit/0c5c8e94ce0d622ee1639a44519a0821cd6d8918))
+
+
+### 新功能
+
+* **object:** 添加merge(合并对象)方法 ([af25372](https://github.com/renzp94/utils/commit/af253728c02da08c763dc76cd156708c938ae6f8))
+* **types:** 添加MergeType(类型合并)类型 ([69e14a7](https://github.com/renzp94/utils/commit/69e14a746755620dd52363ef33680e9d95c2e753))
+
+
+### 文档
+
+* 修复README中的coverage点击跳转问题 ([22d8b2a](https://github.com/renzp94/utils/commit/22d8b2ab0c0f2a78e2f142adf71a3c63e66c1ea1))
+* **object:** 添加merge文档 ([220892d](https://github.com/renzp94/utils/commit/220892daba0a3d7c13584c2ed1fa73bcc47af456))
+* **types:** 添加MergeType文档 ([a99e901](https://github.com/renzp94/utils/commit/a99e90112da8d75a291e89370d27319fe9261442))
+
 ### [0.0.16](https://github.com/renzp94/utils/compare/v0.0.15...v0.0.16) (2024-06-01)
 
 
