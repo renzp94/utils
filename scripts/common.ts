@@ -65,8 +65,7 @@ export const jsrPublish = async () => {
 
   await Bun.write('./jsr.json', JSON.stringify(jsrConfig, null, 2))
   await Bun.$`bunx jsr publish --allow-dirty`
-  await Bun.$`git add jsr.json`
-  return Bun.$`git commit -m "chore(jsr:${jsrConfig.version}): published"`
+  return Bun.$`git add jsr.json && git commit -m "chore(jsr:${jsrConfig.version}): published"`
 }
 export interface CoverageOptions {
   label?: string
@@ -148,6 +147,7 @@ export const coverage = async (options?: CoverageOptions): Promise<boolean> => {
 
     md += lines.slice(lineIndex, endIndex).join('\n')
     await Bun.write(path.resolve(outDir, `${label}.md`), md)
+    await Bun.$`git add ${label}.md && git commit -m "chore: update ${label}.md"`
     return true
   } catch {
     return false
