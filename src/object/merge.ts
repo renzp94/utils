@@ -30,7 +30,7 @@ export const merge = <T, S>(
   target: T,
   source: S,
   options?: MergeOptions,
-): T | MergeType<T, S> => {
+): T | MergeType<T, Partial<S>> => {
   const { deep = true, value } = options ?? {}
 
   if (
@@ -62,7 +62,7 @@ export const merge = <T, S>(
         return { ...prev, [key]: _v }
       },
       {} as Record<string, any>,
-    ) as MergeType<T, S>
+    ) as MergeType<T, Partial<S>>
   }
 
   return target
