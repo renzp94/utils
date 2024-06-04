@@ -1,6 +1,6 @@
 {
   "name": "@renzp/utils",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "exports": {
     ".": "./src/index.ts"
   }
