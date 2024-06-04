@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.18](https://github.com/renzp94/utils/compare/v0.0.17...v0.0.18) (2024-06-04)
+
+
+### Bug修复
+
+* **object:** 修复merge函数返回类型错误的问题 ([ab9ef28](https://github.com/renzp94/utils/commit/ab9ef28f70ae500fdff28ebc0a393cc9f804bc06))
+* **types:** 修复MergeType类型推倒不对的问题 ([c40164c](https://github.com/renzp94/utils/commit/c40164c1c8fb2d05c5ef14c73923443261a3586a))
+
+
+### 新功能
+
+* **types:** 添加ArrayElementType(获取数组中的元素类型)方法 ([c85f936](https://github.com/renzp94/utils/commit/c85f936814cf8d372b84c7b53af2c3b4bf1d5bf6))
+* **types:** 添加Expand(展开悬停类型信息)方法 ([87e2abe](https://github.com/renzp94/utils/commit/87e2abebb5a4c1e6606e999b1c1a445d28470cd6))
+* **types:** 添加ExpandRecursively(展开悬停全部类型信息)方法 ([62ba13d](https://github.com/renzp94/utils/commit/62ba13da224b313670869eb5a5bed44aa0293d24))
+
+
+### 文档
+
+* **types:** 调整MergeType文档 ([05d1f97](https://github.com/renzp94/utils/commit/05d1f97dda8e6aa81de51a298e068282f44f2d4a))
+* **types:** 添加ArrayElementType文档 ([79a7006](https://github.com/renzp94/utils/commit/79a70062772a72ebbcc3dfa871d307dcafb31380))
+* **types:** 添加Expand文档 ([e5dd3bf](https://github.com/renzp94/utils/commit/e5dd3bf64f97b449034e84690e74080cd5216571))
+* **types:** 添加ExpandRecursively方法 ([448b95f](https://github.com/renzp94/utils/commit/448b95f3c00570e6a2aadd6c1f5468344feeede6))
+
+
+### 其他
+
+* 调整coverage生成脚本及jsr发布脚本 ([39b18ba](https://github.com/renzp94/utils/commit/39b18ba3f39136643b0e8fd1e6504ae34478a435))
+* 调整types目录结构 ([36d6ff6](https://github.com/renzp94/utils/commit/36d6ff6ca159a9e35ce0976e80c11b4338ead7b6))
+* **jsr:0.0.17:** published ([ce83972](https://github.com/renzp94/utils/commit/ce83972533353e4482112c935c111c45842058b8))
+* update coverage.md ([03501f7](https://github.com/renzp94/utils/commit/03501f72739f56b4a4381306ffeab11d1e2aeb04))
+* update coverage.md ([44b50ed](https://github.com/renzp94/utils/commit/44b50edfb90a3a96f8fab8b781db90b0057ede9d))
+
 ### [0.0.17](https://github.com/renzp94/utils/compare/v0.0.16...v0.0.17) (2024-06-03)
 
 
