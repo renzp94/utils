@@ -45,6 +45,11 @@ All files                         |  100.00 |  100.00 |
  src/other/index.ts               |  100.00 |  100.00 | 
  src/other/radom.ts               |  100.00 |  100.00 | 
  src/other/uuid.ts                |  100.00 |  100.00 | 
+ src/types/ArrayElementType.ts    |  100.00 |  100.00 | 
+ src/types/expand.ts              |  100.00 |  100.00 | 
+ src/types/expandRecursively.ts   |  100.00 |  100.00 | 
+ src/types/index.ts               |  100.00 |  100.00 | 
+ src/types/mergeType.ts           |  100.00 |  100.00 | 
  src/validator/emailValidator.ts  |  100.00 |  100.00 | 
  src/validator/idCardValidator.ts |  100.00 |  100.00 | 
  src/validator/index.ts           |  100.00 |  100.00 | 
