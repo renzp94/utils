@@ -1,22 +1,32 @@
 # MergeType
 
-类型合并。
+对象类型合并。
 
 ## 基本用法
 
 传入两个类型，返回合并后的类型。
 
 ```ts
-import { MergeType } from '@renzp/utils'
+import type { MergeType } from '@renzp/utils'
 
-
-interface Obj1 {
-  a: number
-}
-interface Obj2 {
-  a: string
-  b: number
-}
-export type Obj = MergeType<Obj1, Obj2>
-const a: Obj = { a: '1', b: 1 }
+MergeType<
+  {
+    a: number
+    b: { c: number }
+  },
+  {
+    a: string
+    b: number
+  }
+>; // { a: number | string; b: number | { c: number } }
+MergeType<
+  {
+    a: number
+    b: { c: number }
+  },
+  {
+    a: string
+    b: { d: number }
+  }
+>; // { a: number | string; b: { c: number; d: number } }
 ```
