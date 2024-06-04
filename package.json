@@ -39,6 +39,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.7.0",
     "@happy-dom/global-registrator": "^14.7.1",
+    "@type-challenges/utils": "^0.1.1",
     "@types/bun": "latest",
     "bun-plugin-dts": "^0.2.3",
     "standard-version": "^9.5.0",
