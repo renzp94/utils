@@ -1,3 +1,4 @@
+export * from './compact'
 export * from './createArray'
 export * from './difference'
 export * from './first'
