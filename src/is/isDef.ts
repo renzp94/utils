@@ -1,4 +1,3 @@
-import type { _ExcludeUndefinedNull } from '../_base'
 import { isNull } from './isNull'
 import { isUndefined } from './isUnDef'
 
@@ -13,5 +12,5 @@ import { isUndefined } from './isUnDef'
  * let b;
  * isDef(b); // false
  */
-export const isDef = <T = any>(v: T): v is _ExcludeUndefinedNull<T> =>
+export const isDef = <T = any>(v: T): v is NonNullable<T> =>
   !isUndefined(v) && !isNull(v)
