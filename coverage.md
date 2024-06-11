@@ -4,12 +4,14 @@ File                              | % Funcs | % Lines | Uncovered Line #s
 ----------------------------------|---------|---------|-------------------
 All files                         |  100.00 |  100.00 |
  src/_base.ts                     |  100.00 |  100.00 | 
+ src/array/compact.ts             |  100.00 |  100.00 | 
  src/array/createArray.ts         |  100.00 |  100.00 | 
  src/array/difference.ts          |  100.00 |  100.00 | 
  src/array/first.ts               |  100.00 |  100.00 | 
  src/array/flatten.ts             |  100.00 |  100.00 | 
  src/array/index.ts               |  100.00 |  100.00 | 
  src/array/last.ts                |  100.00 |  100.00 | 
+ src/array/objectify.ts           |  100.00 |  100.00 | 
  src/array/unique.ts              |  100.00 |  100.00 | 
  src/index.ts                     |  100.00 |  100.00 | 
  src/is/index.ts                  |  100.00 |  100.00 | 
