@@ -37,7 +37,17 @@ export const build = async () => {
  * npm发布
  */
 export const npmPublish = async () => {
-  await Bun.$`bunx standard-version`
+  const [_b, _s, releaseAs] = Bun.argv
+  if (
+    releaseAs &&
+    !['patch', 'minor', 'major'].includes(releaseAs) &&
+    !/\d\.\d\.\d/.test(releaseAs)
+  ) {
+    throw new Error(
+      `版本号:${releaseAs}为错误的版本号，请指定'patch', 'minor', 'major', 'x.x.x'`,
+    )
+  }
+  await Bun.$`bunx standard-version ${releaseAs ? `--release-as ${releaseAs}` : ''}`
   return Bun.$`npm publish`
 }
 
