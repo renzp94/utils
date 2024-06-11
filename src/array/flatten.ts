@@ -1,5 +1,5 @@
 import { isArray, isUnDef } from '../is'
-import { removeKey } from '../object'
+import { omit } from '../object'
 
 export interface FlattenOptions {
   // 如果是对象数组，指定深度扁平化的属性
@@ -61,7 +61,7 @@ export const flatten: Flatten = (list, options) => {
       (prev: Parameters<Flatten>[0], curr: Parameters<Flatten>[0][0]) => {
         let values = isArray(curr) ? curr : [curr]
         if (isCanDeep) {
-          const target: Parameters<Flatten>[0][0] = removeKey(curr, deepKey)
+          const target: Parameters<Flatten>[0][0] = omit(curr, [deepKey])
           values = [target, ...(curr[deepKey] ? _flatten(curr[deepKey]) : [])]
         }
 
