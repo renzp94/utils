@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.20](https://github.com/renzp94/utils/compare/v0.0.19...v0.0.20) (2024-06-11)
+
+
+### 新功能
+
+* **array:** 添加compact(去除假值)方法 ([56cb646](https://github.com/renzp94/utils/commit/56cb646025796bdbe0fb7e0df1f14640d55f2e05))
+* **array:** 添加objectify(数组转对象)方法 ([2c193ff](https://github.com/renzp94/utils/commit/2c193ff093bb1ab55dac4615b3bcaa916c489b95))
+
+
+### 文档
+
+* **array:** 添加compact文档 ([713a27d](https://github.com/renzp94/utils/commit/713a27d838a4a407b444669623501d028a4c95bc))
+* **array:** 添加objectify文档 ([dddd4b5](https://github.com/renzp94/utils/commit/dddd4b5c35c3f8cf967e7257627055a84195956f))
+
+
+### 其他
+
+* 更新依赖 ([d177891](https://github.com/renzp94/utils/commit/d17789115b2488dfa83776570316711cdf62cf51))
+* **is:** 移除剔除null和undefined的类型，使用内置类型NonNullable ([b7c8e9b](https://github.com/renzp94/utils/commit/b7c8e9bbf8e1f0db0f8bed60c7712512104af657))
+* **jsr:0.0.19:** published ([84ccdcd](https://github.com/renzp94/utils/commit/84ccdcdd99d6dabbd5eda85860cfb7ec1001694b))
+* update coverage.md ([a61e33d](https://github.com/renzp94/utils/commit/a61e33d4168f4b8f56ef2922575aa91910c06008))
+
 ### [0.0.19](https://github.com/renzp94/utils/compare/v0.0.18...v0.0.19) (2024-06-04)
 
 
