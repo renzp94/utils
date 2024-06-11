@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.21](https://github.com/renzp94/utils/compare/v0.0.20...v0.0.21) (2024-06-11)
+
+
+### 文档
+
+* **object:** 添加pick文档 ([9f664bf](https://github.com/renzp94/utils/commit/9f664bf9eefe2f4a81fb06c296a8e164f824a17e))
+
+
+### 新功能
+
+* **object:** 将removeKey更名为omit ([c0d0cd7](https://github.com/renzp94/utils/commit/c0d0cd7551da0b8c46a6499edb0e214a7f0ac744))
+* **object:** 添加pick(获取对象指定属性)方法 ([401cd15](https://github.com/renzp94/utils/commit/401cd15c51e35cde35731de4ae84d3a7fe0baf8f))
+
+
+### 其他
+
+* 优化npm发布 ([4c8d047](https://github.com/renzp94/utils/commit/4c8d04796f799770e3ca744b8f43510f9469c363))
+* **jsr:0.0.20:** published ([4dde852](https://github.com/renzp94/utils/commit/4dde852906915e72321069c6ec799a0c67f4d209))
+* update coverage.md ([d2d19ac](https://github.com/renzp94/utils/commit/d2d19acc35d2079c61f9686a19d7afc40bc45807))
+
 ### [0.0.20](https://github.com/renzp94/utils/compare/v0.0.19...v0.0.20) (2024-06-11)
 
 
