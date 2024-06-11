@@ -1,4 +1,4 @@
-import { isArray } from './is'
+import { isArray, isObject } from './is'
 
 /**
  * 调用变量的toString
@@ -32,4 +32,29 @@ export const _find = <T>(
   }
 
   return defaultValue
+}
+/**
+ * pick和omit的通用方法
+ * @param target 源对象
+ * @param keys 属性名数组
+ * @param type 操作类型：pick、omit
+ * @returns 返回处理后的数据
+ */
+export const _po = <T extends Record<PropertyKey, any>, K extends keyof T>(
+  target: T,
+  keys: Array<K>,
+  type: 'pick' | 'omit',
+): T => {
+  if (!isObject(target)) {
+    return target
+  }
+  return Object.keys(target)
+    .filter((key) => {
+      const has = keys.includes(key as any)
+      return type === 'pick' ? has : !has
+    })
+    .reduce(
+      (prev, key) => (target?.[key] ? { ...prev, [key]: target[key] } : prev),
+      {} as T,
+    )
 }
