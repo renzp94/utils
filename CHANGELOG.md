@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.22](https://github.com/renzp94/utils/compare/v0.0.21...v0.0.22) (2024-06-12)
+
+
+### 新功能
+
+* **other:** 添加throttle(创建节流函数)方法 ([88e9b77](https://github.com/renzp94/utils/commit/88e9b778e061ee796ab16771c67eec899359ae19))
+
+
+### 文档
+
+* **other:** 添加throttle方法 ([e31dbea](https://github.com/renzp94/utils/commit/e31dbead2d766858b1c3288be51e3f0d8ee3bf0d))
+
+
+### 其他
+
+* **jsr:0.0.21:** published ([4a77d49](https://github.com/renzp94/utils/commit/4a77d499d0f9e7a4c439e2066c7a2a820b64f4ac))
+* update coverage.md ([78f10c5](https://github.com/renzp94/utils/commit/78f10c58a7adac4c10dd1276ff43a3e16b96dd38))
+
 ### [0.0.21](https://github.com/renzp94/utils/compare/v0.0.20...v0.0.21) (2024-06-11)
 
 
