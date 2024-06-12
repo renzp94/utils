@@ -47,6 +47,7 @@ All files                         |  100.00 |  100.00 |
  src/other/deepClone.ts           |  100.00 |  100.00 | 
  src/other/index.ts               |  100.00 |  100.00 | 
  src/other/radom.ts               |  100.00 |  100.00 | 
+ src/other/throttle.ts            |  100.00 |  100.00 | 
  src/other/uuid.ts                |  100.00 |  100.00 | 
  src/types/arrayElementType.ts    |  100.00 |  100.00 | 
  src/types/expand.ts              |  100.00 |  100.00 | 
