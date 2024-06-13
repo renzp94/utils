@@ -44,6 +44,7 @@ All files                         |  100.00 |  100.00 |
  src/object/merge.ts              |  100.00 |  100.00 | 
  src/object/omit.ts               |  100.00 |  100.00 | 
  src/object/pick.ts               |  100.00 |  100.00 | 
+ src/other/debounce.ts            |  100.00 |  100.00 | 
  src/other/deepClone.ts           |  100.00 |  100.00 | 
  src/other/index.ts               |  100.00 |  100.00 | 
  src/other/radom.ts               |  100.00 |  100.00 | 
@@ -63,4 +64,3 @@ All files                         |  100.00 |  100.00 |
  src/validator/zhValidator.ts     |  100.00 |  100.00 | 
  src/window/copyText.ts           |  100.00 |  100.00 | 
  src/window/index.ts              |  100.00 |  100.00 | 
- test/happydom.ts                 |  100.00 |  100.00 | 
