@@ -76,7 +76,7 @@ console.log(value); // 2
 
 ## 取消节流
 
-如果取消节流，可以使用`fn.cancel`。调用后如果有待执行的任务，则会立即执行，如果不需要执行，则传入`false`。
+如果取消节流，可使用`fn.cancel`。调用后如果有待执行的任务，则会立即执行，如果不需要执行，则传入`false`。取消节流是永久取消，如果想撤销取消节流的操作，可使用`fn.revokeCancel`。
 
 ```ts
 import { throttle } from '@renzp/utils'
@@ -93,6 +93,13 @@ _fn.cancel();
 console.log(value); // 2
 // _fn.cancel(false);
 // console.log(value); // 0
+_fn.revokeCancel()
+value = 0
+for (let i = 0; i < 3; i++) {
+  _fn(i)
+}
+expect(value).toEqual(0)
+setTimeout(() => expect(value).toEqual(2), 300)
 ```
 
 ## 参数
@@ -105,13 +112,22 @@ console.log(value); // 2
 
 ## 返回
 
-| 参数 | 说明     | 类型                                                           |
-| ---- | -------- | -------------------------------------------------------------- |
-| fn   | 节流函数 | `T & { flush: () => void; cancel: (flush?: boolean) => void }` |
+| 参数 | 说明     | 类型            |
+| ---- | -------- | --------------- |
+| fn   | 节流函数 | `ThrottleFn<T>` |
+
+```ts
+export type ThrottleFn<T> = T & {
+  flush: () => void
+  cancel: (flush?: boolean) => void
+  revokeCancel: () => void
+}
+```
 
 ## fn属性
 
-| 参数   | 说明                 | 类型                        |
-| ------ | -------------------- | --------------------------- |
-| flush  | 立即执行最近一个任务 | `() => void`                |
-| cancel | 取消节流             | `(flush?: boolean) => void` |
+| 参数         | 说明                 | 类型                        |
+| ------------ | -------------------- | --------------------------- |
+| flush        | 立即执行最近一个任务 | `() => void`                |
+| cancel       | 取消节流             | `(flush?: boolean) => void` |
+| revokeCancel | 撤销取消节流         | `() => void`                |
