@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.23](https://github.com/renzp94/utils/compare/v0.0.22...v0.0.23) (2024-06-13)
+
+
+### 代码重构
+
+* **other:** 抽离公共节流防抖的公共函数 ([c4d48f5](https://github.com/renzp94/utils/commit/c4d48f5fec2a134286fd8ef8a06fdbbd5647aa3c))
+
+
+### 新功能
+
+* **other:** 添加debounce(创建防抖函数)方法 ([b1d3f4f](https://github.com/renzp94/utils/commit/b1d3f4fae1bfb26149364522a5bc427d28199827))
+* **other:** 添加throttle的revokeCancel(撤销取消节流)方法及优化逻辑 ([67c2062](https://github.com/renzp94/utils/commit/67c20626c3de82abf7e744554fed3e6fa735a0c1))
+
+
+### 文档
+
+* **other:** 添加debounce文档 ([dcbce26](https://github.com/renzp94/utils/commit/dcbce26818351458bb2d862760e113f1fc9fc349))
+* **other:** 添加throttle的revokeCancel方法说明 ([faad86c](https://github.com/renzp94/utils/commit/faad86c8685d4f6e5fb221ae68fcb529e1e8d4bf))
+* **other:** 优化throttle文档 ([7473364](https://github.com/renzp94/utils/commit/7473364e8e82ca3f1add70f125f0486340b607d2))
+
+
+### 其他
+
+* 更新依赖包版本 ([d542489](https://github.com/renzp94/utils/commit/d5424891dba367ab38b237558f161f4931ff9883))
+* 将happy-dom注入排除测试用例执行 ([8838896](https://github.com/renzp94/utils/commit/8838896e5ee8ea4941e83631e394f99a12204940))
+* **jsr:0.0.22:** published ([475185b](https://github.com/renzp94/utils/commit/475185bc7dfc67e6e6058a90fcba7faf1b812a2f))
+* update coverage.md ([17172d5](https://github.com/renzp94/utils/commit/17172d5aa8aef1240740cc6db83ce1cd745a79f3))
+
 ### [0.0.22](https://github.com/renzp94/utils/compare/v0.0.21...v0.0.22) (2024-06-12)
 
 
