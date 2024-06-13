@@ -169,3 +169,26 @@ test('fn不是函数', () => {
     throttle(1 as any)
   }).toThrowError('参数fn应该为函数')
 })
+
+test('先取消节流，再撤销取消节流', () => {
+  let value = 0
+  const fn = (count: number) => {
+    // console.log('先取消节流，再撤销取消节流 run fn: ', count)
+    value = count
+  }
+
+  const _fn = throttle(fn)
+  _fn.cancel()
+  for (let i = 0; i < 3; i++) {
+    _fn(i)
+  }
+  // console.log('先取消节流，再撤销取消节流 => 结束')
+  expect(value).toEqual(2)
+  _fn.revokeCancel()
+  value = 0
+  for (let i = 0; i < 3; i++) {
+    _fn(i)
+  }
+  expect(value).toEqual(0)
+  setTimeout(() => expect(value).toEqual(2), 300)
+})

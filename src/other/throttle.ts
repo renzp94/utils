@@ -5,6 +5,12 @@ export interface ThrottleOptions {
   callTiming?: 'before' | 'after'
 }
 
+export type ThrottleFn<T> = T & {
+  flush: () => void
+  cancel: (flush?: boolean) => void
+  revokeCancel: () => void
+}
+
 /**
  * 创建节流函数
  * @param fn 要执行的函数
@@ -27,7 +33,7 @@ export const throttle = <T extends (...args: any) => any>(
   fn: T,
   time = 300,
   callTiming: 'before' | 'after' = 'after',
-): T & { flush: () => void; cancel: (noWork?: boolean) => void } => {
+): ThrottleFn<T> => {
   if (!isFunction(fn)) {
     throw new Error('参数fn应该为函数')
   }
@@ -41,14 +47,13 @@ export const throttle = <T extends (...args: any) => any>(
   const _throttle = (...args: Parameters<T>) => {
     _args = args
     if (enableWork) {
-      // 如果节流前执行，则执行前设置enableWork
-      if (isBefore) {
+      // 如果被取消节流且节流前执行，则执行前设置enableWork
+      if (!isCancel && isBefore) {
         enableWork = false
       }
       return fn(...args)
     }
     // 如果被取消节流则不需要延时执行
-    // 并且
     if (!isCancel && isNull(timer)) {
       timer = setTimeout(() => {
         // 执行了之后就清空变量
@@ -58,16 +63,24 @@ export const throttle = <T extends (...args: any) => any>(
         if (!isBefore) {
           _throttle(..._args)
         }
-        isCancel = false
       }, time)
     }
   }
 
+  /**
+   * 立即执行
+   * @returns 返回执行函数返回的数据
+   */
   _throttle.flush = () => fn(..._args)
+  /**
+   * 取消节流
+   * @param flush 是否立即执行待执行任务
+   */
   _throttle.cancel = (flush = true) => {
     // 如果有延时器则清除
     if (!isNull(timer)) {
       clearTimeout(timer)
+      timer = null
       if (flush) {
         _throttle.flush()
       }
@@ -77,6 +90,15 @@ export const throttle = <T extends (...args: any) => any>(
     // 标记已取消节流
     isCancel = true
   }
+  /**
+   * 撤销取消节流
+   */
+  _throttle.revokeCancel = () => {
+    if (isCancel) {
+      isCancel = false
+      enableWork = false
+    }
+  }
 
-  return _throttle as any
+  return _throttle as ThrottleFn<T>
 }
