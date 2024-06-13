@@ -11,7 +11,7 @@ import { throttle } from '@renzp/utils'
 
 let value = 0;
 const fn = (count: number) => {
-  value = count
+  value = count;
 };
 const _fn = throttle(fn);
 _fn(1);
@@ -28,7 +28,7 @@ import { throttle } from '@renzp/utils'
 
 let value = 0;
 const fn = (count: number) => {
-  value = count
+  value = count;
 };
 const _fn = throttle(fn, 1000);
 _fn(1);
@@ -46,7 +46,7 @@ import { throttle } from '@renzp/utils'
 
 let value = 0;
 const fn = (count: number) => {
-  value = count
+  value = count;
 };
 const _fn = throttle(fn, 300, 'before');
 _fn(1);
@@ -64,11 +64,11 @@ import { throttle } from '@renzp/utils'
 
 let value = 0;
 const fn = (count: number) => {
-  value = count
+  value = count;
 };
 const _fn = throttle(fn);
 for (let i = 0; i < 3; i++) {
-  _fn(i)
+  _fn(i);
 };
 _fn.flush();
 console.log(value); // 2
@@ -83,23 +83,23 @@ import { throttle } from '@renzp/utils'
 
 let value = 0;
 const fn = (count: number) => {
-  value = count
+  value = count;
 };
 const _fn = throttle(fn);
 for (let i = 0; i < 3; i++) {
-  _fn(i)
+  _fn(i);
 };
 _fn.cancel();
 console.log(value); // 2
 // _fn.cancel(false);
 // console.log(value); // 0
-_fn.revokeCancel()
-value = 0
+_fn.revokeCancel();
+value = 0;
 for (let i = 0; i < 3; i++) {
-  _fn(i)
+  _fn(i);
 }
-expect(value).toEqual(0)
-setTimeout(() => expect(value).toEqual(2), 300)
+expect(value).toEqual(0);
+setTimeout(() => expect(value).toEqual(2), 300);
 ```
 
 ## 参数
