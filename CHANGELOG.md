@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/renzp94/utils/compare/v0.0.23...v0.1.0) (2024-06-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* **array:unique:** `unique`第二个参数`filter`改为`options.filter`
+
+### 其他
+
+* **jsr:0.0.23:** published ([688d7d1](https://github.com/renzp94/utils/commit/688d7d13d618ca4f0036186b4f9dafb9ad3680c3))
+
+
+### 代码重构
+
+* **array: unique:** 重构存在判断逻辑 ([fbd38af](https://github.com/renzp94/utils/commit/fbd38af7e1c7431d1ffceb6217f532a90da96528))
+
+
+### 新功能
+
+* **array:unique:** 添加strict参数 ([919ef50](https://github.com/renzp94/utils/commit/919ef50a2bef0f28cf03d39915ba96afb4272864))
+* **array:** 添加xor(数据取交集)方法 ([a2282ee](https://github.com/renzp94/utils/commit/a2282ee45effa0a538536f8ab79f44a39105e31f))
+
+
+### 文档
+
+* **array:unique:** 添加strict参数文档 ([507c7a4](https://github.com/renzp94/utils/commit/507c7a4d8369a528dec71396e991db180eb36602))
+* **array:** 添加xor文档 ([901754e](https://github.com/renzp94/utils/commit/901754e6d4573a7441bb449dd7b3380ad28f908a))
+
 ### [0.0.23](https://github.com/renzp94/utils/compare/v0.0.22...v0.0.23) (2024-06-13)
 
 
