@@ -16,7 +16,7 @@ test('对象数组去重', () => {
         { a: 3, b: 1 },
         { a: 1, b: 1 },
       ],
-      'a',
+      { filter: 'a' },
     ),
   ).toEqual([
     { a: 1, b: 1 },
@@ -32,7 +32,7 @@ test('对象数组去重', () => {
         { a: 3, b: 1 },
         { a: 1, b: 1 },
       ],
-      'b',
+      { filter: 'b' },
     ),
   ).toEqual([{ a: 1, b: 1 }])
 
@@ -47,7 +47,7 @@ test('对象数组去重', () => {
         { a: 2, b: 1 },
         { a: 3, b: 2 },
       ],
-      ['a', 'b'],
+      { filter: ['a', 'b'] },
     ),
   ).toEqual([
     { a: 1, b: 1 },
@@ -65,7 +65,7 @@ test('对象数组去重', () => {
         { a: 3, b: 1 },
         { a: 1, b: 1 },
       ],
-      (target, v) => target.a === v.a && target.b === v.b,
+      { filter: (target, v) => target.a === v.a && target.b === v.b },
     ),
   ).toEqual([
     { a: 1, b: 1 },
@@ -81,7 +81,7 @@ test('对象数组去重', () => {
         { a: 3, b: 1 },
         { a: 1, b: 1, c: 2 },
       ],
-      (target, v) => target.a === v.a && target.b === v.b,
+      { filter: (target, v) => target.a === v.a && target.b === v.b },
     ),
   ).toEqual([
     { a: 1, b: 1, c: 1 },
@@ -92,4 +92,27 @@ test('对象数组去重', () => {
 
 test('不是数组去重', () => {
   expect(unique({ length: 1 } as any)).toEqual({ length: 1 } as any)
+})
+
+test('非严格比较', () => {
+  expect(unique([1, 1, '1', 2, 3, 4, 3], { strict: false })).toEqual([
+    1, 2, 3, 4,
+  ])
+
+  expect(
+    unique(
+      [
+        { a: 1, b: 1 },
+        { a: 2, b: 1 },
+        { a: 3, b: 1 },
+        { a: 1, b: 1 },
+        { a: '1', b: 1 },
+      ],
+      { filter: 'a', strict: false },
+    ),
+  ).toEqual([
+    { a: 1, b: 1 },
+    { a: 2, b: 1 },
+    { a: 3, b: 1 },
+  ])
 })
