@@ -41,36 +41,29 @@ export const unique = <T>(
 
   return deepClone(list).reduce(
     (prev, v) => {
-      let exist = false
-      // 如果无过滤器则直接值比对
-      if (isUnDef(filter)) {
-        // biome-ignore lint/suspicious/noDoubleEquals: <explanation>
-        exist = strict ? prev.includes(v) : prev.some((item) => item == v)
-      }
-      // 如果有过滤key，则认为数组是对象数组，通过key比较对象属性值是否相同
-      if (isString(filter)) {
-        exist = prev.some((item) =>
-          strict
-            ? item?.[filter] === v?.[filter]
-            : // biome-ignore lint/suspicious/noDoubleEquals: <explanation>
-              item?.[filter] == v?.[filter],
-        )
-      }
-      // 如果有过滤key且为数组，则认为数组是对象数组，通过多个key比较对象属性值是否相同
-      if (isArray(filter)) {
-        exist = prev.some((item) =>
-          filter.every((key) =>
-            // biome-ignore lint/suspicious/noDoubleEquals: <explanation>
-            strict ? item?.[key] === v?.[key] : item?.[key] == v?.[key],
-          ),
-        )
-      }
-      // 如果是过滤函数，则通过过滤函数返回值判断是否相同
-      if (isFunction(filter)) {
-        if (prev.length > 0) {
-          exist = prev.some((item) => filter(v, item))
-        }
-      }
+      const exist =
+        // 如果无过滤器则直接值比对
+        (isUnDef(filter) &&
+          // biome-ignore lint/suspicious/noDoubleEquals: <explanation>
+          (strict ? prev.includes(v) : prev.some((item) => item == v))) ||
+        // 如果有过滤key，则认为数组是对象数组，通过key比较对象属性值是否相同
+        (isString(filter) &&
+          prev.some((item) =>
+            strict
+              ? item?.[filter] === v?.[filter]
+              : // biome-ignore lint/suspicious/noDoubleEquals: <explanation>
+                item?.[filter] == v?.[filter],
+          )) ||
+        // 如果有过滤key且为数组，则认为数组是对象数组，通过多个key比较对象属性值是否相同
+        (isArray(filter) &&
+          prev.some((item) =>
+            filter.every((key) =>
+              // biome-ignore lint/suspicious/noDoubleEquals: <explanation>
+              strict ? item?.[key] === v?.[key] : item?.[key] == v?.[key],
+            ),
+          )) ||
+        // 如果是过滤函数，则通过过滤函数返回值判断是否相同
+        (isFunction(filter) && prev?.some?.((item) => filter(v, item)))
 
       return exist ? prev : [...prev, v]
     },
