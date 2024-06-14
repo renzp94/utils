@@ -28,7 +28,7 @@
     {
       "type": "style",
       "section": "代码格式",
-      "hidden": false
+      "hidden": true
     },
     {
       "type": "refactor",
@@ -53,7 +53,17 @@
     {
       "type": "ci",
       "section": "CI配置",
-      "hidden": false
+      "hidden": true
+    },
+    {
+      "type": "jsr",
+      "section": "jsr",
+      "hidden": true
+    },
+    {
+      "type": "coverage",
+      "section": "coverage",
+      "hidden": true
     }
   ]
 }
