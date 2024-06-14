@@ -1,0 +1,103 @@
+# xor
+
+数组取交集。
+
+## 基本用法
+
+传入多个数组，返回含有交集数据的数组。
+
+```ts
+import { xor } from '@renzp/utils';
+
+xor([1, 1, 2, 3], [4, 3]); // [3]
+xor([1, false, 2], [false, 4, 1])); // [1, false]
+xor([1, '1', 2, 3], [4, 3, '1'])); // ['1', 3]
+```
+
+## 对象数组
+
+当数组元素为对象时，默认是直接对别对象的，如果想根据对象的属性来判断的话，可在最后一个参数传入配置项`options.filter`。
+
+```ts
+import { xor } from '@renzp/utils';
+
+xor(
+  [
+    { a: 1, b: 1 },
+    { a: 2, b: 1 },
+    { a: 3, b: 1 },
+  ],
+  [
+    { a: 1, b: 1 },
+    { a: 2, b: 2 },
+    { a: 3, b: 3 },
+    { a: 3, b: 2 },
+  ],
+  { filter: 'a' },
+); // [{ a: 1, b: 1 }, { a: 2, b: 1 }, { a: 3, b: 1 }]
+```
+
+## 自定义函数
+
+如果当指定对象key进行对比无法满足需求时，可以传给`options.filter`一个函数，函数返回一个`boolean`。
+
+```ts
+import { xor } from '@renzp/utils';
+
+xor(
+  [
+    { a: 1, b: 1 },
+    { a: 2, b: 1 },
+    { a: 3, b: 1 },
+    { a: 1, b: 1 },
+    { a: 2, b: 1 },
+    { a: 3, b: 2 },
+  ],
+  [
+    { a: 1, b: 1 },
+    { a: 2, b: 1 },
+    { a: 3, b: 1 },
+    { a: 1, b: 2 },
+    { a: 2, b: 3 },
+  ],
+  { filter: (target, v) => target.a === v.a && target.b === v.b },
+); // [{ a: 1, b: 1 }, { a: 2, b: 1 }, { a: 3, b: 1 }]
+```
+
+## 非严格模式
+
+默认是严格对比的，即：使用`===`。如果需要非严格模式对比，则设置`options.strict=false`即可。
+
+> 注意：`options?.filter`为函数时`options.strict`无效。
+
+## 参数
+
+| 参数    | 说明     | 类型            | 默认值 | 是否必填 |
+| ------- | -------- | --------------- | ------ | -------- |
+| ...args | 目标数组 | `[...Array<T>]` | -      | 否       |
+| options | 配置     | `XorOptions<T>` | -      | 否       |
+
+```ts
+export type XorOptions<T> = {
+  filter?: UniqueFilter<T>
+  strict?: boolean
+}
+
+export type UniqueFilter<T> =
+  | keyof T
+  | Array<keyof T>
+  | ((target: T, v: T) => boolean)
+```
+
+### options
+
+| 参数   | 说明                                 | 类型              | 默认值 | 是否必填 |
+| ------ | ------------------------------------ | ----------------- | ------ | -------- |
+| filter | 过滤器                               | `UniqueFilter<T>` | -      | 否       |
+| strict | 是否为严格模式(`filter`为函数时无效) | `boolean`         | `true` | 否       |
+
+## 返回
+
+| 参数 | 说明               | 类型       |
+| ---- | ------------------ | ---------- |
+| list | 含有交集数据的数组 | `Array<T>` |
