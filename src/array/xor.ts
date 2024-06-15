@@ -1,6 +1,7 @@
 import { isArray, isDef, isFunction, isObject, isString, isUnDef } from '../is'
 import { deepClone } from '../other'
 import { last } from './last'
+import { remove } from './remove'
 import { type UniqueOptions, unique } from './unique'
 
 type XorOptions<T> = UniqueOptions<T>
@@ -36,12 +37,10 @@ export const xor = <T>(
   ...args: [...Array<Array<T>>] | [...Array<Array<T>>, XorOptions<T>]
 ): [...Array<T>] => {
   let _args = args as [...Array<Array<T>>]
-  let options: XorOptions<T> | undefined = last(
-    args as [...Array<T>, XorOptions<T>],
-  ) as XorOptions<T>
+  let options: XorOptions<T> | undefined = last(args) as XorOptions<T>
 
   if (isObject(options) && (isDef(options?.filter) || isDef(options?.strict))) {
-    _args = _args.slice(0, _args.length - 1)
+    ;[_args] = remove(_args, -1)
   } else {
     options = undefined
   }
