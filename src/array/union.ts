@@ -2,6 +2,7 @@ import { isArray, isDef, isFunction, isObject, isString, isUnDef } from '../is'
 import { deepClone } from '../other'
 import { flatten } from './flatten'
 import { last } from './last'
+import { remove } from './remove'
 import { type UniqueOptions, unique } from './unique'
 
 type UnionOptions<T> = UniqueOptions<T>
@@ -38,12 +39,10 @@ export const union = <T>(
   ...args: [...Array<Array<T>>] | [...Array<Array<T>>, UnionOptions<T>]
 ): [...Array<T>] => {
   let _args = args as [...Array<Array<T>>]
-  let options: UnionOptions<T> | undefined = last(
-    args as [...Array<T>, UnionOptions<T>],
-  ) as UnionOptions<T>
+  let options: UnionOptions<T> | undefined = last(args) as UnionOptions<T>
 
   if (isObject(options) && (isDef(options?.filter) || isDef(options?.strict))) {
-    _args = _args.slice(0, _args.length - 1)
+    ;[_args] = remove(_args, -1)
   } else {
     options = undefined
   }
