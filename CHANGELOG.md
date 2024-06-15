@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/renzp94/utils/compare/v0.1.0...v0.1.1) (2024-06-15)
+
+
+### 新功能
+
+* **array:** 添加remove(数组删除)方法 ([30ce681](https://github.com/renzp94/utils/commit/30ce68188200a9c2a219f9bda26aed7956ec214e))
+* **array:** 添加union(数组取并集)方法 ([ab62f22](https://github.com/renzp94/utils/commit/ab62f2252963da8906b302d93429a415c19ac416))
+
+
+### 文档
+
+* 添加特别说明 ([bb9e5a2](https://github.com/renzp94/utils/commit/bb9e5a2ae7000fcafd8b883d0d2a19114669cf0e))
+* **array:** 添加remove文档 ([93757c6](https://github.com/renzp94/utils/commit/93757c6f4d6e8a6ef7fe0ab3d502daa27b975e2d))
+* **array:** 添加union文档 ([fe61f50](https://github.com/renzp94/utils/commit/fe61f502813016aae9b24f684a2e4bfcaf6737ba))
+* **array:** 修正xor文档错别字 ([5566de8](https://github.com/renzp94/utils/commit/5566de8d61b3be60ad20a6c47fa87c20da00297c))
+
+
+### 其他
+
+* **array(union):** 优化代码中数组移除代码 ([1cc4690](https://github.com/renzp94/utils/commit/1cc4690feb24985f7861226138ce90d6487bb0c6))
+* **array(xor):** 优化代码中数组移除代码 ([e96bcb7](https://github.com/renzp94/utils/commit/e96bcb778ed2faa6ddcd5c7e99e2b2e0a3f5aa88))
+
 ## [0.1.0](https://github.com/renzp94/utils/compare/v0.0.23...v0.1.0) (2024-06-14)
 
 
