@@ -20,3 +20,5 @@
 </p>
 
 `@renzp/utils`是一款零依赖、强类型、实用、ESM优先的Javascript/Typescript工具库。
+
+> 💡 特别说明：`此库所有函数没有特殊说明的，默认不修改传入数据。`
