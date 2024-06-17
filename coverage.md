@@ -10,6 +10,7 @@ All files                         |  100.00 |  100.00 |
  src/array/first.ts               |  100.00 |  100.00 | 
  src/array/flatten.ts             |  100.00 |  100.00 | 
  src/array/index.ts               |  100.00 |  100.00 | 
+ src/array/intersection.ts        |  100.00 |  100.00 | 
  src/array/last.ts                |  100.00 |  100.00 | 
  src/array/objectify.ts           |  100.00 |  100.00 | 
  src/array/remove.ts              |  100.00 |  100.00 | 
