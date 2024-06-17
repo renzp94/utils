@@ -146,3 +146,8 @@ export const _debounceCommon = <T extends (...args: any) => any>(
 
   return _debounce as _DebounceCommonFn<T>
 }
+
+export type Filter<T> =
+  | keyof T
+  | Array<keyof T>
+  | ((target: T, v: T) => boolean)
