@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/renzp94/utils/compare/v0.1.1...v0.1.2) (2024-06-17)
+
+
+### Bug修复
+
+* **array(difference):** 修复difference使用filter命中逻辑错误的问题 ([85ea9ad](https://github.com/renzp94/utils/commit/85ea9ad039745b9d25cb1d9f0477ca02f0781589))
+
+
+### 新功能
+
+* **array:** 将xor重命名为intersection ([368a3c6](https://github.com/renzp94/utils/commit/368a3c60442e3d127d7ec537c365420f310e0af8))
+* **array:** 添加xor(数组取补集)方法 ([f301eb4](https://github.com/renzp94/utils/commit/f301eb4ed98ec5645686b4addbbe6b539344cf31))
+
+
+### 文档
+
+* 调整移动端网站中文适配 ([db6c3c4](https://github.com/renzp94/utils/commit/db6c3c4f08d3be148c054133c86c9b1976982c0d))
+* **array:** 添加xor文档 ([04d0075](https://github.com/renzp94/utils/commit/04d0075d0a5576571dc5ab9f5cb196f19e9f5e2f))
+
+
+### 其他
+
+* **array:** 替换difference和unique的filter类型定位为Filter ([76f9c43](https://github.com/renzp94/utils/commit/76f9c431852d0de9092cd25e6975602c8f05b273))
+
 ### [0.1.1](https://github.com/renzp94/utils/compare/v0.1.0...v0.1.1) (2024-06-15)
 
 
