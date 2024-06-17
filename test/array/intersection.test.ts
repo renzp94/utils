@@ -1,15 +1,15 @@
 import { expect, test } from 'bun:test'
-import { xor } from '../../src'
+import { intersection } from '../../src'
 
 test('基本数据类型合取交集', () => {
-  expect(xor([1, 1, 2, 3], [4, 3])).toEqual([3])
-  expect(xor([1, false, 2], [false, 4, 1])).toEqual([1, false])
-  expect(xor([1, '1', 2, 3], [4, 3, '1'])).toEqual(['1', 3])
+  expect(intersection([1, 1, 2, 3], [4, 3])).toEqual([3])
+  expect(intersection([1, false, 2], [false, 4, 1])).toEqual([1, false])
+  expect(intersection([1, '1', 2, 3], [4, 3, '1'])).toEqual(['1', 3])
 })
 
 test('对象数组单个属性对比取交集', () => {
   expect(
-    xor(
+    intersection(
       [
         { a: 1, b: 1 },
         { a: 2, b: 1 },
@@ -30,7 +30,7 @@ test('对象数组单个属性对比取交集', () => {
   ])
 
   expect(
-    xor(
+    intersection(
       [
         { a: 0, b: 1 },
         { a: 0, b: 1 },
@@ -52,7 +52,7 @@ test('对象数组单个属性对比取交集', () => {
 
 test('对象数组多个属性对比取交集', () => {
   expect(
-    xor(
+    intersection(
       [
         { a: 1, b: 1 },
         { a: 2, b: 1 },
@@ -79,7 +79,7 @@ test('对象数组多个属性对比取交集', () => {
 
 test('对象数组使用filter函数对别取交集', () => {
   expect(
-    xor(
+    intersection(
       [
         { a: 1, b: 1 },
         { a: 2, b: 1 },
@@ -104,7 +104,7 @@ test('对象数组使用filter函数对别取交集', () => {
   ])
 
   expect(
-    xor(
+    intersection(
       [
         { a: 1, b: 1, c: 1 },
         { a: 2, b: 1 },
@@ -126,20 +126,22 @@ test('对象数组使用filter函数对别取交集', () => {
 })
 
 test('不是数组取交集', () => {
-  expect(xor({ length: 1 } as any)).toEqual([])
+  expect(intersection({ length: 1 } as any)).toEqual([])
 })
 
 test('不传任何参数取交集', () => {
-  expect(xor()).toEqual([])
+  expect(intersection()).toEqual([])
 })
 
 test('基本数据类型非严格对比取交集', () => {
-  expect(xor([1, '1', 2, 3], [4, 3, '1'], { strict: false })).toEqual([1, 3])
+  expect(intersection([1, '1', 2, 3], [4, 3, '1'], { strict: false })).toEqual([
+    1, 3,
+  ])
 })
 
 test('对象数组非严格单个属性对比取交集', () => {
   expect(
-    xor(
+    intersection(
       [
         { a: '1', b: 1 },
         { a: 2, b: 1 },
@@ -161,7 +163,7 @@ test('对象数组非严格单个属性对比取交集', () => {
 
 test('对象数组非严格多个属性对比取交集', () => {
   expect(
-    xor(
+    intersection(
       [
         { a: '1', b: 1 },
         { a: 2, b: '1' },

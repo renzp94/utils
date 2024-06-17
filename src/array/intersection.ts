@@ -4,7 +4,7 @@ import { last } from './last'
 import { remove } from './remove'
 import { type UniqueOptions, unique } from './unique'
 
-type XorOptions<T> = UniqueOptions<T>
+type IntersectionOptions<T> = UniqueOptions<T>
 
 /**
  * 数组取交集
@@ -14,11 +14,11 @@ type XorOptions<T> = UniqueOptions<T>
  * @returns 返回一个只有交集部分的数组
  *
  * @example
- * xor([1, 1, 2, 3], [4, 3]); // [3]
- * xor([1, false, 2], [false, 4, 1])); // [1, false]
- * xor([1, '1', 2, 3], [4, 3, '1'])); // ['1', 3]
- * xor([1, '1', 2, 3], [4, 3, '1'], { strict: false }); // [1, 3]
- * xor(
+ * intersection([1, 1, 2, 3], [4, 3]); // [3]
+ * intersection([1, false, 2], [false, 4, 1])); // [1, false]
+ * intersection([1, '1', 2, 3], [4, 3, '1'])); // ['1', 3]
+ * intersection([1, '1', 2, 3], [4, 3, '1'], { strict: false }); // [1, 3]
+ * intersection(
  *   [
  *     { a: 1, b: 1 },
  *     { a: 2, b: 1 },
@@ -33,11 +33,13 @@ type XorOptions<T> = UniqueOptions<T>
  *   { filter: 'a' },
  * ); // [{ a: 1, b: 1 }, { a: 2, b: 1 }, { a: 3, b: 1 }]
  */
-export const xor = <T>(
-  ...args: [...Array<Array<T>>] | [...Array<Array<T>>, XorOptions<T>]
+export const intersection = <T>(
+  ...args: [...Array<Array<T>>] | [...Array<Array<T>>, IntersectionOptions<T>]
 ): [...Array<T>] => {
   let _args = args as [...Array<Array<T>>]
-  let options: XorOptions<T> | undefined = last(args) as XorOptions<T>
+  let options: IntersectionOptions<T> | undefined = last(
+    args,
+  ) as IntersectionOptions<T>
 
   if (isObject(options) && (isDef(options?.filter) || isDef(options?.strict))) {
     ;[_args] = remove(_args, -1)

@@ -1,4 +1,4 @@
-# xor
+# intersection
 
 数组取交集。
 
@@ -7,11 +7,11 @@
 传入多个数组，返回含有交集数据的数组。
 
 ```ts
-import { xor } from '@renzp/utils';
+import { intersection } from '@renzp/utils';
 
-xor([1, 1, 2, 3], [4, 3]); // [3]
-xor([1, false, 2], [false, 4, 1])); // [1, false]
-xor([1, '1', 2, 3], [4, 3, '1'])); // ['1', 3]
+intersection([1, 1, 2, 3], [4, 3]); // [3]
+intersection([1, false, 2], [false, 4, 1])); // [1, false]
+intersection([1, '1', 2, 3], [4, 3, '1'])); // ['1', 3]
 ```
 
 ## 对象数组
@@ -19,9 +19,9 @@ xor([1, '1', 2, 3], [4, 3, '1'])); // ['1', 3]
 当数组元素为对象时，默认是直接对比对象的，如果想根据对象的属性来判断的话，可在最后一个参数传入配置项`options.filter`。
 
 ```ts
-import { xor } from '@renzp/utils';
+import { intersection } from '@renzp/utils';
 
-xor(
+intersection(
   [
     { a: 1, b: 1 },
     { a: 2, b: 1 },
@@ -42,9 +42,9 @@ xor(
 如果当指定对象key进行对比无法满足需求时，可以传给`options.filter`一个函数，函数返回一个`boolean`。
 
 ```ts
-import { xor } from '@renzp/utils';
+import { intersection } from '@renzp/utils';
 
-xor(
+intersection(
   [
     { a: 1, b: 1 },
     { a: 2, b: 1 },
@@ -72,13 +72,13 @@ xor(
 
 ## 参数
 
-| 参数    | 说明     | 类型            | 默认值 | 是否必填 |
-| ------- | -------- | --------------- | ------ | -------- |
-| ...args | 目标数组 | `[...Array<T>]` | -      | 否       |
-| options | 配置     | `XorOptions<T>` | -      | 否       |
+| 参数    | 说明     | 类型                     | 默认值 | 是否必填 |
+| ------- | -------- | ------------------------ | ------ | -------- |
+| ...args | 目标数组 | `[...Array<T>]`          | -      | 否       |
+| options | 配置     | `IntersectionOptions<T>` | -      | 否       |
 
 ```ts
-export type XorOptions<T> = {
+export type IntersectionOptions<T> = {
   filter?: UniqueFilter<T>
   strict?: boolean
 }
