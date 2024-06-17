@@ -19,6 +19,9 @@ export default async () => {
         src: '/logo.png',
         style: 'border-radius: 50%;height: 32px;width: 32px;',
       },
+      darkModeSwitchLabel: '主题',
+      darkModeSwitchTitle: '切换到深色模式',
+      lightModeSwitchTitle: '切换到浅色模式',
       siteTitle: 'Utils',
       search: {
         provider: 'local',
@@ -53,6 +56,8 @@ export default async () => {
       socialLinks: [
         { icon: 'github', link: 'https://github.com/renzp94/utils' },
       ],
+      sidebarMenuLabel: '菜单',
+      returnToTopLabel: '回到顶部',
       sidebar,
       editLink: {
         pattern: 'https://github.com/renzp94/utils/edit/main/docs/:path',
