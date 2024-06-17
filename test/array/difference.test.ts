@@ -101,7 +101,7 @@ test('用函数过滤对象数组', () => {
       [1, 2],
       (target: any, v: any) => target?.a < v?.a,
     ),
-  ).toEqual([])
+  ).toEqual([1, { a: 1, b: 1 }])
 
   expect(
     difference(
@@ -109,7 +109,30 @@ test('用函数过滤对象数组', () => {
       [{ a: 3, b: 1 }, 2],
       (target: any, v: any) => target?.a < v?.a,
     ),
-  ).toEqual([{ a: 1, b: 1 }])
+  ).toEqual([1])
+
+  expect(
+    difference(
+      [
+        { a: 1, b: 1 },
+        { a: 2, b: 1 },
+        { a: 3, b: 1 },
+        { a: 1, b: 1 },
+        { a: 2, b: 1 },
+        { a: 3, b: 2 },
+      ],
+      [
+        { a: 1, b: 1 },
+        { a: 2, b: 1 },
+        { a: 3, b: 1 },
+        { a: 1, b: 2 },
+        { a: 2, b: 3 },
+      ],
+      (target, v) => {
+        return target.a === v.a && target.b === v.b
+      },
+    ),
+  ).toEqual([{ a: 3, b: 2 }])
 
   const list: any = [
     { a: 0, b: 0 },
@@ -125,7 +148,10 @@ test('用函数过滤对象数组', () => {
       v.key = 'key'
       return target.a < v.a
     }),
-  ).toEqual([{ a: 0, b: 0 }])
+  ).toEqual([
+    { a: 1, b: 1 },
+    { a: 2, b: 2 },
+  ])
 
   // 判断是否更改了原属数据
   expect(list).toEqual([

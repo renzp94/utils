@@ -63,7 +63,7 @@ export const difference = <T>(
   // 如果是过滤函数则调用函数
   if (isFunction(filter)) {
     filterFn = (target: T) => {
-      return values.some((v: T) => {
+      return !values.some((v: T) => {
         // 调用前处理一下，避免过滤函数修改原数据
         const _target = isPrimitive(target) ? target : deepClone(target)
         const _v = isPrimitive(v) ? v : deepClone(v)
