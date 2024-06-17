@@ -1,13 +1,9 @@
+import type { Filter } from '../_base'
 import { isArray, isFunction, isString, isUnDef } from '../is'
 import { deepClone } from '../other'
 
-export type UniqueFilter<T> =
-  | keyof T
-  | Array<keyof T>
-  | ((target: T, v: T) => boolean)
-
 export type UniqueOptions<T> = {
-  filter?: UniqueFilter<T>
+  filter?: Filter<T>
   strict?: boolean
 }
 /**

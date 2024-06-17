@@ -1,10 +1,7 @@
+import type { Filter } from '../_base'
 import { isArray, isFunction, isPrimitive, isString, isUnDef } from '../is'
 import { deepClone } from '../other'
 
-export type DifferenceFilter<T> =
-  | keyof T
-  | Array<keyof T>
-  | ((target: T, v: T) => boolean)
 /**
  * 过滤数组
  * @param list 目标数组
@@ -29,7 +26,7 @@ export type DifferenceFilter<T> =
 export const difference = <T>(
   list: Array<T>,
   values: Array<T>,
-  filter?: DifferenceFilter<T>,
+  filter?: Filter<T>,
 ): Array<T> => {
   // 如果目标数组不是数组，则返回空
   if (!isArray(list)) {
