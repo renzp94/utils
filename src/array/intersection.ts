@@ -1,10 +1,9 @@
+import type { FilterOptions } from '../_base'
 import { isArray, isDef, isFunction, isObject, isString, isUnDef } from '../is'
-import { deepClone } from '../other'
+import { deepClone, equal } from '../other'
 import { last } from './last'
 import { remove } from './remove'
-import { type UniqueOptions, unique } from './unique'
-
-type IntersectionOptions<T> = UniqueOptions<T>
+import { unique } from './unique'
 
 /**
  * 数组取交集
@@ -17,7 +16,6 @@ type IntersectionOptions<T> = UniqueOptions<T>
  * intersection([1, 1, 2, 3], [4, 3]); // [3]
  * intersection([1, false, 2], [false, 4, 1])); // [1, false]
  * intersection([1, '1', 2, 3], [4, 3, '1'])); // ['1', 3]
- * intersection([1, '1', 2, 3], [4, 3, '1'], { strict: false }); // [1, 3]
  * intersection(
  *   [
  *     { a: 1, b: 1 },
@@ -34,14 +32,12 @@ type IntersectionOptions<T> = UniqueOptions<T>
  * ); // [{ a: 1, b: 1 }, { a: 2, b: 1 }, { a: 3, b: 1 }]
  */
 export const intersection = <T>(
-  ...args: [...Array<Array<T>>] | [...Array<Array<T>>, IntersectionOptions<T>]
+  ...args: [...Array<Array<T>>] | [...Array<Array<T>>, FilterOptions<T>]
 ): [...Array<T>] => {
   let _args = args as [...Array<Array<T>>]
-  let options: IntersectionOptions<T> | undefined = last(
-    args,
-  ) as IntersectionOptions<T>
+  let options: FilterOptions<T> | undefined = last(args) as FilterOptions<T>
 
-  if (isObject(options) && (isDef(options?.filter) || isDef(options?.strict))) {
+  if (isObject(options) && isDef(options?.filter)) {
     ;[_args] = remove(_args, -1)
   } else {
     options = undefined
@@ -52,7 +48,7 @@ export const intersection = <T>(
     return []
   }
 
-  const { filter, strict = true } = options ?? {}
+  const { filter } = options ?? {}
 
   return deepClone(_args).reduce((prev, currList, i) => {
     if (i === 0) {
@@ -63,25 +59,13 @@ export const intersection = <T>(
       for (const currValue of currList) {
         const isAdd =
           // 如果无过滤器则直接值比对
-          (isUnDef(filter) &&
-            (strict
-              ? prevValue === currValue
-              : // biome-ignore lint/suspicious/noDoubleEquals: <explanation>
-                prevValue == currValue)) ||
+          (isUnDef(filter) && equal(prevValue, currValue)) ||
           // 如果有过滤key，则认为数组是对象数组，通过key比较对象属性值是否相同
           (isString(filter) &&
-            (strict
-              ? prevValue?.[filter] === currValue?.[filter]
-              : // biome-ignore lint/suspicious/noDoubleEquals: <explanation>
-                prevValue?.[filter] == currValue?.[filter])) ||
+            equal(prevValue?.[filter], currValue?.[filter])) ||
           // 如果有过滤key且为数组，则认为数组是对象数组，通过多个key比较对象属性值是否相同
           (isArray(filter) &&
-            filter.every((key) =>
-              strict
-                ? prevValue?.[key] === currValue?.[key]
-                : // biome-ignore lint/suspicious/noDoubleEquals: <explanation>
-                  prevValue?.[key] == currValue?.[key],
-            )) ||
+            filter.every((key) => equal(prevValue?.[key], currValue?.[key]))) ||
           // 如果是过滤函数，则通过过滤函数返回值判断是否相同
           (isFunction(filter) && filter(prevValue, currValue))
 
@@ -91,7 +75,7 @@ export const intersection = <T>(
         }
       }
 
-      return unique(_prev, { filter, strict: false })
+      return unique(_prev, { filter })
     }, [] as T[])
 
     return list
