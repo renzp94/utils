@@ -1,11 +1,9 @@
-import { isArray, isDef, isFunction, isObject, isString, isUnDef } from '../is'
-import { deepClone } from '../other'
+import type { FilterOptions } from '../_base'
+import { isArray, isDef, isObject } from '../is'
 import { flatten } from './flatten'
 import { last } from './last'
 import { remove } from './remove'
-import { type UniqueOptions, unique } from './unique'
-
-type UnionOptions<T> = UniqueOptions<T>
+import { unique } from './unique'
 
 /**
  * 数组取并集
@@ -18,7 +16,6 @@ type UnionOptions<T> = UniqueOptions<T>
  * union([1, 1, 2, 3], [4, 3]); // [1, 2, 3, 4]
  * union([1, false, 2], [false, 4, 1])); // [1, false, 2, 4]
  * union([1, '1', 2, 3], [4, 3, '1'])); // [1, '1', 2, 3, 4]
- * union([1, '1', 2, 3], [4, 3, '1'], { strict: false }); // [1, 2, 3, 4]
  * union(
  *   [
  *     { a: 1, b: 1 },
@@ -36,12 +33,12 @@ type UnionOptions<T> = UniqueOptions<T>
  * ); // [{ a: 1, b: 1 }, { a: 2, b: 1 }, { a: 3, b: 1 }, { a: 4, b: 2 }]
  */
 export const union = <T>(
-  ...args: [...Array<Array<T>>] | [...Array<Array<T>>, UnionOptions<T>]
+  ...args: [...Array<Array<T>>] | [...Array<Array<T>>, FilterOptions<T>]
 ): [...Array<T>] => {
   let _args = args as [...Array<Array<T>>]
-  let options: UnionOptions<T> | undefined = last(args) as UnionOptions<T>
+  let options: FilterOptions<T> | undefined = last(args) as FilterOptions<T>
 
-  if (isObject(options) && (isDef(options?.filter) || isDef(options?.strict))) {
+  if (isObject(options) && isDef(options?.filter)) {
     ;[_args] = remove(_args, -1)
   } else {
     options = undefined
