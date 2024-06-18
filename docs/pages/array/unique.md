@@ -4,7 +4,7 @@
 
 ## 基本用法
 
-传入一个数组，返回去重后的数组。如果是对象数组，可以使用第二个参数指定对象的key，也可传入函数进行自定义对比。
+传入一个数组，使用[SameValueZero](https://262.ecma-international.org/6.0/#sec-samevaluezero)进行比较，返回去重后的数组。如果是对象数组，可以使用第二个参数指定对象的key，也可传入函数进行自定义对比。
 
 ```ts
 import { unique } from '@renzp/utils'
@@ -35,26 +35,20 @@ unique(
 | 参数    | 说明         | 类型               | 默认值 | 是否必填 |
 | ------- | ------------ | ------------------ | ------ | -------- |
 | list    | 要去重的数组 | `Array<T>`         | -      | 是       |
-| options | 配置         | `UniqueOptions<T>` | -      | 否       |
+| options | 配置         | `FilterOptions<T>` | -      | 否       |
+
+### options
+
+| 参数   | 说明          | 类型        | 默认值 | 是否必填 |
+| ------ | ------------- | ----------- | ------ | -------- |
+| filter | 过滤key或函数 | `Filter<T>` | -      | 否       |
 
 ```ts
-export type UniqueOptions<T> = {
-  filter?: UniqueFilter<T>
-  strict?: boolean
-}
-
-export type UniqueFilter<T> =
+export type Filter<T> =
   | keyof T
   | Array<keyof T>
   | ((target: T, v: T) => boolean)
 ```
-
-### options
-
-| 参数   | 说明                                 | 类型              | 默认值 | 是否必填 |
-| ------ | ------------------------------------ | ----------------- | ------ | -------- |
-| filter | 过滤器                               | `UniqueFilter<T>` | -      | 否       |
-| strict | 是否为严格模式(`filter`为函数时无效) | `boolean`         | `true` | 否       |
 
 ## 返回
 
