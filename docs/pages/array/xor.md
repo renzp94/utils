@@ -4,7 +4,7 @@
 
 ## 基本用法
 
-传入多个数组，返回含有补集数据的数组。
+传入多个数组，使用[SameValueZero](https://262.ecma-international.org/6.0/#sec-samevaluezero)进行比较，返回含有补集数据的数组。
 
 ```ts
 import { xor } from '@renzp/utils';
@@ -71,27 +71,23 @@ xor(
 
 ## 参数
 
-| 参数    | 说明     | 类型            | 默认值 | 是否必填 |
-| ------- | -------- | --------------- | ------ | -------- |
-| ...args | 目标数组 | `[...Array<T>]` | -      | 否       |
-| options | 配置     | `XorOptions<T>` | -      | 否       |
+| 参数    | 说明     | 类型               | 默认值 | 是否必填 |
+| ------- | -------- | ------------------ | ------ | -------- |
+| ...args | 目标数组 | `[...Array<T>]`    | -      | 否       |
+| options | 配置     | `FilterOptions<T>` | -      | 否       |
+
+### options
+
+| 参数   | 说明          | 类型        | 默认值 | 是否必填 |
+| ------ | ------------- | ----------- | ------ | -------- |
+| filter | 过滤key或函数 | `Filter<T>` | -      | 否       |
 
 ```ts
-export type XorOptions<T> = {
-  filter?: Filter<T>
-}
-
 export type Filter<T> =
   | keyof T
   | Array<keyof T>
   | ((target: T, v: T) => boolean)
 ```
-
-### options
-
-| 参数   | 说明   | 类型        | 默认值 | 是否必填 |
-| ------ | ------ | ----------- | ------ | -------- |
-| filter | 过滤器 | `Filter<T>` | -      | 否       |
 
 ## 返回
 
