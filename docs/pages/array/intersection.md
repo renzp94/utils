@@ -4,7 +4,7 @@
 
 ## 基本用法
 
-传入多个数组，返回含有交集数据的数组。
+传入多个数组，使用[SameValueZero](https://262.ecma-international.org/6.0/#sec-samevaluezero)进行比较，返回含有交集数据的数组。
 
 ```ts
 import { intersection } from '@renzp/utils';
@@ -64,38 +64,25 @@ intersection(
 ); // [{ a: 1, b: 1 }, { a: 2, b: 1 }, { a: 3, b: 1 }]
 ```
 
-## 非严格模式
-
-默认是严格对比的，即：使用`===`。如果需要非严格模式对比，则设置`options.strict=false`即可。
-
-> 注意：`options?.filter`为函数时`options.strict`无效。
-
 ## 参数
 
-| 参数    | 说明     | 类型                     | 默认值 | 是否必填 |
-| ------- | -------- | ------------------------ | ------ | -------- |
-| ...args | 目标数组 | `[...Array<T>]`          | -      | 否       |
-| options | 配置     | `IntersectionOptions<T>` | -      | 否       |
+| 参数    | 说明     | 类型               | 默认值 | 是否必填 |
+| ------- | -------- | ------------------ | ------ | -------- |
+| ...args | 目标数组 | `[...Array<T>]`    | -      | 否       |
+| options | 配置     | `FilterOptions<T>` | -      | 否       |
+
+### options
+
+| 参数   | 说明          | 类型        | 默认值 | 是否必填 |
+| ------ | ------------- | ----------- | ------ | -------- |
+| filter | 过滤key或函数 | `Filter<T>` | -      | 否       |
 
 ```ts
-export type IntersectionOptions<T> = {
-  filter?: UniqueFilter<T>
-  strict?: boolean
-}
-
-export type UniqueFilter<T> =
+export type Filter<T> =
   | keyof T
   | Array<keyof T>
   | ((target: T, v: T) => boolean)
 ```
-
-### options
-
-| 参数   | 说明                                 | 类型              | 默认值 | 是否必填 |
-| ------ | ------------------------------------ | ----------------- | ------ | -------- |
-| filter | 过滤器                               | `UniqueFilter<T>` | -      | 否       |
-| strict | 是否为严格模式(`filter`为函数时无效) | `boolean`         | `true` | 否       |
-
 ## 返回
 
 | 参数 | 说明               | 类型       |
