@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/renzp94/utils/compare/v0.2.0...v0.2.1) (2024-06-18)
+
+
+### 新功能
+
+* **array:** 添加sort(数组排序)方法 ([3984609](https://github.com/renzp94/utils/commit/398460907549fa6f743e203919c8ca0a9cd25830))
+
+
+### 文档
+
+* **array:** 添加sort文档 ([fc4159e](https://github.com/renzp94/utils/commit/fc4159e3a12782fc2fd801a2761bd843dc3f156f))
+
 ## [0.2.0](https://github.com/renzp94/utils/compare/v0.1.2...v0.2.0) (2024-06-18)
 
 
