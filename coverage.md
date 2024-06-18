@@ -14,6 +14,7 @@ All files                         |  100.00 |  100.00 |
  src/array/last.ts                |  100.00 |  100.00 | 
  src/array/objectify.ts           |  100.00 |  100.00 | 
  src/array/remove.ts              |  100.00 |  100.00 | 
+ src/array/sort.ts                |  100.00 |  100.00 | 
  src/array/union.ts               |  100.00 |  100.00 | 
  src/array/unique.ts              |  100.00 |  100.00 | 
  src/array/xor.ts                 |  100.00 |  100.00 | 
