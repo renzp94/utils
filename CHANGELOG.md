@@ -2,6 +2,43 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/renzp94/utils/compare/v0.1.2...v0.2.0) (2024-06-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* **array(union):** `array(union)`: 移除union的strict模式使用SameValueZero比较
+* **array(intersection):** `array(intersection)`: 移除intersection的strict模式使用SameValueZero比较
+* **array(unique):** `array(unique)`: 移除unique的strict模式使用SameValueZero比较
+* **array(difference):** `array(difference)`第二个参数`filter`改为`options.filter`
+
+### 新功能
+
+* **other:** 添加equal(是否相等)方法 ([fcf1f58](https://github.com/renzp94/utils/commit/fcf1f5873f09d4432adde2b37252ae471ab9ba3b))
+
+
+### 代码重构
+
+* **array(difference):** 调整difference使用SameValueZero进行比较并且调整filter传参方式 ([2c0de38](https://github.com/renzp94/utils/commit/2c0de38969b133ca773c24b6b19349aea31e46d5))
+* **array(intersection):** 移除intersection的strict模式使用SameValueZero比较 ([38531c2](https://github.com/renzp94/utils/commit/38531c2af4a9779e2c75bd289612efbacfd86f91))
+* **array(union):** 移除union的strict模式使用SameValueZero比较 ([a794dbc](https://github.com/renzp94/utils/commit/a794dbc21202c95a74293bab25dbaf23c4ab8574))
+* **array(unique):** 移除unique的strict模式使用SameValueZero比较 ([62defe6](https://github.com/renzp94/utils/commit/62defe6966bb81d013402c17942fa1b05097a4cc))
+
+
+### 其他
+
+* **array(xor):** 使用公共的FilterOptions类型 ([56e904d](https://github.com/renzp94/utils/commit/56e904dced3f5d06e8ea46c4d860d644a07a16c0))
+
+
+### 文档
+
+* **array(difference):** 调整difference文档 ([2d8a17c](https://github.com/renzp94/utils/commit/2d8a17cef58351e8990877683079a18b7d505a1a))
+* **array(intersection):** 调整intersection文档 ([d032e0c](https://github.com/renzp94/utils/commit/d032e0c4ff79a690bd837bfce47d2941904643e2))
+* **array(union):** 调整union文档 ([c7ed06d](https://github.com/renzp94/utils/commit/c7ed06d774bb0cf0bcfafa84563d40c02d262546))
+* **array(unique):** 调整unique文档 ([bf01ca2](https://github.com/renzp94/utils/commit/bf01ca218893d4a8beac658e057cd9640f312d14))
+* **array(xor):** 调整xor文档 ([1e4029c](https://github.com/renzp94/utils/commit/1e4029c008fe9ff73dfb479be92c196ef13f995a))
+* **other:** 添加equal文档 ([f9aa457](https://github.com/renzp94/utils/commit/f9aa457f634e881a2a44d08b3526f4741391cf2e))
+
 ### [0.1.2](https://github.com/renzp94/utils/compare/v0.1.1...v0.1.2) (2024-06-17)
 
 
