@@ -1,13 +1,9 @@
-import type { Filter } from '../_base'
+import type { FilterOptions } from '../_base'
 import { isArray, isDef, isObject } from '../is'
 import { deepClone } from '../other'
 import { difference } from './difference'
 import { last } from './last'
 import { remove } from './remove'
-
-type XorOptions<T> = {
-  filter: Filter<T>
-}
 
 /**
  * 数组取补集
@@ -39,10 +35,10 @@ type XorOptions<T> = {
  * ); // [{ a: 1, b: 2 }, { a: 2, b: 3 }, { a: 3, b: 4 }, { a: 2, b: 5 }]
  */
 export const xor = <T>(
-  ...args: [...Array<Array<T>>] | [...Array<Array<T>>, XorOptions<T>]
+  ...args: [...Array<Array<T>>] | [...Array<Array<T>>, FilterOptions<T>]
 ): [...Array<T>] => {
   let _args = args as [...Array<Array<T>>]
-  let options: XorOptions<T> | undefined = last(args) as XorOptions<T>
+  let options: FilterOptions<T> | undefined = last(args) as FilterOptions<T>
 
   if (isObject(options) && isDef(options?.filter)) {
     ;[_args] = remove(_args, -1)
@@ -63,8 +59,8 @@ export const xor = <T>(
     }
 
     return [
-      ...difference(prev, currList, filter),
-      ...difference(currList, prev, filter),
+      ...difference(prev, currList, { filter }),
+      ...difference(currList, prev, { filter }),
     ]
   }, []) as [...Array<T>]
 
