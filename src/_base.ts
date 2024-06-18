@@ -151,3 +151,7 @@ export type Filter<T> =
   | keyof T
   | Array<keyof T>
   | ((target: T, v: T) => boolean)
+
+export type FilterOptions<T> = {
+  filter?: Filter<T>
+}

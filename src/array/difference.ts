@@ -1,12 +1,12 @@
-import type { Filter } from '../_base'
+import type { FilterOptions } from '../_base'
 import { isArray, isFunction, isPrimitive, isString, isUnDef } from '../is'
-import { deepClone } from '../other'
+import { deepClone, equal } from '../other'
 
 /**
  * 过滤数组
  * @param list 目标数组
  * @param values 比较数组
- * @param filter 过滤key或函数
+ * @param options 配置
  * @returns 返回过滤后的数组
  *
  * @example
@@ -15,18 +15,18 @@ import { deepClone } from '../other'
  * difference(
  *  [{ a: 1, b: 1 },{ a: 2, b: 2 }],
  *  [{ a: 1 }],
- *  'a',
+ *  { filter: 'a' },
  * ); // [{ a: 2, b: 2 }]
  * difference(
  *  [{ a: 0, b: 0 },{ a: 1, b: 1 },{ a: 2, b: 2 }],
  *  [{ a: 1 }],
- *  (target, v) => target.a < v.a,
+ *  { filter: (target, v) => target.a < v.a },
  * ); // [{ a: 1, b: 1 }, { a: 2, b: 2 }]
  */
 export const difference = <T>(
   list: Array<T>,
   values: Array<T>,
-  filter?: Filter<T>,
+  options?: FilterOptions<T>,
 ): Array<T> => {
   // 如果目标数组不是数组，则返回空
   if (!isArray(list)) {
@@ -36,14 +36,17 @@ export const difference = <T>(
   if (!isArray(values)) {
     return list
   }
+
+  const { filter } = options ?? {}
+
   // 如果没有过滤key或过滤函数则直接对比
-  let filterFn: any = (v: T) => !values.includes(v)
+  let filterFn: any = (v: T) => !values.some((item) => equal(item, v))
   // 如果是过滤key则对比key
   if (isString(filter)) {
     filterFn = (item: T) => {
       return (
         isUnDef(item?.[filter]) ||
-        !values.some((v) => item?.[filter] === v?.[filter])
+        !values.some((v) => equal(item?.[filter], v?.[filter]))
       )
     }
   }
@@ -53,7 +56,7 @@ export const difference = <T>(
       const hasKey = filter.findIndex((key) => item?.[key]) > -1
       return (
         !hasKey ||
-        !values.some((v) => filter.every((key) => item?.[key] === v?.[key]))
+        !values.some((v) => filter.every((key) => equal(item?.[key], v?.[key])))
       )
     }
   }
