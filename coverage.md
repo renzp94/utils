@@ -50,6 +50,7 @@ All files                         |  100.00 |  100.00 |
  src/object/pick.ts               |  100.00 |  100.00 | 
  src/other/debounce.ts            |  100.00 |  100.00 | 
  src/other/deepClone.ts           |  100.00 |  100.00 | 
+ src/other/equal.ts               |  100.00 |  100.00 | 
  src/other/index.ts               |  100.00 |  100.00 | 
  src/other/radom.ts               |  100.00 |  100.00 | 
  src/other/throttle.ts            |  100.00 |  100.00 | 
