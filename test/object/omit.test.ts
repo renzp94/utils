@@ -1,5 +1,5 @@
 import { expect, test } from 'bun:test'
-import { omit } from '../../src'
+import { isNumber, omit } from '../../src'
 
 test('移除对象属性', () => {
   const a = { a: 1, b: 2 }
@@ -10,4 +10,8 @@ test('移除对象属性', () => {
 
 test('传入的不是对象', () => {
   expect(omit([], 'a' as any)).toEqual([])
+})
+
+test('自定义函数移除对象属性', () => {
+  expect(omit({ a: 1, b: 2, c: '3' }, isNumber)).toEqual({ c: '3' })
 })
