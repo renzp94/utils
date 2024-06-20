@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/renzp94/utils/compare/v0.2.1...v0.2.2) (2024-06-20)
+
+
+### 其他
+
+* logo改成圆角 ([6189074](https://github.com/renzp94/utils/commit/61890745427144a2223dc6aab21b4c2286c8d423))
+
+
+### 新功能
+
+* **object:** 添加omit和pick支持自定义函数 ([60279ca](https://github.com/renzp94/utils/commit/60279caba625b4f3872192e0f95c9cf95ca9b756))
+
+
+### 文档
+
+* **object:** 调整omit和pick文档 ([809dd78](https://github.com/renzp94/utils/commit/809dd782bc55a9fea5834316b6911e424451336c))
+
 ### [0.2.1](https://github.com/renzp94/utils/compare/v0.2.0...v0.2.1) (2024-06-18)
 
 
