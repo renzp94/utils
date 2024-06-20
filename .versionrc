@@ -23,7 +23,7 @@
     {
       "type": "docs",
       "section": "文档",
-      "hidden": false
+      "hidden": true
     },
     {
       "type": "style",
@@ -43,7 +43,7 @@
     {
       "type": "test",
       "section": "测试",
-      "hidden": false
+      "hidden": true
     },
     {
       "type": "build",
