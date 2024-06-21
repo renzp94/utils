@@ -21,10 +21,13 @@ All files                         |  100.00 |  100.00 |
  src/index.ts                     |  100.00 |  100.00 | 
  src/is/index.ts                  |  100.00 |  100.00 | 
  src/is/isArray.ts                |  100.00 |  100.00 | 
+ src/is/isArrayBuffer.ts          |  100.00 |  100.00 | 
  src/is/isBigint.ts               |  100.00 |  100.00 | 
  src/is/isBoolean.ts              |  100.00 |  100.00 | 
  src/is/isDate.ts                 |  100.00 |  100.00 | 
  src/is/isDef.ts                  |  100.00 |  100.00 | 
+ src/is/isEmpty.ts                |  100.00 |  100.00 | 
+ src/is/isEqual.ts                |  100.00 |  100.00 | 
  src/is/isFalsy.ts                |  100.00 |  100.00 | 
  src/is/isFunction.ts             |  100.00 |  100.00 | 
  src/is/isJson.ts                 |  100.00 |  100.00 | 
@@ -51,7 +54,6 @@ All files                         |  100.00 |  100.00 |
  src/object/pick.ts               |  100.00 |  100.00 | 
  src/other/debounce.ts            |  100.00 |  100.00 | 
  src/other/deepClone.ts           |  100.00 |  100.00 | 
- src/other/equal.ts               |  100.00 |  100.00 | 
  src/other/index.ts               |  100.00 |  100.00 | 
  src/other/radom.ts               |  100.00 |  100.00 | 
  src/other/throttle.ts            |  100.00 |  100.00 | 
