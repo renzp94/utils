@@ -2,13 +2,13 @@ import { expect, test } from 'bun:test'
 import { isRefData } from '../../src'
 
 test('isRefData', () => {
-  expect(isRefData(new WeakSet())).toBe(true)
-  expect(isRefData(new WeakMap())).toBe(true)
-  expect(isRefData({ size: 0 })).toBe(true)
-  expect(isRefData(new Map())).toBe(true)
-  expect(isRefData(new Set())).toBe(true)
-  expect(isRefData({})).toBe(true)
-  expect(isRefData([])).toBe(true)
-  expect(isRefData(1)).toBe(false)
-  expect(isRefData(null)).toBe(false)
+  expect(isRefData(new WeakSet())).toBeTrue()
+  expect(isRefData(new WeakMap())).toBeTrue()
+  expect(isRefData({ size: 0 })).toBeTrue()
+  expect(isRefData(new Map())).toBeTrue()
+  expect(isRefData(new Set())).toBeTrue()
+  expect(isRefData({})).toBeTrue()
+  expect(isRefData([])).toBeTrue()
+  expect(isRefData(1)).toBeFalse()
+  expect(isRefData(null)).toBeFalse()
 })

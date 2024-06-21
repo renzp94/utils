@@ -3,17 +3,17 @@ import { isDef } from '../../src'
 
 test('isDef', () => {
   const a = 1
-  expect(isDef(a)).toBe(true)
+  expect(isDef(a)).toBeTrue()
   let b: unknown
-  expect(isDef(b)).toBe(false)
+  expect(isDef(b)).toBeFalse()
   const c = null
-  expect(isDef(c)).toBe(false)
+  expect(isDef(c)).toBeFalse()
   const d = undefined
-  expect(isDef(d)).toBe(false)
+  expect(isDef(d)).toBeFalse()
   const e = 'null'
-  expect(isDef(e)).toBe(true)
+  expect(isDef(e)).toBeTrue()
   const f = 'undefined'
-  expect(isDef(f)).toBe(true)
+  expect(isDef(f)).toBeTrue()
   let g: number | undefined | null
   if (isDef(g)) {
     g // 自动推断类型为number

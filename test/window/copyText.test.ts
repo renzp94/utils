@@ -3,7 +3,7 @@ import { copyText } from '../../src'
 
 test('copyText', async () => {
   const status = await copyText('复制文本')
-  expect(status).toBe(true)
+  expect(status).toBeTrue()
   const text = await navigator.clipboard.readText()
   expect(text).toBe('复制文本')
 })
@@ -14,5 +14,5 @@ test('happydom没有document.execCommand', async () => {
   // @ts-ignore
   navigator.clipboard.writeText = undefined
   const status = await copyText('复制文本1')
-  expect(status).toBe(false)
+  expect(status).toBeFalse()
 })

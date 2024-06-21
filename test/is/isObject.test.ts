@@ -5,8 +5,8 @@ test('isObject', () => {
   const a = {
     a: 1,
   }
-  expect(isObject(a)).toBe(true)
-  expect(isObject(1)).toBe(false)
+  expect(isObject(a)).toBeTrue()
+  expect(isObject(1)).toBeFalse()
   if (isObject(a)) {
     a
   } else {

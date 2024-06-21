@@ -3,8 +3,8 @@ import { isUndefined } from '../../src'
 
 test('isUndefined', () => {
   let a: unknown
-  expect(isUndefined(a)).toBe(true)
+  expect(isUndefined(a)).toBeTrue()
   const b = 1
-  expect(isUndefined(b)).toBe(false)
-  expect(isUndefined(null)).toBe(false)
+  expect(isUndefined(b)).toBeFalse()
+  expect(isUndefined(null)).toBeFalse()
 })
