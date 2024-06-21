@@ -1,4 +1,4 @@
-# equal
+# isEqual
 
 是否相等。
 
@@ -9,12 +9,12 @@
 > 注意：Symbol尽量使用字符串作为key，此方法比较会通过`toString`获取`Symbol([key])`字符串中的`[key]`，如果`key`相等，则Symbol就相等
 
 ```ts
-import { equal } from '@renzp/utils'
+import { isEqual } from '@renzp/utils'
 
-equal(0, 0); // true
-equal({ a: 1 }, { a: 1 }); // true
-equal([1, 2, 3, '4'], [1, 2, 3, 4]); // false
-equal(
+isEqual(0, 0); // true
+isEqual({ a: 1 }, { a: 1 }); // true
+isEqual([1, 2, 3, '4'], [1, 2, 3, 4]); // false
+isEqual(
   {
     a: 1,
     b: 2,
@@ -34,8 +34,16 @@ equal(
 | ------ | -------- | ------------------------------------------- | ------ | -------- |
 | target | 目标数据 | `T \| Array<T> \| Map<string, T> \| Set<T>` | -      | 是       |
 | value  | 比较数据 | `U \| Array<U> \| Map<string, U> \| Set<U>` | -      | 是       |
-| filter | 匹配规则 | `EqualFilter<T, U>`                         | -      | 否       |
+| filter | 匹配规则 | `IsEqualFilter<T, U>`                       | -      | 否       |
 
+```ts
+export type IsEqualFilter<T, U> =
+  | keyof T
+  | keyof U
+  | Array<keyof T>
+  | Array<keyof U>
+  | ((target: any, v: any) => boolean)
+```
 
 ## 返回
 

@@ -1,6 +1,14 @@
 import type { FilterOptions } from '../_base'
-import { isArray, isDef, isFunction, isObject, isString, isUnDef } from '../is'
-import { deepClone, equal } from '../other'
+import {
+  isArray,
+  isDef,
+  isEqual,
+  isFunction,
+  isObject,
+  isString,
+  isUnDef,
+} from '../is'
+import { deepClone } from '../other'
 import { last } from './last'
 import { remove } from './remove'
 import { unique } from './unique'
@@ -59,13 +67,15 @@ export const intersection = <T>(
       for (const currValue of currList) {
         const isAdd =
           // 如果无过滤器则直接值比对
-          (isUnDef(filter) && equal(prevValue, currValue)) ||
+          (isUnDef(filter) && isEqual(prevValue, currValue)) ||
           // 如果有过滤key，则认为数组是对象数组，通过key比较对象属性值是否相同
           (isString(filter) &&
-            equal(prevValue?.[filter], currValue?.[filter])) ||
+            isEqual(prevValue?.[filter], currValue?.[filter])) ||
           // 如果有过滤key且为数组，则认为数组是对象数组，通过多个key比较对象属性值是否相同
           (isArray(filter) &&
-            filter.every((key) => equal(prevValue?.[key], currValue?.[key]))) ||
+            filter.every((key) =>
+              isEqual(prevValue?.[key], currValue?.[key]),
+            )) ||
           // 如果是过滤函数，则通过过滤函数返回值判断是否相同
           (isFunction(filter) && filter(prevValue, currValue))
 

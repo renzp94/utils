@@ -1,4 +1,3 @@
-import { unique } from '../array'
 import {
   isArray,
   isDate,
@@ -11,12 +10,13 @@ import {
   isSet,
   isString,
   isSymbol,
-} from '../is'
+} from '.'
+import { unique } from '../array'
 
 const _getSymbolKey = (v: symbol) => v.toString().slice('Symbol('.length, -1)
 const _hasObjectKey = (v: string) => /^(\[object )[A-Z]{1}\w*\]$/.test(v)
 
-export type EqualFilter<T, U> =
+export type IsEqualFilter<T, U> =
   | keyof T
   | keyof U
   | Array<keyof T>
@@ -34,14 +34,14 @@ export type EqualFilter<T, U> =
  * @returns 如果相等则返回true，否则返回false
  *
  * @example
- * equal(0, 0); // true
- * equal({ a: 1 }, { a: 1 }); // true
- * equal([1, 2, 3, '4'], [1, 2, 3, 4]); // false
+ * isEqual(0, 0); // true
+ * isEqual({ a: 1 }, { a: 1 }); // true
+ * isEqual([1, 2, 3, '4'], [1, 2, 3, 4]); // false
  */
-export const equal = <T, U>(
+export const isEqual = <T, U>(
   target: T | Array<T> | Map<string, T> | Set<T>,
   value: U | Array<U> | Map<string, U> | Set<U>,
-  filter?: EqualFilter<T, U>,
+  filter?: IsEqualFilter<T, U>,
 ): boolean => {
   // 如果是自定义函数则直接使用函数对比
   if (isFunction(filter) && !isArray(target) && !isArray(value)) {
@@ -97,7 +97,7 @@ export const equal = <T, U>(
       keys.every((key) => {
         const tv = isMap(target) ? target.get(key) : (target as any)[key]
         const vv = isMap(value) ? value.get(key) : (value as any)[key]
-        return equal(tv, vv, filter)
+        return isEqual(tv, vv, filter)
       })
     )
   }
@@ -121,7 +121,7 @@ export const equal = <T, U>(
     if (isFunction(filter)) {
       return _target.every((tv, index) => filter(tv, _value[index]))
     }
-    return _target.every((tv, index) => equal(tv, _value[index]))
+    return _target.every((tv, index) => isEqual(tv, _value[index]))
   }
 
   return Object.is(target, value)

@@ -1,6 +1,6 @@
 import type { FilterOptions } from '../_base'
-import { isArray, isFunction, isString, isUnDef } from '../is'
-import { deepClone, equal } from '../other'
+import { isArray, isEqual, isFunction, isString, isUnDef } from '../is'
+import { deepClone } from '../other'
 
 /**
  * 数组去重
@@ -35,14 +35,14 @@ export const unique = <T>(
     (prev, v) => {
       const exist =
         // 如果无过滤器则直接值比对
-        (isUnDef(filter) && prev.some((item) => equal(item, v))) ||
+        (isUnDef(filter) && prev.some((item) => isEqual(item, v))) ||
         // 如果有过滤key，则认为数组是对象数组，通过key比较对象属性值是否相同
         (isString(filter) &&
-          prev.some((item) => equal(item?.[filter], v?.[filter]))) ||
+          prev.some((item) => isEqual(item?.[filter], v?.[filter]))) ||
         // 如果有过滤key且为数组，则认为数组是对象数组，通过多个key比较对象属性值是否相同
         (isArray(filter) &&
           prev.some((item) =>
-            filter.every((key) => equal(item?.[key], v?.[key])),
+            filter.every((key) => isEqual(item?.[key], v?.[key])),
           )) ||
         // 如果是过滤函数，则通过过滤函数返回值判断是否相同
         (isFunction(filter) && prev?.some?.((item) => filter(v, item)))

@@ -1,65 +1,65 @@
 import { expect, test } from 'bun:test'
-import { equal } from '../../src'
+import { isEqual } from '../../src'
 
 test('NaN判断', () => {
-  expect(equal(Number.NaN, Number.NaN)).toBe(true)
-  expect(equal(Number.NaN, 0 / 0)).toBe(true)
-  expect(equal(Number.NaN, 0)).toBe(false)
-  expect(equal(Number.NaN, undefined)).toBe(false)
-  expect(equal(Number.NaN, null)).toBe(false)
-  expect(equal(Number.NaN, false)).toBe(false)
+  expect(isEqual(Number.NaN, Number.NaN)).toBe(true)
+  expect(isEqual(Number.NaN, 0 / 0)).toBe(true)
+  expect(isEqual(Number.NaN, 0)).toBe(false)
+  expect(isEqual(Number.NaN, undefined)).toBe(false)
+  expect(isEqual(Number.NaN, null)).toBe(false)
+  expect(isEqual(Number.NaN, false)).toBe(false)
 })
 
 test('假值判断', () => {
-  expect(equal(false, false)).toBe(true)
-  expect(equal(false, Number.NaN)).toBe(false)
-  expect(equal(false, 0)).toBe(false)
-  expect(equal(false, '')).toBe(false)
-  expect(equal(false, undefined)).toBe(false)
-  expect(equal(undefined, null)).toBe(false)
+  expect(isEqual(false, false)).toBe(true)
+  expect(isEqual(false, Number.NaN)).toBe(false)
+  expect(isEqual(false, 0)).toBe(false)
+  expect(isEqual(false, '')).toBe(false)
+  expect(isEqual(false, undefined)).toBe(false)
+  expect(isEqual(undefined, null)).toBe(false)
 })
 
 test('基本类型判断', () => {
-  expect(equal(0, 0)).toBe(true)
-  expect(equal(0, -0)).toBe(true)
-  expect(equal(0, '0')).toBe(false)
-  expect(equal(0, Number.NaN)).toBe(false)
-  expect(equal(false, 0)).toBe(false)
-  expect(equal(false, '')).toBe(false)
-  expect(equal(false, undefined)).toBe(false)
-  expect(equal(undefined, null)).toBe(false)
-  expect(equal('ab', 'abc')).toBe(false)
+  expect(isEqual(0, 0)).toBe(true)
+  expect(isEqual(0, -0)).toBe(true)
+  expect(isEqual(0, '0')).toBe(false)
+  expect(isEqual(0, Number.NaN)).toBe(false)
+  expect(isEqual(false, 0)).toBe(false)
+  expect(isEqual(false, '')).toBe(false)
+  expect(isEqual(false, undefined)).toBe(false)
+  expect(isEqual(undefined, null)).toBe(false)
+  expect(isEqual('ab', 'abc')).toBe(false)
   const a = Symbol(1)
   const b = a
-  expect(equal(a, b)).toBe(true)
-  expect(equal(Symbol(1), Symbol(1))).toBe(true)
+  expect(isEqual(a, b)).toBe(true)
+  expect(isEqual(Symbol(1), Symbol(1))).toBe(true)
 })
 
 test('日期判断', () => {
-  expect(equal(new Date('1970/01/01'), new Date('1970/01/01'))).toBe(true)
-  expect(equal(new Date('1970/01/01'), new Date('1970/01/02'))).toBe(false)
+  expect(isEqual(new Date('1970/01/01'), new Date('1970/01/01'))).toBe(true)
+  expect(isEqual(new Date('1970/01/01'), new Date('1970/01/02'))).toBe(false)
   const now1 = new Date()
   const now2 = new Date()
-  expect(equal(now1, now2)).toBe(true)
+  expect(isEqual(now1, now2)).toBe(true)
 })
 
 test('正则判断', () => {
-  expect(equal(/\d/, /\d/)).toBe(true)
-  expect(equal(/\d/, /[0-9]/)).toBe(false)
+  expect(isEqual(/\d/, /\d/)).toBe(true)
+  expect(isEqual(/\d/, /[0-9]/)).toBe(false)
 })
 
 test('对象判断', () => {
-  expect(equal({ a: 1 }, { a: 1 })).toBe(true)
-  expect(equal({ a: '1' }, { a: 1 })).toBe(false)
-  expect(equal({ a: 1 }, { a: 1, b: 2 })).toBe(false)
+  expect(isEqual({ a: 1 }, { a: 1 })).toBe(true)
+  expect(isEqual({ a: '1' }, { a: 1 })).toBe(false)
+  expect(isEqual({ a: 1 }, { a: 1, b: 2 })).toBe(false)
   expect(
-    equal(
+    isEqual(
       { a: 1, b: { c: 1, d: { e: 2 } } },
       { a: 1, b: { c: 1, d: { e: 2 } } },
     ),
   ).toBe(true)
   expect(
-    equal(
+    isEqual(
       { a: 1, b: { c: 1, d: { e: 2 } } },
       { a: 1, b: { c: 1, d: { e: 3 } } },
     ),
@@ -68,7 +68,7 @@ test('对象判断', () => {
 
 test('Map判断', () => {
   expect(
-    equal(
+    isEqual(
       new Map([
         ['a', 1],
         ['b', 2],
@@ -80,7 +80,7 @@ test('Map判断', () => {
     ),
   ).toBe(true)
   expect(
-    equal(
+    isEqual(
       new Map<string, string | number>([
         ['a', '1'],
         ['b', 2],
@@ -94,15 +94,15 @@ test('Map判断', () => {
 })
 
 test('数组判断', () => {
-  expect(equal([1, 2, 3], [1, 2, 3])).toBe(true)
-  expect(equal([1, 2], [1, 2, 3])).toBe(false)
-  expect(equal([], [])).toBe(true)
-  expect(equal([1, 2, 3, '4'], [1, 2, 3, 4])).toBe(false)
-  expect(equal([1, 2, 3, '4'], [1, 2, 3])).toBe(false)
-  expect(equal([0], [false])).toBe(false)
+  expect(isEqual([1, 2, 3], [1, 2, 3])).toBe(true)
+  expect(isEqual([1, 2], [1, 2, 3])).toBe(false)
+  expect(isEqual([], [])).toBe(true)
+  expect(isEqual([1, 2, 3, '4'], [1, 2, 3, 4])).toBe(false)
+  expect(isEqual([1, 2, 3, '4'], [1, 2, 3])).toBe(false)
+  expect(isEqual([0], [false])).toBe(false)
 
   expect(
-    equal(
+    isEqual(
       [
         {
           a: 1,
@@ -127,7 +127,7 @@ test('数组判断', () => {
   ).toBe(true)
 
   expect(
-    equal(
+    isEqual(
       [
         {
           a: 1,
@@ -153,13 +153,13 @@ test('数组判断', () => {
 })
 
 test('Set判断', () => {
-  expect(equal(new Set([1, 2, 3]), new Set([1, 2, 3]))).toBe(true)
-  expect(equal(new Set([1, 2, 3, '4']), new Set([1, 2, 3, 4]))).toBe(false)
-  expect(equal(new Set([1, 2, 3, '4']), new Set([1, 2, 3]))).toBe(false)
-  expect(equal(new Set([0]), new Set([false]))).toBe(false)
+  expect(isEqual(new Set([1, 2, 3]), new Set([1, 2, 3]))).toBe(true)
+  expect(isEqual(new Set([1, 2, 3, '4']), new Set([1, 2, 3, 4]))).toBe(false)
+  expect(isEqual(new Set([1, 2, 3, '4']), new Set([1, 2, 3]))).toBe(false)
+  expect(isEqual(new Set([0]), new Set([false]))).toBe(false)
 
   expect(
-    equal(
+    isEqual(
       new Set([
         {
           a: 1,
@@ -184,7 +184,7 @@ test('Set判断', () => {
   ).toBe(true)
 
   expect(
-    equal(
+    isEqual(
       new Set([
         {
           a: 1,
@@ -211,7 +211,7 @@ test('Set判断', () => {
 
 test('指定key判断是否相等', () => {
   expect(
-    equal(
+    isEqual(
       {
         a: 1,
         b: 2,
@@ -225,7 +225,7 @@ test('指定key判断是否相等', () => {
   ).toBe(true)
 
   expect(
-    equal(
+    isEqual(
       {
         a: 1,
         b: 2,
@@ -240,7 +240,7 @@ test('指定key判断是否相等', () => {
   ).toBe(true)
 
   expect(
-    equal(
+    isEqual(
       {
         a: 1,
         b: 2,
@@ -258,7 +258,7 @@ test('指定key判断是否相等', () => {
 test('自定义函数判断是否相等', () => {
   type Obj = { a: number; b: number }
   expect(
-    equal(
+    isEqual(
       {
         a: 1,
         b: 2,
@@ -272,7 +272,7 @@ test('自定义函数判断是否相等', () => {
   ).toBe(true)
 
   expect(
-    equal(
+    isEqual(
       [
         {
           a: 2,

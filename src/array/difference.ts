@@ -1,6 +1,13 @@
 import type { FilterOptions } from '../_base'
-import { isArray, isFunction, isPrimitive, isString, isUnDef } from '../is'
-import { deepClone, equal } from '../other'
+import {
+  isArray,
+  isEqual,
+  isFunction,
+  isPrimitive,
+  isString,
+  isUnDef,
+} from '../is'
+import { deepClone } from '../other'
 
 /**
  * 过滤数组
@@ -40,13 +47,13 @@ export const difference = <T>(
   const { filter } = options ?? {}
 
   // 如果没有过滤key或过滤函数则直接对比
-  let filterFn: any = (v: T) => !values.some((item) => equal(item, v))
+  let filterFn: any = (v: T) => !values.some((item) => isEqual(item, v))
   // 如果是过滤key则对比key
   if (isString(filter)) {
     filterFn = (item: T) => {
       return (
         isUnDef(item?.[filter]) ||
-        !values.some((v) => equal(item?.[filter], v?.[filter]))
+        !values.some((v) => isEqual(item?.[filter], v?.[filter]))
       )
     }
   }
@@ -56,7 +63,9 @@ export const difference = <T>(
       const hasKey = filter.findIndex((key) => item?.[key]) > -1
       return (
         !hasKey ||
-        !values.some((v) => filter.every((key) => equal(item?.[key], v?.[key])))
+        !values.some((v) =>
+          filter.every((key) => isEqual(item?.[key], v?.[key])),
+        )
       )
     }
   }
