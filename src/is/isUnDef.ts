@@ -1,13 +1,14 @@
+import { isDef } from './isDef'
+
 /**
- * 是否为undefined
+ * 是否为无值(即：值为undefined或null)
  * @param v 要判断的变量
- * @returns 如果是undefined则返回true，否则返回false
+ * @returns 如果无值则返回true，否则返回false
  *
  * @example
  * const a = 1;
- * isUndefined(a); // false
+ * isUnDef(a); // false
  * let b;
- * isUndefined(b); // true
+ * isUnDef(b); // true
  */
-export const isUndefined = (v: unknown): v is undefined =>
-  typeof v === 'undefined'
+export const isUnDef = (v: unknown): v is undefined | null => !isDef(v)

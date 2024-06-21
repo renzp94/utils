@@ -4,7 +4,7 @@ import { isNull } from './isNull'
 import { isNumber } from './isNumber'
 import { isString } from './isString'
 import { isSymbol } from './isSymbol'
-import { isUndefined } from './isUnDef'
+import { isUndefined } from './isUndefined'
 
 /**
  * 是否为基础数据类型
