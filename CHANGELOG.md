@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/renzp94/utils/compare/v0.2.2...v0.2.3) (2024-06-21)
+
+
+### 其他
+
+* 调整打包目标降级为es6 ([cc8eb86](https://github.com/renzp94/utils/commit/cc8eb869b1295ca66e7fbe0f24dd65571f7aa2f6))
+
 ### [0.2.2](https://github.com/renzp94/utils/compare/v0.2.1...v0.2.2) (2024-06-20)
 
 
