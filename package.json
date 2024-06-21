@@ -4,10 +4,7 @@
   "description": "一款零依赖、实用的Javascript/Typescript工具库",
   "type": "module",
   "main": "dist/index.js",
-  "files": [
-    "dist",
-    "./coverage.svg"
-  ],
+  "files": ["dist", "./coverage.svg"],
   "types": "dist/index.d.ts",
   "author": "renzp <1074720760.qq.com>",
   "repository": {
@@ -18,9 +15,7 @@
   "bugs": {
     "url": "https://github.com/renzp94/utils/issues"
   },
-  "keywords": [
-    "utils"
-  ],
+  "keywords": ["utils"],
   "license": "MIT",
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
@@ -28,6 +23,7 @@
   },
   "scripts": {
     "build": "bun run scripts/build.ts",
+    "build:es6": "tsup",
     "pub:npm": "bun run scripts/pub-npm.ts",
     "pub:jsr": "bun run scripts/pub-jsr.ts",
     "pub:all": "bun run scripts/pub-all.ts",
@@ -42,6 +38,7 @@
     "@type-challenges/utils": "^0.1.1",
     "@types/bun": "^1.1.4",
     "bun-plugin-dts": "^0.2.3",
+    "tsup": "^8.1.0",
     "vitepress": "^1.2.3"
   },
   "peerDependencies": {

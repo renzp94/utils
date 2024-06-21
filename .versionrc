@@ -48,7 +48,7 @@
     {
       "type": "build",
       "section": "构建",
-      "hidden": false
+      "hidden": true
     },
     {
       "type": "ci",
