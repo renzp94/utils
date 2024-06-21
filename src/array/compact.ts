@@ -18,7 +18,7 @@ import { isArray, isTruth } from '../is'
  * compact([0, 1, 2, undefined, null, false, Number.NaN, '', []]); // [1, 2, []]
  * compact({ a: 0, b: 2, c: false }); // { a: 0, b: 2, c: false }
  */
-export const compact = <T>(list: T | Array<T>): Array<_ExcludeFalsy<T>> | T => {
+export const compact = <T>(list: Array<T>): Array<_ExcludeFalsy<T>> => {
   if (isArray(list)) {
     return list.filter(isTruth)
   }
