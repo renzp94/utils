@@ -1,6 +1,6 @@
 # isObject
 
-是否为`Object`类型
+是否为`Object`类型。
 
 ## 基本用法
 

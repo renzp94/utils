@@ -1,8 +1,8 @@
 # isFalsy
 
-是否为假值(`false`或者可以隐式转换成`false`的值)
+是否为假值(`false`或者可以隐式转换成`false`的值)。
 
-假值：`false`、`null`、`undefined`、`0`、`''`、`NaN`
+假值：`false`、`null`、`undefined`、`0`、`''`、`NaN`。
 
 ## 基本用法
 

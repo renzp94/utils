@@ -1,6 +1,6 @@
 # isBigint
 
-是否为`Bigint`类型
+是否为`Bigint`类型。
 
 ## 基本用法
 

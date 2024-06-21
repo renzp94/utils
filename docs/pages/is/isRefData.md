@@ -1,6 +1,6 @@
 # isRefData
 
-是否为引用类型数据。引用类型数据有：`Object`, `Array`, `Date`, `Map`, `Set`, `WeakMap`, `WeakSet`
+是否为引用类型数据。引用类型数据有：`Object`, `Array`, `Date`, `Map`, `Set`, `WeakMap`, `WeakSet`。
 
 ## 基本用法
 

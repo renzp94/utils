@@ -1,6 +1,6 @@
 # isUnDef
 
-是否无值(即：值为`undefined`或`null`)
+是否无值(即：值为`undefined`或`null`)。
 
 ## 基本用法
 

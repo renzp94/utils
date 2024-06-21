@@ -2,7 +2,7 @@
 
 去除数组中假值。
 
-`假值`：`false`、`null`、`undefined`、`0`、`""`、`NaN`
+`假值`：`false`、`null`、`undefined`、`0`、`""`、`NaN`。
 
 ## 基本用法
 

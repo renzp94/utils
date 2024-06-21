@@ -1,6 +1,6 @@
 # isUndefined
 
-是否为`undefined`
+是否为`undefined`。
 
 ## 基本用法
 

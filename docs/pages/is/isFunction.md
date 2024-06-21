@@ -1,6 +1,6 @@
 # isFunction
 
-是否为`Function`类型
+是否为`Function`类型。
 
 ## 基本用法
 

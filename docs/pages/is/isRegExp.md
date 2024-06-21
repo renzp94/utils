@@ -1,6 +1,6 @@
 # isRegExp
 
-是否为`RegExp`类型
+是否为`RegExp`类型。
 
 ## 基本用法
 

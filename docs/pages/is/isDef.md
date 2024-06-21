@@ -1,6 +1,6 @@
 # isDef
 
-是否有值(即：值不是`undefined`和`null`)
+是否有值(即：值不是`undefined`和`null`)。
 
 ## 基本用法
 

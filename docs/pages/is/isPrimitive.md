@@ -1,6 +1,6 @@
 # isPrimitive
 
-是否为基础数据类型。基础数据类型有：`string`, `number`, `boolean`, `null`, `undefined`，`symbol`
+是否为基础数据类型。基础数据类型有：`string`, `number`, `boolean`, `null`, `undefined`，`symbol`。
 
 ## 基本用法
 

@@ -21,7 +21,7 @@ setTimeout(() => console.log(value), 300); // 1
 
 ## 设置节流时间
 
-可传入`time`参数设置节流时间。如果传入值小于0，则表示没有节流和直接调用函数一样。如果传入0则放到下一个执行周期(即：`setTimeout(fn,0)`)
+可传入`time`参数设置节流时间。如果传入值小于0，则表示没有节流和直接调用函数一样。如果传入0则放到下一个执行周期(即：`setTimeout(fn,0)`)。
 
 ```ts
 import { throttle } from '@renzp/utils'

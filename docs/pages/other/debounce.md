@@ -31,7 +31,7 @@ setTimeout(() => console.log(value), 504); // 2
 
 ## 设置防抖时间
 
-可传入`time`参数设置防抖时间。如果传入值小于0，则表示没有防抖和直接调用函数一样。如果传入0则放到下一个执行周期(即：`setTimeout(fn,0)`)
+可传入`time`参数设置防抖时间。如果传入值小于0，则表示没有防抖和直接调用函数一样。如果传入0则放到下一个执行周期(即：`setTimeout(fn,0)`)。
 
 ```ts
 import { debounce } from '@renzp/utils'

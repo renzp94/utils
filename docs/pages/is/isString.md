@@ -1,6 +1,6 @@
 # isString
 
-是否为`string`类型
+是否为`string`类型。
 
 ## 基本用法
 
