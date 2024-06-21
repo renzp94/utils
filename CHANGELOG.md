@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/renzp94/utils/compare/v0.2.3...v0.3.0) (2024-06-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* 重命名equal函数为isEqual函数
+
+### Bug修复
+
+* **array:** 修复compact函数类型提示错误的问题 ([e30da80](https://github.com/renzp94/utils/commit/e30da80449388f891cc49455e5b112f92e800fa5))
+
+
+### 代码重构
+
+* 重命名equal为isEqual ([2cb787a](https://github.com/renzp94/utils/commit/2cb787a631270174bc8c950a141606c8d32e0c72))
+
+
+### 其他
+
+* 调整isUndefined函数和isUnDef函数的文件名 ([6d7d1cd](https://github.com/renzp94/utils/commit/6d7d1cd1895626902ffacd8ae6d4e1516429e50c))
+
+
+### 新功能
+
+* **is:** 添加isArrayBuffer(是否为ArrayBuffer类型)方法 ([cf2640d](https://github.com/renzp94/utils/commit/cf2640d2c5caac765a823540d3d1ef9483f2f90d))
+* **is:** 添加isEmpty(是否为空)方法 ([dd668f5](https://github.com/renzp94/utils/commit/dd668f5005a7c3d30363f1691fe406a5978cc839))
+
 ### [0.2.3](https://github.com/renzp94/utils/compare/v0.2.2...v0.2.3) (2024-06-21)
 
 
