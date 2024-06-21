@@ -1,17 +1,15 @@
-import {
-  isArray,
-  isDate,
-  isDef,
-  isFunction,
-  isMap,
-  isNumber,
-  isObject,
-  isRegExp,
-  isSet,
-  isString,
-  isSymbol,
-} from '.'
 import { unique } from '../array'
+import { isArray } from './isArray'
+import { isDate } from './isDate'
+import { isDef } from './isDef'
+import { isFunction } from './isFunction'
+import { isMap } from './isMap'
+import { isNumber } from './isNumber'
+import { isObject } from './isObject'
+import { isRegExp } from './isRegExp'
+import { isSet } from './isSet'
+import { isString } from './isString'
+import { isSymbol } from './isSymbol'
 
 const _getSymbolKey = (v: symbol) => v.toString().slice('Symbol('.length, -1)
 const _hasObjectKey = (v: string) => /^(\[object )[A-Z]{1}\w*\]$/.test(v)
