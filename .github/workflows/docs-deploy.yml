@@ -1,11 +1,9 @@
 name: Docs Deploy
 on:
   push:
-    branches: main
     paths: "docs/**"
-    tags: "v*"
   pull_request:
-    branches: main
+    paths: "docs/**"
 
 jobs:
   deploy:
