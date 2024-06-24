@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/renzp94/utils/compare/v0.3.0...v0.3.1) (2024-06-24)
+
+
+### 其他
+
+* **is:** 调整isEqual函数引入其他方法的方式 ([3cb5cd9](https://github.com/renzp94/utils/commit/3cb5cd9f0d56bc165ceb3073667b6e7e11dec040))
+
 ## [0.3.0](https://github.com/renzp94/utils/compare/v0.2.3...v0.3.0) (2024-06-21)
 
 
