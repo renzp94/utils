@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/npm/v/@renzp/utils.svg?sanitize=true" alt="Version">
   </a>
   <a href="https://www.npmjs.com/package/@renzp/utils" target="_blank" style="display: inline-block;margin-left: 4px;">
-    <img src="https://img.shields.io/npm/l/@renzp/utils.svg?sanitize=true" target="_blank" alt="License">
+    <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
   </a>
 </p>
 
