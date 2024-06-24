@@ -1,0 +1,30 @@
+name: Docs Deploy
+on:
+  push:
+    branches: main
+    tags: "v*"
+  pull_request:
+    branches: main
+
+jobs:
+  deploy:
+    name: Coverage
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
+      
+      - name: Install step
+        run: "bun install"
+
+      - name: Run Test
+        run: "bun test --coverage --coverage-reporter lcov"
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
