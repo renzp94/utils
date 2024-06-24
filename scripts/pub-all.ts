@@ -1,11 +1,10 @@
-import { coverage, jsrPublish, npmPublish } from './common'
+import { jsrPublish, npmPublish } from './common'
 
 // biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log('📦 打包中...')
 await Bun.$`bun run build:es6`
 // biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log('📦 打包成功 🎉🎉🎉')
-await coverage()
 await npmPublish()
 await jsrPublish()
 await Bun.$`git push origin --follow-tags`
@@ -17,7 +16,6 @@ await Bun.$`git push origin --follow-tags`
 // if (result.success) {
 //   // biome-ignore lint/suspicious/noConsoleLog: <explanation>
 //   console.log('📦 打包成功 🎉🎉🎉')
-//   await coverage()
 //   await npmPublish()
 //   await jsrPublish()
 //   await Bun.$`git push origin --follow-tags`

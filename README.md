@@ -1,7 +1,7 @@
 <p align="center"><a href="https://github.com/renzp94/utils" target="_blank" rel="noopener noreferrer"><img width="200" src="./logo.png" alt="@renzp/utils logo"></a></p>
 <p align="center">
-  <a href="https://github.com/renzp94/utils/blob/main/coverage.md">
-    <img src="./coverage.svg" alt="Code coverage">
+  <a href="https://codecov.io/github/renzp94/utils" > 
+    <img src="https://codecov.io/github/renzp94/utils/graph/badge.svg?token=OXSH9CDYFE"/> 
   </a>
   <a href="https://bundlephobia.com/package/@renzp/utils">
     <img src="https://img.shields.io/bundlephobia/minzip/@renzp/utils?label=minzipped" alt="Bundle Size">
