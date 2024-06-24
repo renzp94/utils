@@ -29,8 +29,7 @@
     "pub:all": "bun run scripts/pub-all.ts",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs",
-    "coverage": "bun run scripts/coverage.ts"
+    "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.1",
