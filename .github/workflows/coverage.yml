@@ -1,10 +1,7 @@
-name: Docs Deploy
+name: Coverage Deploy
 on:
   push:
-    branches: main
     tags: "v*"
-  pull_request:
-    branches: main
 
 jobs:
   deploy:
