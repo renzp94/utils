@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://github.com/renzp94/utils/compare/v0.3.1...v0.3.2) (2024-06-26)
+
+
+### 新功能
+
+* **fp:** 添加curry(函数柯里化)方法 ([e11daec](https://github.com/renzp94/utils/commit/e11daec671ad401202d38c1f66ad09401335f0cb))
+
 ### [0.3.1](https://github.com/renzp94/utils/compare/v0.3.0...v0.3.1) (2024-06-24)
 
 
