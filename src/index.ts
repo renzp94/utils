@@ -1,4 +1,5 @@
 export * from './array'
+export * from './fp'
 export * from './is'
 export * from './number'
 export * from './object'
