@@ -1,3 +1,4 @@
+import type { AnyFunction } from '../_base'
 import { isFunction } from '../is'
 
 type DiffPrefixLoose<T extends readonly any[], O extends any[]> = T extends [
@@ -14,7 +15,7 @@ type ArrToPrefixUnion<A extends any[]> = A extends [infer P, ...infer R]
   ? [P] | [P, ...ArrToPrefixUnion<R>]
   : []
 
-type CurryFn<T extends (...args: any[]) => any> = <
+export type CurryFn<T extends AnyFunction> = <
   R extends ArrToPrefixUnion<Parameters<T>>,
 >(
   ...args: R
@@ -38,7 +39,7 @@ type CurryFn<T extends (...args: any[]) => any> = <
  * const emailValidator = createValidator(/^[a-zA-Z0-9_\.\-\+]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/);
  * emailValidator('lisi@qq.com'); // true
  */
-export const curry = <F extends (...args: any[]) => any>(fn: F): CurryFn<F> => {
+export const curry = <F extends AnyFunction>(fn: F): CurryFn<F> => {
   if (!isFunction(fn)) {
     throw new Error('参数fn需要是一个函数')
   }

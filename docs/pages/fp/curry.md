@@ -22,9 +22,9 @@ emailValidator('lisi@qq.com'); // true
 
 ## 参数
 
-| 参数 | 说明             | 类型                      | 默认值 | 是否必填 |
-| ---- | ---------------- | ------------------------- | ------ | -------- |
-| fn   | 需要柯里化的函数 | `(...args: any[]) => any` | -      | 是       |
+| 参数 | 说明             | 类型          | 默认值 | 是否必填 |
+| ---- | ---------------- | ------------- | ------ | -------- |
+| fn   | 需要柯里化的函数 | `AnyFunction` | -      | 是       |
 
 ## 返回
 
@@ -33,6 +33,8 @@ emailValidator('lisi@qq.com'); // true
 | fn   | 柯里化后的函数 | `CurryFn<F>` |
 
 ```ts
+export type AnyFunction = (...args: any[]) => any
+
 type DiffPrefixLoose<T extends readonly any[], O extends any[]> = T extends [
   infer P1,
   ...infer R1,
@@ -47,7 +49,7 @@ type ArrToPrefixUnion<A extends any[]> = A extends [infer P, ...infer R]
   ? [P] | [P, ...ArrToPrefixUnion<R>]
   : []
 
-type CurryFn<T extends (...args: any[]) => any> = <
+type CurryFn<T extends AnyFunction> = <
   R extends ArrToPrefixUnion<Parameters<T>>,
 >(
   ...args: R

@@ -1,5 +1,4 @@
 import { isArray, isFunction, isNull, isObject } from './is'
-import type { DebounceOptions } from './other'
 
 /**
  * 调用变量的toString
@@ -159,3 +158,5 @@ export type Filter<T> =
 export type FilterOptions<T> = {
   filter?: Filter<T>
 }
+
+export type AnyFunction = (...args: any[]) => any
