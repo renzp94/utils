@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.3](https://github.com/renzp94/utils/compare/v0.3.2...v0.3.3) (2024-06-27)
+
+
+### 其他
+
+* 抽离类型定义 ([b552a60](https://github.com/renzp94/utils/commit/b552a603dc6cb5104f677e4c78e0643c102f623a))
+* 将debounce和throttle方法从other移至fp ([c112bf4](https://github.com/renzp94/utils/commit/c112bf46ad551ecd7107988b6caceabd0ec4e8a0))
+
+
+### 新功能
+
+* **fp:** 添加compose(函数组合)方法 ([40f1ced](https://github.com/renzp94/utils/commit/40f1cedddc3d28aa43e9dac0a53c9496364a0441))
+* **fp:** 添加memo(函数缓存)方法 ([03a4925](https://github.com/renzp94/utils/commit/03a49256b3fe5b1b52de68bdabadf39f7edd7f55))
+* **is:** 添加isPromise(是否为Promise)方法 ([42c3d6b](https://github.com/renzp94/utils/commit/42c3d6bdc3bba860983de2f82a32f3047d090196))
+
 ### [0.3.2](https://github.com/renzp94/utils/compare/v0.3.1...v0.3.2) (2024-06-26)
 
 
