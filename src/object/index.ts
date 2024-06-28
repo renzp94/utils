@@ -1,3 +1,4 @@
+export * from './mapToObject'
 export * from './merge'
 export * from './objectToMap'
 export * from './omit'
