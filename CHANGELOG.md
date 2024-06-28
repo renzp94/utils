@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.4](https://github.com/renzp94/utils/compare/v0.3.3...v0.3.4) (2024-06-28)
+
+
+### 新功能
+
+* **object:** 添加mapToObject(map转对象)方法 ([022d20e](https://github.com/renzp94/utils/commit/022d20e30c488f76f994bb7b980b37e49e1f96d6))
+* **object:** 添加objectToMap(对象转Map)方法 ([c321547](https://github.com/renzp94/utils/commit/c3215479b7a0603cf55959012159867ec2944f1e))
+* **other:** 添加treeShaking(数据树摇)方法 ([e89d110](https://github.com/renzp94/utils/commit/e89d110fafacc2d04a026cf5cfff6f55be7b802b))
+* **types:** 添加Mutex(类型互斥)方法 ([3651700](https://github.com/renzp94/utils/commit/3651700420403a1a3921bbf428be87b2cf2345ea))
+
 ### [0.3.3](https://github.com/renzp94/utils/compare/v0.3.2...v0.3.3) (2024-06-27)
 
 
