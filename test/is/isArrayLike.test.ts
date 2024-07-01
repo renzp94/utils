@@ -1,5 +1,5 @@
 import { expect, test } from 'bun:test'
-import { createArray, isArrayLike } from '../../src'
+import { isArrayLike } from '../../src'
 
 test('isArrayLike', () => {
   expect(isArrayLike([])).toBeTrue()
