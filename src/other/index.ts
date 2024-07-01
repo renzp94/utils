@@ -1,4 +1,5 @@
 export * from './deepClone'
 export * from './radom'
+export * from './reverse'
 export * from './threeShaking'
 export * from './uuid'
