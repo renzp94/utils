@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.5](https://github.com/renzp94/utils/compare/v0.3.4...v0.3.5) (2024-07-01)
+
+
+### 新功能
+
+* **is:** 添加isArrayLike(是否为ArrayLike类型)方法 ([6379104](https://github.com/renzp94/utils/commit/6379104465f36229b146e58723e84c2a349779b4))
+* **is:** 添加isFloat(是否为小数)方法 ([c8cde96](https://github.com/renzp94/utils/commit/c8cde96b885e99dd09dd56e3e52cafa777abe73a))
+* **is:** 添加isInt(是否为整数)方法 ([b4d4860](https://github.com/renzp94/utils/commit/b4d4860d05c9cb257ad07a4d9e6f5350fd5a6248))
+* **is:** 添加isNodeList(是否为NodeList类型)方法 ([3676806](https://github.com/renzp94/utils/commit/3676806a4d423c0a49d9437e149894ca080ad360))
+* **other:** 添加reverse(反转数据)方法 ([14e7af0](https://github.com/renzp94/utils/commit/14e7af08ae3716a297618f35093ed5bbbcc09e8d))
+
 ### [0.3.4](https://github.com/renzp94/utils/compare/v0.3.3...v0.3.4) (2024-06-28)
 
 
