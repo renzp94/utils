@@ -2,6 +2,8 @@
 
 数组取交集。
 
+<img src="./images/intersection.png" height="300" width="300" />
+
 ## 基本用法
 
 传入多个数组，使用[SameValueZero](https://262.ecma-international.org/6.0/#sec-samevaluezero)进行比较，返回含有交集数据的数组。
