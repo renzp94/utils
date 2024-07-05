@@ -7,7 +7,7 @@
 传入一个值，如果是`Array`类型则返回`true`，否则返回`false`。
 
 ```ts
-import { isArray } from '@renzp/utils'
+import { isArray } from '@renzp/utils';
 
 isArray([]); // true
 isArray({ length: 1 }); // false

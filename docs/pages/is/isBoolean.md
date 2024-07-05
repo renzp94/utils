@@ -7,7 +7,7 @@
 传入一个值，如果是`Boolean`类型则返回`true`，否则返回`false`。
 
 ```ts
-import { isBoolean } from '@renzp/utils'
+import { isBoolean } from '@renzp/utils';
 
 isBoolean(false); // true
 isBoolean(1); // false

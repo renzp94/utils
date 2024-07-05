@@ -7,7 +7,7 @@
 传入一个值，如果是`WeakSet`类型则返回`true`，否则返回`false`。
 
 ```ts
-import { isWeakSet } from '@renzp/utils'
+import { isWeakSet } from '@renzp/utils';
 
 isWeakSet(new WeakSet()); // true
 isWeakSet({ size: 0 }); // false

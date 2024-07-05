@@ -9,7 +9,7 @@
 传入一个数据，返回一个数组：`[删除后的数据，删除的数据]`。
 
 ```ts
-import { treeShaking } from '@renzp/utils'
+import { treeShaking } from '@renzp/utils';
 
 treeShaking([1, '2', 3, 4, 5], { indexes: [0, 2] }); // [['2', 4, 5], [1, 3]]
 treeShaking([1, '2', 3, 4, 5], { start: 2, end: 4 }); // [[1, '2'], [3, 4, 5]]

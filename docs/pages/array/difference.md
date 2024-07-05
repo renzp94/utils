@@ -11,7 +11,7 @@
 如果需要自定义过滤规则可将规则函数传入第三个参数。
 
 ```ts
-import { difference } from '@renzp/utils'
+import { difference } from '@renzp/utils';
 
 difference([1, 2, 3], [2, 3]); // [1]
 difference([1, 2, false, '1'], ['1']); // [1, 2, false]

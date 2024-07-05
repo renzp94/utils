@@ -7,7 +7,7 @@
 传入目标对象和合并对象，如果target和source都是对象，则返回合并后的对象，否则返回target。默认是深度合并，可以传入`deep: false`禁止深度合并，如果自定义合并规则，可传入`value`函数。
 
 ```ts
-import { merge } from '@renzp/utils'
+import { merge } from '@renzp/utils';
 
 merge({ a: 1 }, { b: 1 }); // { a: 1, b: 1 }
 merge({ a: 1, b: { c: 1, d: 1 } }, { b: { c: 2 } }); // { a: 1, b: { c: 2, d: 1 } }

@@ -7,7 +7,7 @@
 传入一个值，如果是`Date`类型则返回`true`，否则返回`false`。
 
 ```ts
-import { isDate } from '@renzp/utils'
+import { isDate } from '@renzp/utils';
 
 isDate(new Date()); // true
 isDate('1970-01-01'); // false

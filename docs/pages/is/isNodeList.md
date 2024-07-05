@@ -7,7 +7,7 @@
 传入一个值，如果是`NodeList`类型则返回`true`，否则返回`false`。
 
 ```ts
-import { isNodeList } from '@renzp/utils'
+import { isNodeList } from '@renzp/utils';
 
 isNodeList([]); // false
 isNodeList(document.querySelectorAll('div')); // true

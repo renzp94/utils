@@ -14,7 +14,7 @@
 传入一个值，如果为空则返回`true`，否则返回`false`。
 
 ```ts
-import { isEmpty } from '@renzp/utils'
+import { isEmpty } from '@renzp/utils';
 
 isEmpty(null); // true
 isEmpty(0); // false

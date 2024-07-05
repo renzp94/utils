@@ -7,7 +7,7 @@
 随机生成UUID。如果需要含有大写字母，可传入`true`。
 
 ```ts
-import { uuid } from '@renzp/utils'
+import { uuid } from '@renzp/utils';
 
 uuid(); // nlcvepvq-w764-vtn5-ut6t-13r7tyn0j8hb
 uuid(true); // 4EbKOG6X-k6DJ-I5AJ-41FM-mP5At4u8D25G

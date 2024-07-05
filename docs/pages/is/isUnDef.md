@@ -7,7 +7,7 @@
 传入一个值，如果无值则返回`true`，否则返回`false`。
 
 ```ts
-import { isUnDef } from '@renzp/utils'
+import { isUnDef } from '@renzp/utils';
 
 const a = 1;
 isUnDef(a); // false

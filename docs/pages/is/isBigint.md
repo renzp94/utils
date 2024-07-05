@@ -7,7 +7,7 @@
 传入一个值，如果是`Bigint`类型则返回`true`，否则返回`false`。
 
 ```ts
-import { isBigint } from '@renzp/utils'
+import { isBigint } from '@renzp/utils';
 
 isBigint(1n); // true
 isBigint(1); // false

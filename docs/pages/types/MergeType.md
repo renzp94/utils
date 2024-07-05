@@ -7,7 +7,7 @@
 传入两个类型，返回合并后的类型。
 
 ```ts
-import type { MergeType } from '@renzp/utils'
+import type { MergeType } from '@renzp/utils';
 
 MergeType<
   {

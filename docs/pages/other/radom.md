@@ -7,7 +7,7 @@
 传入最小范围和最大范围，返回生成的随机数。如果需要指定精度，可传入第三个参数，精度最大为12(默认)。
 
 ```ts
-import { radom } from '@renzp/utils'
+import { radom } from '@renzp/utils';
 
 radom(100, 10000); // 9059.655590156493
 radom(100, 10000, 0); // 9059

@@ -7,7 +7,7 @@
 传入一个值，如果是`小数`则返回`true`，否则返回`false`。
 
 ```ts
-import { isFloat } from '@renzp/utils'
+import { isFloat } from '@renzp/utils';
 
 isFloat(1); // false
 isFloat(1.2); // true

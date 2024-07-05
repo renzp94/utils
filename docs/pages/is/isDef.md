@@ -7,7 +7,7 @@
 传入一个值，如果不是`undefined`和`null`则返回`true`，否则返回`false`。
 
 ```ts
-import { isDef } from '@renzp/utils'
+import { isDef } from '@renzp/utils';
 
 const a = 1;
 isDef(a); // true

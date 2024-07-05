@@ -9,7 +9,7 @@
 > 注意：Symbol尽量使用字符串作为key，此方法比较会通过`toString`获取`Symbol([key])`字符串中的`[key]`，如果`key`相等，则Symbol就相等
 
 ```ts
-import { isEqual } from '@renzp/utils'
+import { isEqual } from '@renzp/utils';
 
 isEqual(0, 0); // true
 isEqual({ a: 1 }, { a: 1 }); // true

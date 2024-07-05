@@ -9,7 +9,7 @@
 传入一个对象和属性名数组或自定义函数，返回删除属性后的对象。
 
 ```ts
-import { isNumber, omit } from '@renzp/utils'
+import { isNumber, omit } from '@renzp/utils';
 
 const a = { a: 1, b: 2, c: '3' };
 const b = omit(a, "a"); // b = { b: 2, c: '3' }  a = { a: 1, b: 2, c: '3' }

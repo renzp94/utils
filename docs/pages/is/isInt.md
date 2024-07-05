@@ -7,7 +7,7 @@
 传入一个值，如果是`整数`则返回`true`，否则返回`false`。
 
 ```ts
-import { isInt } from '@renzp/utils'
+import { isInt } from '@renzp/utils';
 
 isInt(1); // true
 isInt(1.2); // false

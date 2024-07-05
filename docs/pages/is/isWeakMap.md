@@ -7,7 +7,7 @@
 传入一个值，如果是`WeakMap`类型则返回`true`，否则返回`false`。
 
 ```ts
-import { isWeakMap } from '@renzp/utils'
+import { isWeakMap } from '@renzp/utils';
 
 isWeakMap(new WeakMap()); // true
 isWeakMap({ size: 0 }); // false

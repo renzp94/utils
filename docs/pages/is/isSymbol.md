@@ -7,7 +7,7 @@
 传入一个值，如果是`symbol`类型则返回`true`，否则返回`false`。
 
 ```ts
-import { isString } from '@renzp/utils'
+import { isString } from '@renzp/utils';
 
 isSymbol(Symbol(0)); // true
 isSymbol(0); // false

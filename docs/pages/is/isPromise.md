@@ -7,7 +7,7 @@
 传入一个值，如果是`Promise`类型或`Async函数`则返回`true`，否则返回`false`。
 
 ```ts
-import { isPromise } from '@renzp/utils'
+import { isPromise } from '@renzp/utils';
 
 isPromise(new Promise(() => {})); // true
 isPromise(async () => {}); // true

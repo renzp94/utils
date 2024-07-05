@@ -7,7 +7,7 @@
 传入一个字符串，如果是中文则返回`true`，否则返回`false`。
 
 ```ts
-import { zhValidator } from '@renzp/utils'
+import { zhValidator } from '@renzp/utils';
 
 zhValidator('这是一段中文文字，还有中文标点符号。'); // true
 zhValidator('这是一段中文文字', ZH_MATCH.W); // true

@@ -7,7 +7,7 @@
 传入一个值，如果是`Json`数据则返回`true`，否则返回`false`。
 
 ```ts
-import { isJson } from '@renzp/utils'
+import { isJson } from '@renzp/utils';
 
 isJson(null); // false
 isJson(undefined); // false

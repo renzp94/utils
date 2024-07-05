@@ -7,7 +7,7 @@
 传入一个函数，返回一个防抖函数，默认防抖时间为`300ms`。
 
 ```ts
-import { debounce } from '@renzp/utils'
+import { debounce } from '@renzp/utils';
 let value = 0;
 const fn = (count: number) => {
   value = count;
@@ -34,7 +34,7 @@ setTimeout(() => console.log(value), 504); // 2
 可传入`time`参数设置防抖时间。如果传入值小于0，则表示没有防抖和直接调用函数一样。如果传入0则放到下一个执行周期(即：`setTimeout(fn,0)`)。
 
 ```ts
-import { debounce } from '@renzp/utils'
+import { debounce } from '@renzp/utils';
 
 let value = 0;
 const fn = (count: number) => {
@@ -53,7 +53,7 @@ setTimeout(() => console.log(value), 1); // 2
 默认是`time`时间内没有触发函数则执行，如果想先执行再等待，可以设置`callTiming`为`before`。
 
 ```ts
-import { debounce } from '@renzp/utils'
+import { debounce } from '@renzp/utils';
 
 let value = 0;
 const fn = (count: number) => {
@@ -71,7 +71,7 @@ setTimeout(() => console.log(value), 600); // 1
 如果想在防抖时间内立即执行最后一次调用，则可以使用`fn.flush`。
 
 ```ts
-import { debounce } from '@renzp/utils'
+import { debounce } from '@renzp/utils';
 
 let value = 0;
 const fn = (count: number) => {
@@ -90,7 +90,7 @@ console.log(value); // 2
 如果取消防抖，可使用`fn.cancel`。调用后如果有待执行的任务，则会立即执行，如果不需要执行，则传入`false`。取消防抖是永久取消，如果想撤销取消防抖的操作，可使用`fn.revokeCancel`。
 
 ```ts
-import { debounce } from '@renzp/utils'
+import { debounce } from '@renzp/utils';
 
 let value = 0;
 const fn = (count: number) => {

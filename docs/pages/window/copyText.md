@@ -9,7 +9,7 @@
 传入一个字符串，将字符串复制到剪切板中，如果复制成功则返回`true`，否则返回`false`。
 
 ```ts
-import { copyText } from '@renzp/utils'
+import { copyText } from '@renzp/utils';
 
 const status = await copyText('复制文本'); // true
 const text = await navigator.clipboard.readText()

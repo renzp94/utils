@@ -7,7 +7,7 @@
 传入一个值，如果是`Object`类型则返回`true`，否则返回`false`。
 
 ```ts
-import { isObject } from '@renzp/utils'
+import { isObject } from '@renzp/utils';
 
 isObject({}); // true
 isObject(1); // false

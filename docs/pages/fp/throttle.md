@@ -7,7 +7,7 @@
 传入一个函数，返回一个节流函数，默认节流时间为`300ms`。
 
 ```ts
-import { throttle } from '@renzp/utils'
+import { throttle } from '@renzp/utils';
 
 let value = 0;
 const fn = (count: number) => {
@@ -24,7 +24,7 @@ setTimeout(() => console.log(value), 300); // 1
 可传入`time`参数设置节流时间。如果传入值小于0，则表示没有节流和直接调用函数一样。如果传入0则放到下一个执行周期(即：`setTimeout(fn,0)`)。
 
 ```ts
-import { throttle } from '@renzp/utils'
+import { throttle } from '@renzp/utils';
 
 let value = 0;
 const fn = (count: number) => {
@@ -42,7 +42,7 @@ setTimeout(() => console.log(value), 1000); // 1
 默认是等待`time`时间后执行函数，如果想先执行再等待，可以设置`callTiming`为`before`。
 
 ```ts
-import { throttle } from '@renzp/utils'
+import { throttle } from '@renzp/utils';
 
 let value = 0;
 const fn = (count: number) => {
@@ -60,7 +60,7 @@ setTimeout(() => console.log(value), 300); // 1
 如果想在节流时间内立即执行最后一次调用，则可以使用`fn.flush`。
 
 ```ts
-import { throttle } from '@renzp/utils'
+import { throttle } from '@renzp/utils';
 
 let value = 0;
 const fn = (count: number) => {
@@ -79,7 +79,7 @@ console.log(value); // 2
 如果取消节流，可使用`fn.cancel`。调用后如果有待执行的任务，则会立即执行，如果不需要执行，则传入`false`。取消节流是永久取消，如果想撤销取消节流的操作，可使用`fn.revokeCancel`。
 
 ```ts
-import { throttle } from '@renzp/utils'
+import { throttle } from '@renzp/utils';
 
 let value = 0;
 const fn = (count: number) => {

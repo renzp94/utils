@@ -7,7 +7,7 @@
 传入一个值，如果是`number`类型则返回`true`，否则返回`false`。
 
 ```ts
-import { isNumber } from '@renzp/utils'
+import { isNumber } from '@renzp/utils';
 
 isNumber(1); // true
 isNumber('1'); // false

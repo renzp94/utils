@@ -9,7 +9,7 @@
 传入一个字符串，如果是手机号格式则返回`true`，否则返回`false`。
 
 ```ts
-import { phoneValidator } from '@renzp/utils'
+import { phoneValidator } from '@renzp/utils';
 
 phoneValidator('13311111111'); // true
 phoneValidator('12000000000'); // false

@@ -7,7 +7,7 @@
 传入一个值，如果是`RegExp`类型则返回`true`，否则返回`false`。
 
 ```ts
-import { isRegExp } from '@renzp/utils'
+import { isRegExp } from '@renzp/utils';
 
 isRegExp(/\d/); // true
 isRegExp('/\d/'); // false

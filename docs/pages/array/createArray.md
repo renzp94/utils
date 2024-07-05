@@ -7,7 +7,7 @@
 传入数组长度和填充元素，返回一个含有元素的数组。如果需要复杂的元素填充，第二个参数可以传入一个函数。
 
 ```ts
-import { createArray } from '@renzp/utils'
+import { createArray } from '@renzp/utils';
 
 createArray(2); // []
 createArray(2).length; // 2

@@ -14,7 +14,7 @@
 传入一个字符串，如果是邮箱格式则返回`true`，否则返回`false`。
 
 ```ts
-import { emailValidator } from '@renzp/utils'
+import { emailValidator } from '@renzp/utils';
 
 emailValidator('lisi@qq.com'); // true
 emailValidator('wangwu@163.com'); // true

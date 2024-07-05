@@ -7,7 +7,7 @@
 传入一个函数，返回一个柯里化后的函数。
 
 ```ts
-import { curry } from '@renzp/utils'
+import { curry } from '@renzp/utils';
 
 const regValidator = (regExp: RegExp, v: string) => regExp.test(v);
 curry(regValidator)(/^1[3-9]\d{9}$/, '13311111111'); // true

@@ -7,7 +7,7 @@
 传入一个数组，使用[SameValueZero](https://262.ecma-international.org/6.0/#sec-samevaluezero)进行比较，返回去重后的数组。如果是对象数组，可以使用第二个参数指定对象的key，也可传入函数进行自定义对比。
 
 ```ts
-import { unique } from '@renzp/utils'
+import { unique } from '@renzp/utils';
 
 unique([1, 1, 2, 3, 4, 3]); // [1, 2, 3, 4]
 unique(

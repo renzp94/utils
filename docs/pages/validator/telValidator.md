@@ -10,7 +10,7 @@
 传入一个字符串，如果是座机号码格式则返回`true`，否则返回`false`。
 
 ```ts
-import { telValidator } from '@renzp/utils'
+import { telValidator } from '@renzp/utils';
 
 telValidator('010-12345678'); // true
 telValidator('(010)88050109'); // true

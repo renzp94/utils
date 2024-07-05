@@ -7,7 +7,7 @@
 传入一个值，如果是`Function`类型则返回`true`，否则返回`false`。
 
 ```ts
-import { isFunction } from '@renzp/utils'
+import { isFunction } from '@renzp/utils';
 
 const a = () => {};
 isFunction(a); // true

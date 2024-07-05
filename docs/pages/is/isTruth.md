@@ -7,7 +7,7 @@
 传入一个值，如果是真值则返回`true`，否则返回`false`。
 
 ```ts
-import { isTruth } from '@renzp/utils'
+import { isTruth } from '@renzp/utils';
 
 isTruth(false); // false
 isTruth(1); // true

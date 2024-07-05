@@ -7,7 +7,7 @@
 传入一个目标对象数组和其对象的key，返回转换后的对象。
 
 ```ts
-import { createArray, objectify } from '@renzp/utils'
+import { createArray, objectify } from '@renzp/utils';
 
 const list = createArray(3, (i) => ({
   key: `key_${i}`,
@@ -40,7 +40,7 @@ objectify(list, 'key');
 第二个参数可传入目标数组中的对象属性名，则自动将`对象.属性名`作为转换对象的属性。也可传入一个函数，函数返回值用于自定义转换对象的属性。
 
 ```ts
-import { createArray, objectify } from '@renzp/utils'
+import { createArray, objectify } from '@renzp/utils';
 
 const list = createArray(3, (i) => ({
   key: `key_${i}`,
@@ -74,7 +74,7 @@ objectify(list, (v) => `p_${v.key}`);
 
 
 ```ts
-import { createArray, objectify } from '@renzp/utils'
+import { createArray, objectify } from '@renzp/utils';
 
 type Obj = {
   key: string

@@ -7,7 +7,7 @@
 传入一个值，如果是`Map`类型则返回`true`，否则返回`false`。
 
 ```ts
-import { isMap } from '@renzp/utils'
+import { isMap } from '@renzp/utils';
 
 isMap(new Map()); // true
 isMap({ size: 0 }); // false

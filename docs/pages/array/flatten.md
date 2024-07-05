@@ -9,7 +9,7 @@
 传入一个数组，返回扁平化后的数组。
 
 ```ts
-import { flatten } from '@renzp/utils'
+import { flatten } from '@renzp/utils';
 
 flatten([[1], 2, [3]]); // [1, 2, 3]
 flatten([[1, 2], 3, [4, [5]]]); // [1, 2, 3, 4, 5]

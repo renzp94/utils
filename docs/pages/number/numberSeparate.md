@@ -7,7 +7,7 @@
 传入一个数字，返回分割后的数字字符串。
 
 ```ts
-import { numberSeparate } from '@renzp/utils'
+import { numberSeparate } from '@renzp/utils';
 
 numberSeparate(1234); // 123,4
 numberSeparate(123456789.123456); // 123,456,789.123456

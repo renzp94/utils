@@ -9,7 +9,7 @@
 传入一个值，如果是假值则返回`true`，否则返回`false`。
 
 ```ts
-import { isFalsy } from '@renzp/utils'
+import { isFalsy } from '@renzp/utils';
 
 isFalsy(false); // true
 isFalsy(1); // false

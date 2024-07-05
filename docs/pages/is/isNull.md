@@ -7,7 +7,7 @@
 传入一个值，如果是`Null`则返回`true`，否则返回`false`。
 
 ```ts
-import { isNull } from '@renzp/utils'
+import { isNull } from '@renzp/utils';
 
 const a = null;
 isNull(a); // true

@@ -7,7 +7,7 @@
 传入一个值，如果是`string`类型则返回`true`，否则返回`false`。
 
 ```ts
-import { isString } from '@renzp/utils'
+import { isString } from '@renzp/utils';
 
 isString('1'); // true
 isString(1); // false

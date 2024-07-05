@@ -13,7 +13,7 @@
 传入一个字符串，如果是身份证格式则返回`true`，否则返回`false`。
 
 ```ts
-import { idCardValidator } from '@renzp/utils'
+import { idCardValidator } from '@renzp/utils';
 
 idCardValidator('34052419800101001X'); // true
 idCardValidator('620102195603025028'); // true

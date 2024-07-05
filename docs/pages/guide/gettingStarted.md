@@ -29,7 +29,7 @@ $ bun add @renzp/utils
     }
 </script>
 <script type="module">
-  import { isNumber } from '@renzp/utils'
+  import { isNumber } from '@renzp/utils';
 </script>
 ```
 
@@ -39,12 +39,12 @@ $ bun add @renzp/utils
 ## 使用
 
 ```ts
-import { isNumber } from '@renzp/utils'
+import { isNumber } from '@renzp/utils';
 // import { isNumber } from '@renzp/utils/is' 
 
-const v: unknown = Math.PI
+const v: unknown = Math.PI;
 
 if (isNumber(v)) {
-  console.log(v.toFixed(2)) // 3.14
+  console.log(v.toFixed(2)); // 3.14
 }
 ```

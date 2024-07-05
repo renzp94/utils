@@ -7,7 +7,7 @@
 传入一个数组，返回最后一个元素，如果没有则返回默认值。
 
 ```ts
-import { last } from '@renzp/utils'
+import { last } from '@renzp/utils';
 
 last([1, 2, 3]); // 3
 last([], 2); // 2

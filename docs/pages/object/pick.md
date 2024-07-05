@@ -9,7 +9,7 @@
 传入一个对象和属性名数组或自定义函数，返回包含指定属性的对象。
 
 ```ts
-import { isNumber, pick } from '@renzp/utils'
+import { isNumber, pick } from '@renzp/utils';
 
 const a = { a: 1, b: 2, c: '3' };
 const c = pick(a, ["a"]); // c = { a: 1 }  a = { a: 1, b: 2, c: '3' }

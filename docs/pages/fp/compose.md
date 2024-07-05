@@ -7,7 +7,7 @@
 传入多个函数，返回一个组合后的新函数。
 
 ```ts
-import { compose } from '@renzp/utils'
+import { compose } from '@renzp/utils';
 
 const getOdd = (list: Array<number>) => list.filter((v) => v % 2 === 0);
 const great20 = (list: Array<number>) => list.filter((v) => v > 20);

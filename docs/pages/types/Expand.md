@@ -7,7 +7,7 @@
 传入一个类型，在`vscode`中鼠标悬停是将展开一层的类型定义。
 
 ```ts
-import type { Expand } from '@renzp/utils'
+import type { Expand } from '@renzp/utils';
 
 interface Obj1 {
   a: string

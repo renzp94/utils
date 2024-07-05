@@ -7,7 +7,7 @@
 传入一个值，如果是`undefined`则返回`true`，否则返回`false`。
 
 ```ts
-import { isUndefined } from '@renzp/utils'
+import { isUndefined } from '@renzp/utils';
 
 const a = 1;
 isUndefined(a); // false

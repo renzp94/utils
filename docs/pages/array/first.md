@@ -7,7 +7,7 @@
 传入一个数组，返回第一个元素，如果没有则返回默认值。
 
 ```ts
-import { first } from '@renzp/utils'
+import { first } from '@renzp/utils';
 
 first([1, 2, 3]); // 1
 first([], 2); // 2

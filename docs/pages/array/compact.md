@@ -9,7 +9,7 @@
 传入一个数组，返回一个去除假值的数组。
 
 ```ts
-import { compact } from '@renzp/utils'
+import { compact } from '@renzp/utils';
 
 compact([0, 1, 2, undefined, null, false, Number.NaN, '', []]); // [1, 2, []]
 compact({ a: 0, b: 2, c: false }); // { a: 0, b: 2, c: false }

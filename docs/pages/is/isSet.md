@@ -7,7 +7,7 @@
 传入一个值，如果是`Set`类型则返回`true`，否则返回`false`。
 
 ```ts
-import { isSet } from '@renzp/utils'
+import { isSet } from '@renzp/utils';
 
 isSet(new Set()); // true
 isSet({ size: 0 }); // false

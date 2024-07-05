@@ -7,7 +7,7 @@
 传入一个值，如果是引用类型数据则返回`true`，否则返回`false`。
 
 ```ts
-import { isRefData } from '@renzp/utils'
+import { isRefData } from '@renzp/utils';
 
 isRefData({}); // true
 isRefData([]); // true

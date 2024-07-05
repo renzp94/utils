@@ -7,7 +7,7 @@
 传入一个值，如果是基础数据类型则返回`true`，否则返回`false`。
 
 ```ts
-import { isPrimitive } from '@renzp/utils'
+import { isPrimitive } from '@renzp/utils';
 
 isPrimitive(1); // true
 isPrimitive('1'); // true

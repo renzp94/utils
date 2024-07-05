@@ -7,7 +7,7 @@
 传入一个字符串，如果是纯数字则返回`true`，否则返回`false`。
 
 ```ts
-import { numberValidator } from '@renzp/utils'
+import { numberValidator } from '@renzp/utils';
 
 numberValidator('1'); // true
 numberValidator('1.1'); // true
