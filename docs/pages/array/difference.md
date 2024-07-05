@@ -4,7 +4,7 @@
 
 ## 基本用法
 
-传入目标数组和比较数组，使用[SameValueZero](https://262.ecma-international.org/6.0/#sec-samevaluezero)进行比较，返回目标数组在比较数组里的数据。
+传入目标数组和比较数组，使用[SameValueZero](https://262.ecma-international.org/6.0/#sec-samevaluezero)进行比较，返回目标数组不在比较数组里的数据。
 
 如果是对象数组，可将第三个参数传入对象的key来匹配。
 
