@@ -1,67 +1,4 @@
-import { isArray, isFunction, isNull, isObject } from './is'
-
-/**
- * 调用变量的toString
- * @param v 变量
- * @returns 返回toString返回的数据
- */
-export const _toString = (v: unknown): string =>
-  Object.prototype.toString.call(v)
-
-/**
- * 排除假值类型
- */
-export type _ExcludeFalsy<T> = T extends false | null | undefined | 0 | ''
-  ? never
-  : T
-
-/**
- * 获取数组元素
- * @param list 目标数组
- * @param index 数组下标
- * @param defaultValue 默认值
- * @returns 返回指定下标的元素，如果没有返回默认值
- */
-export const _find = <T>(
-  list: Array<T>,
-  index: number,
-  defaultValue?: T,
-): T | undefined => {
-  if (isArray(list)) {
-    return list?.[index] ?? defaultValue
-  }
-
-  return defaultValue
-}
-/**
- * pick和omit的通用方法
- * @param target 源对象
- * @param filter 属性数组或自定义函数
- * @param type 操作类型：pick、omit
- * @returns 返回处理后的数据
- */
-export const _po = <T extends Record<PropertyKey, any>, K extends keyof T>(
-  target: T,
-  filter: Array<K> | ((v: T[keyof T]) => boolean),
-  type: 'pick' | 'omit',
-): T => {
-  if (!isObject(target)) {
-    return target
-  }
-
-  return Object.keys(target)
-    .filter((key) => {
-      const has = isFunction(filter)
-        ? filter(target[key])
-        : filter.includes(key as K)
-
-      return type === 'pick' ? has : !has
-    })
-    .reduce(
-      (prev, key) => (target?.[key] ? { ...prev, [key]: target[key] } : prev),
-      {} as T,
-    )
-}
+import { isFunction, isNull } from '../is'
 
 export type _DebounceCommonFn<T> = T & {
   flush: () => void
@@ -149,14 +86,3 @@ export const _debounceCommon = <T extends (...args: any) => any>(
 
   return _debounce as _DebounceCommonFn<T>
 }
-
-export type Filter<T> =
-  | keyof T
-  | Array<keyof T>
-  | ((target: T, v: T) => boolean)
-
-export type FilterOptions<T> = {
-  filter?: Filter<T>
-}
-
-export type AnyFunction = (...args: any[]) => any

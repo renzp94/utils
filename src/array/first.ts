@@ -1,4 +1,4 @@
-import { _find } from '../_base'
+import { _find } from './_private'
 
 /**
  * 获取数组第一个元素

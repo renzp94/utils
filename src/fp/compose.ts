@@ -1,4 +1,4 @@
-import type { AnyFunction } from '../_base'
+import type { AnyFunction } from '../_private'
 import { isFunction } from '../is'
 
 type FirstReturnType<Fns extends Array<AnyFunction>> = Fns extends [

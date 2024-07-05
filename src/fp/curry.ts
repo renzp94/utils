@@ -1,4 +1,4 @@
-import type { AnyFunction } from '../_base'
+import type { AnyFunction } from '../_private'
 import { isFunction } from '../is'
 
 type DiffPrefixLoose<T extends readonly any[], O extends any[]> = T extends [

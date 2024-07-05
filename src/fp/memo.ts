@@ -1,4 +1,4 @@
-import { type AnyFunction, _toString } from '../_base'
+import { type AnyFunction, _toString } from '../_private'
 import { isFunction } from '../is'
 
 export type MemoReturnType<T extends AnyFunction> = ((

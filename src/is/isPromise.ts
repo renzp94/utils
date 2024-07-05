@@ -1,4 +1,4 @@
-import { _toString } from '../_base'
+import { _toString } from '../_private'
 
 /**
  * 是否为Promise类型或async函数

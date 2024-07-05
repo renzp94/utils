@@ -1,5 +1,5 @@
-import { _po } from '../_base'
 import type { ExpandRecursively } from '../types'
+import { _po } from './_private'
 
 /**
  * 删除对象指定属性

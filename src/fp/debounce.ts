@@ -1,5 +1,5 @@
-import { _debounceCommon } from '../_base'
 import { isNull } from '../is'
+import { _debounceCommon } from './_private'
 
 export type DebounceOptions = {}
 

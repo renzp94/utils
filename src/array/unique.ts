@@ -1,4 +1,4 @@
-import type { FilterOptions } from '../_base'
+import type { FilterOptions } from '../_private'
 import { isArray, isEqual, isFunction, isString, isUnDef } from '../is'
 import { deepClone } from '../other'
 

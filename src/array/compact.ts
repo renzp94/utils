@@ -1,4 +1,4 @@
-import type { _ExcludeFalsy } from '../_base'
+import type { _ExcludeFalsy } from '../_private'
 import { isArray, isTruth } from '../is'
 
 /**
