@@ -40,7 +40,6 @@ $ bun add @renzp/utils
 
 ```ts
 import { isNumber } from '@renzp/utils';
-// import { isNumber } from '@renzp/utils/is' 
 
 const v: unknown = Math.PI;
 
