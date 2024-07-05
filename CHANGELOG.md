@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.6](https://github.com/renzp94/utils/compare/v0.3.5...v0.3.6) (2024-07-05)
+
+
+### 代码重构
+
+* 重命名_base为_private及拆分其代码 ([93069f6](https://github.com/renzp94/utils/commit/93069f62b5d2c9bca813235b460604acb353eb99))
+
+
+### 新功能
+
+* **array:** 添加max(获取最大值)方法 ([6501783](https://github.com/renzp94/utils/commit/65017832084b42a5797392dd0b288e3e69f91781))
+* **array:** 添加min(获取最小值)方法 ([1c21aac](https://github.com/renzp94/utils/commit/1c21aace3c95e6f9ecefbc36e554b54d64e1f744))
+
 ### [0.3.5](https://github.com/renzp94/utils/compare/v0.3.4...v0.3.5) (2024-07-01)
 
 
