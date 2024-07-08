@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.7](https://github.com/renzp94/utils/compare/v0.3.6...v0.3.7) (2024-07-08)
+
+
+### 其他
+
+* 移除无用目录文件 ([a1e44f0](https://github.com/renzp94/utils/commit/a1e44f09c925bce279a7629afa5a508c24148d65))
+
+
+### 新功能
+
+* **fp:** 添加chain(函数链式调用)方法 ([27436db](https://github.com/renzp94/utils/commit/27436db898fa75441ff0ef300d396079fed2130a))
+
 ### [0.3.6](https://github.com/renzp94/utils/compare/v0.3.5...v0.3.6) (2024-07-05)
 
 
