@@ -9,9 +9,9 @@
 ```ts
 import { compose } from '@renzp/utils';
 
-const getOdd = (list: Array<number>) => list.filter((v) => v % 2 === 0);
+const getEven = (list: Array<number>) => list.filter((v) => v % 2 === 0);
 const great20 = (list: Array<number>) => list.filter((v) => v > 20);
-const fn = compose(great20, getOdd);
+const fn = compose(great20, getEven);
 fn([2, 5, 7, 20, 23, 24, 25, 29, 35, 36]); // [24, 36]
 ```
 

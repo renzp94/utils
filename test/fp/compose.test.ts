@@ -1,18 +1,18 @@
 import { expect, test } from 'bun:test'
 import { compose } from '../../src'
 
-const getOdd = (list: Array<number>) => list.filter((v) => v % 2 === 0)
+const getEven = (list: Array<number>) => list.filter((v) => v % 2 === 0)
 const great20 = (list: Array<number>) => list.filter((v) => v > 20)
 const _toString = <T>(list: Array<T>) => list.toString()
 const list = [2, 5, 7, 20, 23, 24, 25, 29, 35, 36]
 
 test('获取偶数且大于20', () => {
-  const fn = compose(great20, getOdd)
+  const fn = compose(great20, getEven)
   expect(fn(list)).toEqual([24, 36])
 })
 
 test('获取偶数且大于20并且数组转字符串', () => {
-  const fn = compose(great20, getOdd)
+  const fn = compose(great20, getEven)
   const fn1 = compose(_toString, fn)
   expect(fn1(list)).toEqual('24,36')
 })
