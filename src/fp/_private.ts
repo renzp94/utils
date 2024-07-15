@@ -27,6 +27,8 @@ export const _debounceCommon = <T extends (...args: any) => any>(
   let isCancel = false
   let isFlush = false
 
+  let result: ReturnType<T>
+
   const _debounce = (...args: Parameters<T>) => {
     _args = args
     if (enableWork) {
@@ -34,7 +36,11 @@ export const _debounceCommon = <T extends (...args: any) => any>(
       if (!isCancel && isBefore) {
         enableWork = false
       }
-      return fn(...args)
+      result = fn(...args)
+      setTimeout(() => {
+        enableWork = true
+      }, time)
+      return result
     }
 
     timer = customFn(timer, isCancel, (_timer, _enableWork) => {
@@ -46,6 +52,8 @@ export const _debounceCommon = <T extends (...args: any) => any>(
         _debounce(...(_args ?? []))
       }
     })
+
+    return result
   }
 
   /**

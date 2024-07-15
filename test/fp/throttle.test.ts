@@ -192,3 +192,41 @@ test('先取消节流，再撤销取消节流', () => {
   expect(value).toEqual(0)
   setTimeout(() => expect(value).toEqual(2), 300)
 })
+
+test('节流异步函数', async () => {
+  let count = 0
+  const fn = async () => {
+    // console.log('节流异步函数 run fn: ', count)
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        count++
+        resolve(count)
+      }, 10)
+    })
+  }
+  // console.log('节流异步函数 => 结束')
+  const _fn = throttle(fn, 20, 'before')
+  const data1 = await _fn()
+  const data2 = await _fn()
+  expect(data1).toEqual(1)
+  expect(data2).toEqual(1)
+})
+
+test('节流异步函数超过节流时间', async () => {
+  let count = 0
+  const fn = async () => {
+    // console.log('节流异步函数超过节流时间 run fn: ', count)
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        count++
+        resolve(count)
+      }, 20)
+    })
+  }
+  // console.log('节流异步函数超过节流时间 => 结束')
+  const _fn = throttle(fn, 10, 'before')
+  const data1 = await _fn()
+  const data2 = await _fn()
+  expect(data1).toEqual(1)
+  expect(data2).toEqual(2)
+})

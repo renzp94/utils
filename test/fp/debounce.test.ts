@@ -229,3 +229,79 @@ test('先取消防抖，再撤销取消防抖', () => {
   setTimeout(() => expect(value).toEqual(0), 300)
   setTimeout(() => expect(value).toEqual(2), 504)
 })
+
+test('防抖异步函数', async () => {
+  let count = 0
+  const fn = async () => {
+    // console.log('防抖异步函数 run fn: ', count)
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        count++
+        resolve(count)
+      }, 150)
+    })
+  }
+  // console.log('防抖异步函数 => 结束')
+  const _fn = debounce(fn, 200, 'before')
+  const data1 = await _fn()
+  const data2 = await _fn()
+  setTimeout(() => expect(data1).toEqual(1), 149)
+  setTimeout(() => expect(data2).toEqual(1), 310)
+})
+
+test('防抖异步函数', async () => {
+  let count = 0
+  const fn = async () => {
+    // console.log('防抖异步函数 run fn: ', count)
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        count++
+        resolve(count)
+      }, 150)
+    })
+  }
+  // console.log('防抖异步函数 => 结束')
+  const _fn = debounce(fn, 200, 'before')
+  const data1 = await _fn()
+  const data2 = await _fn()
+  setTimeout(() => expect(data1).toEqual(1), 149)
+  setTimeout(() => expect(data2).toEqual(1), 310)
+})
+
+test('防抖异步函数after', async () => {
+  let count = 0
+  const fn = async () => {
+    // console.log('防抖异步函数 run fn: ', count)
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        count++
+        resolve(count)
+      }, 150)
+    })
+  }
+  // console.log('防抖异步函数 => 结束')
+  const _fn = debounce(fn, 200, 'after')
+  const data1 = await _fn()
+  const data2 = await _fn()
+  expect(data1).toEqual(undefined)
+  expect(data2).toEqual(undefined)
+})
+
+test('防抖异步函数超过防抖时间', async () => {
+  let count = 0
+  const fn = async () => {
+    // console.log('防抖异步函数超过防抖时间 run fn: ', count)
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        count++
+        resolve(count)
+      }, 20)
+    })
+  }
+  // console.log('防抖异步函数超过防抖时间 => 结束')
+  const _fn = debounce(fn, 10, 'before')
+  const data1 = await _fn()
+  const data2 = await _fn()
+  expect(data1).toEqual(1)
+  expect(data2).toEqual(2)
+})
