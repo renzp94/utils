@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.8](https://github.com/renzp94/utils/compare/v0.3.7...v0.3.8) (2024-07-15)
+
+
+### Bug修复
+
+* **fp(throttle):** 修复节流异步函数时第二次调用结果返回undefined的问题 ([e9755c2](https://github.com/renzp94/utils/commit/e9755c2267344e1cef958c5e4535f88ac2446bd5))
+
 ### [0.3.7](https://github.com/renzp94/utils/compare/v0.3.6...v0.3.7) (2024-07-08)
 
 
