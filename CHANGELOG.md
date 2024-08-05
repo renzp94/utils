@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.9](https://github.com/renzp94/utils/compare/v0.3.8...v0.3.9) (2024-08-05)
+
+
+### Bug修复
+
+* **is(isEqual):** 修复filter类型报错的问题 ([48fb39c](https://github.com/renzp94/utils/commit/48fb39c8763149d09efbe35479205b065376a272))
+
 ### [0.3.8](https://github.com/renzp94/utils/compare/v0.3.7...v0.3.8) (2024-07-15)
 
 

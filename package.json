@@ -1,6 +1,6 @@
 {
   "name": "@renzp/utils",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "author": "renzp <1074720760.qq.com>",
   "repository": {
     "type": "git",
@@ -13,6 +13,7 @@
     "@nubuild/cli": "^0.0.3",
     "@type-challenges/utils": "^0.1.1",
     "@types/bun": "^1.1.4",
+    "standard-version": "^9.5.0",
     "vitepress": "^1.2.3"
   },
   "peerDependencies": {
@@ -22,9 +23,13 @@
     "url": "https://github.com/renzp94/utils/issues"
   },
   "description": "一款零依赖、实用的Javascript/Typescript工具库",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/renzp94/utils#readme",
-  "keywords": ["utils"],
+  "keywords": [
+    "utils"
+  ],
   "license": "MIT",
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
