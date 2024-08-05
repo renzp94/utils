@@ -1,45 +1,9 @@
-import fs from 'node:fs'
-import { exists, readdir, unlink } from 'node:fs/promises'
-import path from 'node:path'
-import dts from 'bun-plugin-dts'
-
-/**
- * 删除dist 目录
- */
-export const rmDist = async (dir = './dist') => {
-  const hasDist = await exists('./dist')
-  if (hasDist) {
-    const distFiles = await readdir(dir)
-    const rmFiles = distFiles.map((file) => {
-      const filepath = `${dir}/${file}`
-      const stat = fs.statSync(filepath)
-      if (stat.isDirectory()) {
-        rmDist(filepath)
-      } else {
-        return unlink(`${dir}/${file}`)
-      }
-    })
-
-    return Promise.all(rmFiles)
-  }
-}
+import { exists } from 'node:fs/promises'
 
 /**
  * 打包
  */
-export const build = async () => {
-  await rmDist()
-  return Bun.build({
-    entrypoints: ['./src/index.ts'],
-    outdir: './dist',
-    naming: '[name].[ext]',
-    splitting: true,
-    minify: true,
-    format: 'esm',
-    sourcemap: 'external',
-    plugins: [dts()],
-  })
-}
+export const build = () => Bun.$`bun run build`
 
 /**
  * npm发布

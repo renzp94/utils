@@ -1,33 +1,37 @@
 {
   "name": "@renzp/utils",
   "version": "0.3.8",
-  "description": "一款零依赖、实用的Javascript/Typescript工具库",
-  "type": "module",
-  "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
-  "types": "dist/index.d.ts",
   "author": "renzp <1074720760.qq.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/renzp94/utils.git"
   },
-  "homepage": "https://github.com/renzp94/utils#readme",
+  "main": "dist/index.js",
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.1",
+    "@happy-dom/global-registrator": "^14.12.0",
+    "@nubuild/cli": "^0.0.3",
+    "@type-challenges/utils": "^0.1.1",
+    "@types/bun": "^1.1.4",
+    "vitepress": "^1.2.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.4.5"
+  },
   "bugs": {
     "url": "https://github.com/renzp94/utils/issues"
   },
-  "keywords": [
-    "utils"
-  ],
+  "description": "一款零依赖、实用的Javascript/Typescript工具库",
+  "files": ["dist"],
+  "homepage": "https://github.com/renzp94/utils#readme",
+  "keywords": ["utils"],
   "license": "MIT",
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
     "access": "public"
   },
   "scripts": {
-    "build": "bun run scripts/build.ts",
-    "build:es6": "tsup",
+    "build": "nubuild build",
     "pub:npm": "bun run scripts/pub-npm.ts",
     "pub:jsr": "bun run scripts/pub-jsr.ts",
     "pub:all": "bun run scripts/pub-all.ts",
@@ -35,16 +39,6 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
-  "devDependencies": {
-    "@biomejs/biome": "^1.8.1",
-    "@happy-dom/global-registrator": "^14.12.0",
-    "@type-challenges/utils": "^0.1.1",
-    "@types/bun": "^1.1.4",
-    "bun-plugin-dts": "^0.2.3",
-    "tsup": "^8.1.0",
-    "vitepress": "^1.2.3"
-  },
-  "peerDependencies": {
-    "typescript": "^5.4.5"
-  }
+  "type": "module",
+  "types": "dist/index.d.ts"
 }
