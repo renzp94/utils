@@ -95,7 +95,7 @@ export const isEqual = <T, U>(
       keys.every((key) => {
         const tv = isMap(target) ? target.get(key) : (target as any)[key]
         const vv = isMap(value) ? value.get(key) : (value as any)[key]
-        return isEqual(tv, vv, filter)
+        return isEqual(tv, vv, filter as any)
       })
     )
   }
