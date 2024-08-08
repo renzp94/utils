@@ -7,5 +7,5 @@
  * await sleep(2000); // 等待2000毫秒
  * console.log('end');
  */
-export const sleep = async (time: number) =>
+export const sleep = async (time: number): Promise<void> =>
   new Promise<void>((resolve) => setTimeout(resolve, time))
