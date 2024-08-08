@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.10](https://github.com/renzp94/utils/compare/v0.3.9...v0.3.10) (2024-08-08)
+
+
+### 新功能
+
+* **other:** 添加sleep(休眠)方法 ([3cbe25d](https://github.com/renzp94/utils/commit/3cbe25df391b3678d64bbbd2609122bc82c5aec6))
+
 ### [0.3.9](https://github.com/renzp94/utils/compare/v0.3.8...v0.3.9) (2024-08-05)
 
 
