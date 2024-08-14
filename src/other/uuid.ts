@@ -1,5 +1,5 @@
 import { createArray } from '../array'
-import { radom } from './radom'
+import { radom } from '../number/radom'
 
 /**
  * 生成UUID
