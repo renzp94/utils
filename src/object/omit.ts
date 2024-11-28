@@ -11,7 +11,7 @@ import { _po } from './_private'
  *
  * @example
  * const a = { a: 1, b: 2, c: '3' };
- * const c = omit(a, "a"); // c = { b: 2, c: '3' }  a = { a: 1, b: 2, c: '3' }
+ * const c = omit(a, ['a']); // c = { b: 2, c: '3' }  a = { a: 1, b: 2, c: '3' }
  * omit(a, isNumber); // { c: '3' }
  */
 export const omit = <T extends Record<PropertyKey, any>, K extends keyof T>(

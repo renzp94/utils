@@ -12,7 +12,7 @@
 import { isNumber, omit } from '@renzp/utils';
 
 const a = { a: 1, b: 2, c: '3' };
-const b = omit(a, "a"); // b = { b: 2, c: '3' }  a = { a: 1, b: 2, c: '3' }
+const b = omit(a, ['a']); // b = { b: 2, c: '3' }  a = { a: 1, b: 2, c: '3' }
 omit(a, isNumber); // { c: '3' }
 ```
 
