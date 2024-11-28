@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.11](https://github.com/renzp94/utils/compare/v0.3.10...v0.3.11) (2024-11-28)
+
+
+### Bug修复
+
+* **other(sleep):** 修复jsr发布类型错误的问题 ([72e649f](https://github.com/renzp94/utils/commit/72e649fcf7b51242ed6598056996ffa884386772))
+
+
+### 其他
+
+* 调整radom归类为数字操作 ([9da6509](https://github.com/renzp94/utils/commit/9da65098ac90d9bd443b5feae1126a4a2a482b22))
+
 ### [0.3.10](https://github.com/renzp94/utils/compare/v0.3.9...v0.3.10) (2024-08-08)
 
 
