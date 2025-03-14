@@ -1,6 +1,6 @@
 # Mutex
 
-类型互斥。
+合并类型且合并的类型互斥。即：如`type Value = Mutex<{a:number},{b:number}>`，合并后的类型`Value`可以包含`a`或`b`，但不能同时包含。
 
 ## 基本用法
 
@@ -9,6 +9,7 @@
 ```ts
 import type { Mutex } from '@renzp/utils';
 
+// 指定属性时仅可以指定index或者{start,end}，不能同时制定index和{start,end}
 export type RemoveOptions = Mutex<
   {
     index: number
